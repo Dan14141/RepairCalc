@@ -1,0 +1,252 @@
+[
+  {
+    "installed_as": "database-architect",
+    "upstream": "https://github.com/sickn33/antigravity-awesome-skills/tree/main/skills/database-architect",
+    "files": [
+      {
+        "path": "SKILL.md",
+        "sha256": "341616fc336a178cb82ffe06675a947b1f2d3e967d9d38bb8a1fd20f96f998a8"
+      }
+    ]
+  },
+  {
+    "installed_as": "database-design",
+    "upstream": "https://github.com/wshobson/agents/tree/main/plugins/database-design/skills/postgresql-table-design",
+    "files": [
+      {
+        "path": "references\\details.md",
+        "sha256": "fac8b43c75ed30d95f2ab12886021f26bb8b03f8fed0cea2929b8de18953023a"
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "1e27b0fac6d88a710cd925b831608ca202c40ade4f4e285a8e027dcf2f9a44ea"
+      }
+    ]
+  },
+  {
+    "installed_as": "data-quality-frameworks",
+    "upstream": "https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/data-quality-frameworks",
+    "files": [
+      {
+        "path": "references\\details.md",
+        "sha256": "224757dd2c96e2c13fddea88cfe74297f35bf7aae00ec1622bfec0585210f812"
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "58e61444165ba7caa572fb7f1ba2d23cfd5038cfa6699f86b5648e7fcb71d34d"
+      }
+    ]
+  },
+  {
+    "installed_as": "documentation",
+    "upstream": "https://github.com/anthropics/knowledge-work-plugins/tree/main/engineering/skills/documentation",
+    "files": [
+      {
+        "path": "SKILL.md",
+        "sha256": "1d469418f786a05be83d2a05f04d68788aeed584d13863a650f5ad73c6c4cf50"
+      }
+    ]
+  },
+  {
+    "installed_as": "postgres-pro",
+    "upstream": "https://github.com/Jeffallan/claude-skills/tree/main/skills/postgres-pro",
+    "files": [
+      {
+        "path": "references\\extensions.md",
+        "sha256": "a5e67a41cd616629322203dc64932c4151109bbeb1e836589746a628b9fd19f1"
+      },
+      {
+        "path": "references\\jsonb.md",
+        "sha256": "8ad7086e676f86f23305a5127714566898e4c500593e1a4679194a32c7f530f2"
+      },
+      {
+        "path": "references\\maintenance.md",
+        "sha256": "a9915cf08759fb92ccfbcfd2b811f36ac7c02ad0bffff2dc7f59aca9e670203c"
+      },
+      {
+        "path": "references\\performance.md",
+        "sha256": "b137e04782ab4c5387184862cb689d7657d5cbb13c3c41d61980a2edf7c2c8d4"
+      },
+      {
+        "path": "references\\replication.md",
+        "sha256": "1a42f7cb39aae4c3afc42addfc37ba3fff31b473d1eb82878adecb1e2390cfd5"
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "aa3bf7c9a5a7af779095ef7e1a1afd0939880edfb7853719bfd54fe80fc74bbe"
+      }
+    ]
+  },
+  {
+    "installed_as": "sql-pro",
+    "upstream": "https://github.com/Jeffallan/claude-skills/tree/main/skills/sql-pro",
+    "files": [
+      {
+        "path": "references\\database-design.md",
+        "sha256": "b8d0676ac91213999c28e03dae2a7685d78dda05b6abe3f6b34690d2ae19d0f6"
+      },
+      {
+        "path": "references\\dialect-differences.md",
+        "sha256": "5eac1a75d44e65dab3877353bf9e5963fa95dd990b5b1d853b17f744761f9586"
+      },
+      {
+        "path": "references\\optimization.md",
+        "sha256": "dd197a02491cda9e1d26e2f0fdff4a5a90f4a54ccf4f6d57e5041a62c06be9a6"
+      },
+      {
+        "path": "references\\query-patterns.md",
+        "sha256": "19c3b2e803336b5de9edb9fb663d2942f010459bf50f0d2961d5b0c1da6e3a8f"
+      },
+      {
+        "path": "references\\window-functions.md",
+        "sha256": "23f1987aa8223d256502f9ef1504b5aff35999ad6917d85a62c6df4ede7b1769"
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "c2916129aa5624e1d0d56dde8722bfe05bcf4a0d49df308ebf1ede5b53676feb"
+      }
+    ]
+  },
+  {
+    "installed_as": "data-report",
+    "upstream": "https://github.com/nexu-io/open-design/tree/main/skills/data-report",
+    "files": [
+      {
+        "path": "example.html",
+        "sha256": "f006f72762d2a7322175e37d9d568dd5c85610f2b0d768210b09ffa7c617c252"
+      },
+      {
+        "path": "example.md",
+        "sha256": "fb536289a402c0186e23ca8ab3b396051469233bd3269c08a48295237a0bc337"
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "ad1ce62d6b3a39eed9f13663de29440676f5e85040261747d47491cbc2ad5a04"
+      }
+    ]
+  },
+  {
+    "installed_as": "pg-aiguide",
+    "upstream": "https://github.com/timescale/pg-aiguide/tree/main/skills/postgres",
+    "files": [
+      {
+        "path": "references\\backfill-strategies.md",
+        "sha256": "67f337a606288a6d90408493c712bb17207dba44ce8c808c0e621ef850cd7376"
+      },
+      {
+        "path": "references\\complete-example.md",
+        "sha256": "27126eb01914c2d15843eee4f41c1954d243598e5411a4b854b1c337801a5b32"
+      },
+      {
+        "path": "references\\design-postgis-tables.md",
+        "sha256": "c94284724fb0d611cf7717b2cfa8863a135db62a5c144e17dbbf691ead760b87"
+      },
+      {
+        "path": "references\\design-postgres-tables.md",
+        "sha256": "a4822cefdc283979e8a75f312780cb00aad83fb03b994f72e1675dc04a8eb252"
+      },
+      {
+        "path": "references\\find-hypertable-candidates.md",
+        "sha256": "12472d435c00f8676faa0be2d9a068ffea1c57f4f8376bacfe5ec921a727bd94"
+      },
+      {
+        "path": "references\\migrate-postgres-tables-to-hypertables.md",
+        "sha256": "1d52f9d8351a62deaaa63f5d226954d93439d9c2c8d0bd60745958dc43779565"
+      },
+      {
+        "path": "references\\pgvector-semantic-search.md",
+        "sha256": "0c23028b9bc8f9a8bc4f45042d5996877533f60d7798a074ce73373ebc3e24f6"
+      },
+      {
+        "path": "references\\postgres-database-migration.md",
+        "sha256": "b37d01fa733edef05c76e299ee0e73fd19c2bd23fa20dc8156cf902fe17f5fd9"
+      },
+      {
+        "path": "references\\postgres-hybrid-text-search.md",
+        "sha256": "cb4837e06c8072acbd1134522d6f29bec819c4b8ae0fc6417f106e739b7421e8"
+      },
+      {
+        "path": "references\\schema-exploration\\guide.md",
+        "sha256": "c51dc3fae147335b5d9318d2b1068081a0e487da2d33a760ea8646e29f939081"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\data-values.md",
+        "sha256": "3183929bbe04767a341c325ef6611d407bf2289b560595e3448bd23ce918fbdb"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\extensions.md",
+        "sha256": "3651c97e5769e029fe963fb49d76484b3de4b3625ce311becbb86be0f63d2d6c"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\foreign-tables.md",
+        "sha256": "c58f5e4c88b4b07b9b49d13f690087616f8f4c3587db646cde68fdad81614f3e"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\overview.md",
+        "sha256": "f8be7d79ecf0437db77de378dd6e9f615e8e9c8df44eae7907d01c4ee6cceae8"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\partitioning-and-inheritance.md",
+        "sha256": "78733194f7d8484c3ad58fe25bb013e5dc477beb4f77879572d9807b7f550597"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\psql.md",
+        "sha256": "4b2255b4414d32f1d05471c7ae25f62432633c953c5af09c84e4386beea01061"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\query-authoring.md",
+        "sha256": "3d65fdb1fafd3d3f2e3a540a5e4226cef0da2b6024e5d386958ab1e9bb6358be"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\routines.md",
+        "sha256": "e20d2d35ade30c7af4d2ff1b548469fe6ae5d2f5da38a17d85f6429383bdac4d"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\security.md",
+        "sha256": "6a7ac7d923f3a5607b4bcca9cf611460ae105f01b1ce8c8321cd875353b426c2"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\tables.md",
+        "sha256": "a5911dd9feb7e1c37c1c9c27902662f656944ddb956e88e780ce2a2cae9a8e5d"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\triggers.md",
+        "sha256": "44e1e94567c60de12ec8267d2295a77296d1fd1c07985d2a17e1446a02ded2a8"
+      },
+      {
+        "path": "references\\schema-exploration\\references\\views.md",
+        "sha256": "03d588a87bf2bdd3dd5baea3c9bf9ce2ec5c515853b251b40645cf97c13ab7e3"
+      },
+      {
+        "path": "references\\setup-timescaledb-hypertables.md",
+        "sha256": "dcfce6a31d21f427f852eb030e36a30ff5d38f5ad06176beb35f02f0485e2098"
+      },
+      {
+        "path": "references\\validation-queries.md",
+        "sha256": "19c7d3eed6c369ff8fe141bca4c36313df2005fdb391b182790c30125bca1c3b"
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "6855e5cb7628c3cee607abdd3d6032cc414ec44a96e50ffa371d94cd0e3e3fed"
+      }
+    ]
+  },
+  {
+    "installed_as": "redis-development",
+    "upstream": "https://github.com/midudev/autoskills/tree/main/packages/autoskills/skills-registry/redis-core",
+    "files": [
+      {
+        "path": "references\\choose-data-structure.md",
+        "sha256": "6fc700db240d40cf07412c6a1915a144792b58ab606b2737877066ad0e015b9e"
+      },
+      {
+        "path": "references\\key-naming.md",
+        "sha256": "17d96bbb0892be65a2fe658db7e8d1038c08a7f1d75c06c169d8e7d847c93ac6"
+      },
+      {
+        "path": "SKILL.md",
+        "sha256": "7ab1000e7a1548c4f82179ea1d5a57ced43851e6a924ac647cecd822015b81a7"
+      }
+    ]
+  }
+]

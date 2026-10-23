@@ -1,14 +1,37 @@
-# Dependencies and package-manager caches
+# ==========================================
+# 1. ГЛОБАЛЬНЫЕ ИСКЛЮЧЕНИЯ (Безопасность)
+# ==========================================
+# Секреты инфраструктуры (пароли, ключи, сертификаты)
+server/.secrets/
+server/.venv/
+server/CONNECTIONS.private.md
+server/client-ca.crt
+server/ca.key
+.env
+.env.*
+!.env.example
+
+# Локальные данные разработки (из исходного гит-игнора)
+/docs/chat.json
+/docs/Кейс №1_микросервис_умных_калькуляторов_ремонта_и_стоимости_работ_Максидом.docx
+/.aws/
+/.ssh/
+/.codex/
+
+# ==========================================
+# 2. NODE.JS / REACT (Фронтенд)
+# ==========================================
+# Зависимости и кеши пакетных менеджеров
 node_modules/
 .npm/
 
-# Build output and caches
+# Сборка и кеши
 dist/
 .cache/
 .vite/
 *.tsbuildinfo
 
-# Test results, coverage and browser authentication state
+# Тесты и браузерные сессии
 test-results/
 playwright-report/
 blob-report/
@@ -17,25 +40,32 @@ coverage/
 playwright/.cache/
 playwright/.auth/
 
-# Local environment and credentials; keep the public setup template
-.env
-.env.*
-!.env.example
-*.local
-/.aws/
-/.ssh/
-/.codex/
+# ==========================================
+# 3. JAVA / SPRING BOOT (Бэкенд)
+# ==========================================
+# Сборка Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
 
-# Private source material used during development
-/docs/chat.json
-/docs/Кейс №1_микросервис умных калькуляторов ремонта и стоимости работ_Максидом.docx
-
-# Logs
-*.log
-
-# Editor and operating-system files
+# Файлы среды разработки IDEA
+*.iml
+*.ipr
+*.iws
+out/
 .idea/
 .vscode/
+
+# ==========================================
+# 4. ОБЩИЕ ФАЙЛЫ И ОС
+# ==========================================
+# Логи
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Временные файлы редакторов и ОС
 *.suo
 *.user
 *.swp

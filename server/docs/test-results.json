@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-10-23T15:37:26.952569+00:00",
+  "results": [
+    {
+      "test": "test_01_password_and_permissions",
+      "status": "passed"
+    },
+    {
+      "test": "test_02_publication_and_history",
+      "status": "passed"
+    },
+    {
+      "test": "test_03_import_identity_and_money",
+      "status": "passed"
+    },
+    {
+      "test": "test_04_manual_decision_survives_model_versions",
+      "status": "passed"
+    },
+    {
+      "test": "test_05_estimate_totals_and_immutability",
+      "status": "passed"
+    },
+    {
+      "test": "test_06_labor_sources_and_lower_bound",
+      "status": "passed"
+    },
+    {
+      "test": "test_07_partial_unknown_is_not_zero",
+      "status": "passed"
+    },
+    {
+      "test": "test_08_redis_password_acl_ttl",
+      "status": "passed"
+    },
+    {
+      "test": "test_09_pgadmin_http",
+      "status": "passed"
+    },
+    {
+      "test": "test_10_region_cycles_and_missing_quantities",
+      "status": "passed"
+    }
+  ]
+}

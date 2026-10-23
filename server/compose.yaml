@@ -1,0 +1,88 @@
+name: repaircalc-db
+services:
+  postgres:
+    image: ${POSTGRES_IMAGE:-postgres:17.11-alpine}
+    pull_policy: never
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: repaircalc
+      POSTGRES_USER: repaircalc_admin
+      POSTGRES_PASSWORD_FILE: /run/config/postgres_admin_password
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256 --auth-local=trust --encoding=UTF8
+    entrypoint: ["/bin/sh", "-ec"]
+    command:
+      - |
+        cp /run/config/bootstrap.sql /docker-entrypoint-initdb.d/001-bootstrap.sql
+        chown postgres:postgres /docker-entrypoint-initdb.d/001-bootstrap.sql
+        exec docker-entrypoint.sh postgres -c config_file=/run/config/postgresql.conf
+    ports:
+      - "${BIND_ADDRESS:-0.0.0.0}:${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - postgres_config:/run/config:ro
+    healthcheck:
+      test: ["CMD-SHELL", "psql -X -U repaircalc_admin -d repaircalc -Atc \"SELECT 1 FROM pg_roles WHERE rolname='repaircalc_app'\" | grep -qx 1"]
+      start_period: 20s
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    networks: [data]
+    shm_size: 256mb
+  redis:
+    image: ${REDIS_IMAGE:-redis:7.4.11-alpine}
+    pull_policy: never
+    restart: unless-stopped
+    command: ["redis-server", "/run/config/redis.conf"]
+    ports:
+      - "${BIND_ADDRESS:-0.0.0.0}:${REDIS_PORT:-6380}:6379"
+    volumes:
+      - redis_data:/data
+      - redis_config:/run/config:ro
+    healthcheck:
+      test: ["CMD-SHELL", "REDISCLI_AUTH=$$(cat /run/config/redis_health_password) redis-cli --user health -h redis -p 6379 ping | grep -qx PONG"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    networks: [data]
+  pgadmin:
+    image: ${PGADMIN_IMAGE:-dpage/pgadmin4:9.18}
+    pull_policy: never
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@repaircalc.dev}
+      PGADMIN_DEFAULT_PASSWORD_FILE: /run/config/pgadmin_password
+      PGADMIN_SERVER_JSON_FILE: /run/config/servers.json
+      PGADMIN_LISTEN_PORT: '80'
+      PGADMIN_CONFIG_SERVER_MODE: 'True'
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'True'
+      PGADMIN_CONFIG_UPGRADE_CHECK_ENABLED: 'False'
+      PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: 'True'
+      PGADMIN_CONFIG_SESSION_COOKIE_SECURE: 'False'
+    ports:
+      - "${BIND_ADDRESS:-0.0.0.0}:${PGADMIN_PORT:-5443}:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      - pgadmin_config:/run/config:ro
+    depends_on:
+      postgres: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "/venv/bin/python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:80/misc/ping',timeout=5)"]
+      interval: 10s
+      timeout: 8s
+      retries: 30
+    networks: [data]
+networks:
+  data:
+volumes:
+  postgres_data:
+  redis_data:
+  pgadmin_data:
+  postgres_config:
+    name: repaircalc-db_postgres_config
+    external: true
+  redis_config:
+    name: repaircalc-db_redis_config
+    external: true
+  pgadmin_config:
+    name: repaircalc-db_pgadmin_config
+    external: true

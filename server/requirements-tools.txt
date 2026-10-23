@@ -1,0 +1,3 @@
+cryptography>=46,<51
+psycopg[binary]>=3.2,<4
+redis>=6,<8

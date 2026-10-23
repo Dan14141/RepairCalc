@@ -1,0 +1,14 @@
+          version          |                              sha256                              
+---------------------------+------------------------------------------------------------------
+ 001_schema.sql            | a5a86352916f650d1651cfd0b7af89e60893856062f12beb5b9fe5d157ad7309
+ 002_integrity.sql         | 3478e8b5c509d69508f04e1916eb4cccb03bc7965637cb36622c8aede53ea7a7
+ 003_additional_guards.sql | e4dad6168b1a4d658520890c2583e34cee134ed463a046db3c561a0886429f39
+(3 rows)
+
+ tables 
+--------
+     30
+(1 row)
+
+
+Restored into separate database: repaircalc_restore_20261023_151334_849149

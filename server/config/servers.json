@@ -1,0 +1,22 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "RepairCalc — application",
+      "Group": "RepairCalc",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "repaircalc",
+      "Username": "repaircalc_app",
+      "SSLMode": "disable"
+    },
+    "2": {
+      "Name": "RepairCalc — read only",
+      "Group": "RepairCalc",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "repaircalc",
+      "Username": "repaircalc_reader",
+      "SSLMode": "disable"
+    }
+  }
+}

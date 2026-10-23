@@ -1,0 +1,17 @@
+[
+  {
+    "image": "postgres:17.11-alpine",
+    "image_id": "sha256:ab20e934b27ba3ff927c1b4c9ff8cf6c32f315f743efe68dd3441182a87fb085",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "redis:7.4.11-alpine",
+    "image_id": "sha256:4df5c34dc41256fc4ed293482cb34281e17d133077e9aa3c6a87fda60a356c65",
+    "platform": "linux/amd64"
+  },
+  {
+    "image": "dpage/pgadmin4:9.18",
+    "image_id": "sha256:f50f50cb2eda23412f7cddf0a7a4f2a4046f583f4f411d87d8b06c0bec8ae0a1",
+    "platform": "linux/amd64"
+  }
+]

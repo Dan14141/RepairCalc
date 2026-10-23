@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-23T15:37:21.500893+00:00",
+  "pgadmin_http_login": "passed",
+  "connections": [
+    {
+      "username": "repaircalc_app",
+      "sslmode": "disable",
+      "status": "connected"
+    },
+    {
+      "username": "repaircalc_reader",
+      "sslmode": "disable",
+      "status": "connected"
+    }
+  ]
+}
