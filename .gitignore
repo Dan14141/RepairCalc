@@ -1,0 +1,46 @@
+# Dependencies and package-manager caches
+node_modules/
+.npm/
+
+# Build output and caches
+dist/
+.cache/
+.vite/
+*.tsbuildinfo
+
+# Test results, coverage and browser authentication state
+test-results/
+playwright-report/
+blob-report/
+coverage/
+.nyc_output/
+playwright/.cache/
+playwright/.auth/
+
+# Local environment and credentials; keep the public setup template
+.env
+.env.*
+!.env.example
+*.local
+/.aws/
+/.ssh/
+/.codex/
+
+# Private source material used during development
+/docs/chat.json
+/docs/Кейс №1_микросервис умных калькуляторов ремонта и стоимости работ_Максидом.docx
+
+# Logs
+*.log
+
+# Editor and operating-system files
+.idea/
+.vscode/
+*.suo
+*.user
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini

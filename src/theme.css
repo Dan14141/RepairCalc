@@ -1,0 +1,222 @@
+/* Semantic text colours meet AA contrast on the paper, white and sage surfaces. */
+:root {
+  --orange: #b95838;
+  --text-secondary: #5e6c54;
+  --text-accent: #935136;
+}
+.workspace p,
+.workspace small,
+.workspace .eyebrow,
+.breadcrumb,
+.breadcrumb button,
+.region-button,
+.profile-button > span,
+.project-toolbar > .text-button,
+.project-title small,
+.step,
+.step small,
+.step-number,
+.project-options label > span,
+.segmented button,
+.section-label > span,
+.section-label h2 > span,
+.room-tab,
+.room-tab small,
+.add-room,
+.subtle-badge,
+.dimension-field > span,
+.area-readout > span,
+.area-readout strong small,
+.input-unit > span,
+.counter-row,
+.counter > span,
+.field-note,
+.plan-label,
+.plan-footnote,
+.room-metrics,
+.room-metrics b,
+.condition > .toggle-row strong,
+.condition > .toggle-row small,
+.toggle-row strong,
+.toggle-row small,
+.tip,
+.tip p,
+.inspiration-eyebrow,
+.inspiration-caption,
+.live-badge,
+.budget-subtitle,
+.budget-lines > div > span,
+.budget-lines strong,
+.reserve-row,
+.reserve-row > span > span,
+.reserve-row select,
+.budget-controls > .toggle-row strong,
+.budget-disclaimer,
+.summary-assurance,
+.footer,
+.footer > button,
+.footer-demo,
+.preset small,
+.selected-material-info > span,
+.material-tags > span,
+.selected-material-bottom strong small,
+.included p,
+.back-step,
+.estimate-intro p,
+.estimate-actions > span,
+.table-head,
+.estimate-row small,
+.estimate-row > div > span,
+.page-tools > span,
+.search-box input::placeholder,
+.sort-select,
+.sort-select select,
+.filter-chips > button:not(.active),
+.filter-chips > span,
+.catalog-notice,
+.demo-tag,
+.product-brand,
+.product-card-info > p,
+.product-price strong small,
+.wet-badge,
+.project-status,
+.project-card-body > small,
+.project-card-body > p,
+.new-project-card p,
+.guide-banner p,
+.guide-item small,
+.guide-item small > span,
+.guide-number,
+.guide-content p,
+.empty-state p,
+.modal-description,
+.modal-note,
+.form-field > span,
+.region-list > button,
+.guest-profile p,
+.help-steps p,
+.info-box p,
+.replacement-option > small,
+.detail-favorite,
+.product-description,
+.detail-price > span,
+.product-calc-result small,
+.detail-demo {
+  color: var(--text-secondary);
+}
+.room-tab.active,
+.room-tab.active small,
+.selected-material-bottom .text-button,
+.new-project-card b,
+.detail-favorite.saved {
+  color: var(--text-accent);
+}
+.product-brand > span:last-child,
+.rating {
+  color: #836529;
+}
+.step.active .step-number {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+.step.complete .step-number {
+  color: #536543;
+}
+.partner,
+.partner small {
+  color: #a4b29b;
+}
+.sidebar > .mobile-close {
+  display: none;
+}
+.room-tabs-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+.room-tabs-row > .room-tabs {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+}
+.room-tabs-row > .add-room {
+  margin: 1px 1px 4px 0;
+}
+@media (max-width: 900px) {
+  .sidebar > .mobile-close {
+    display: flex;
+  }
+}
+@media (max-width: 480px) {
+  .room-tabs-row {
+    gap: 7px;
+  }
+  .room-editor .dimension-field > span,
+  .room-editor .area-readout > span {
+    min-height: 27px;
+  }
+}
+@media print {
+  .room-tabs-row {
+    display: none;
+  }
+}
+
+.mobile-budget-bar {
+  display: none;
+}
+@media (min-width: 701px) {
+  .summary-column {
+    position: sticky;
+    top: 22px;
+  }
+}
+@media (max-width: 700px) {
+  .app[data-page='calculator'] .workspace {
+    padding-bottom: 78px;
+  }
+  .mobile-budget-bar {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 13px 20px max(13px, env(safe-area-inset-bottom));
+    border-top: 1px solid #dce2d2;
+    background: #fbfcf7f5;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 -4px 25px #35472d08;
+  }
+  .mobile-budget-bar small {
+    display: block;
+    font-size: 9px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+  .mobile-budget-bar strong {
+    font-family: 'Manrope Variable', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+  }
+  .mobile-budget-bar .button {
+    font-size: 12px;
+    min-height: 43px;
+    padding: 11px 15px;
+  }
+  .app[data-page='calculator'] .toast {
+    bottom: 93px;
+  }
+}
+@media print {
+  .mobile-budget-bar {
+    display: none;
+  }
+  .summary-column {
+    position: static;
+  }
+}

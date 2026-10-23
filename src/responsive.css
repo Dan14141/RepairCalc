@@ -1,0 +1,2214 @@
+@media (min-width: 1600px) {
+  .sidebar {
+    width: 252px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .workspace {
+    margin-left: 252px;
+  }
+  main {
+    padding: 40px 48px 0;
+  }
+  .topbar {
+    padding: 0 48px;
+  }
+  .page-heading h1 {
+    font-size: 43px;
+  }
+  .calculator-layout {
+    grid-template-columns: minmax(0, 1fr) 355px;
+    gap: 30px;
+  }
+  .room-editor-body {
+    padding: 24px;
+  }
+  .room-fields {
+    padding-right: 30px;
+  }
+  .room-plan {
+    max-height: 310px;
+  }
+  .dimension-grid {
+    gap: 22px 15px;
+  }
+  .inspiration-card {
+    height: 248px;
+  }
+  .inspiration-card > .room-scene {
+    width: 256px;
+  }
+  .budget-card {
+    padding: 23px;
+  }
+  .budget-lines > div {
+    font-size: 11px;
+  }
+  .nav-item {
+    font-size: 13px;
+  }
+  .toast {
+    left: calc(50% + 126px);
+  }
+}
+@media (max-width: 1250px) {
+  .sidebar {
+    width: 205px;
+    padding: 27px 12px 18px;
+  }
+  .workspace {
+    margin-left: 205px;
+  }
+  .logo-button {
+    padding: 0 8px;
+  }
+  .logo > span {
+    font-size: 25px;
+  }
+  .logo > svg {
+    width: 30px;
+  }
+  .logo small {
+    font-size: 5px;
+  }
+  .nav-item {
+    font-size: 11px;
+    padding: 0 11px;
+    gap: 10px;
+  }
+  .workspace-label {
+    padding-left: 11px;
+  }
+  .topbar {
+    padding: 0 26px;
+  }
+  main {
+    padding: 27px 26px 0;
+  }
+  .page-heading h1 {
+    font-size: 32px;
+  }
+  .page-heading p {
+    font-size: 12px;
+  }
+  .calculator-layout {
+    grid-template-columns: minmax(0, 1fr) 285px;
+    gap: 20px;
+  }
+  .project-options {
+    gap: 12px;
+  }
+  .project-options select {
+    min-width: 94px;
+  }
+  .project-options label > span {
+    font-size: 10px;
+  }
+  .segmented button {
+    font-size: 9px;
+  }
+  .option-divider {
+    display: none;
+  }
+  .room-tab {
+    padding: 12px 10px;
+    min-width: 101px;
+    gap: 7px;
+  }
+  .room-tab strong {
+    font-size: 11px;
+  }
+  .room-tab svg {
+    width: 18px;
+  }
+  .room-tab small {
+    font-size: 10px;
+  }
+  .add-room {
+    min-width: 49px;
+  }
+  .add-room span {
+    display: none;
+  }
+  .room-editor-body {
+    grid-template-columns: 46% 54%;
+    padding: 16px 14px;
+  }
+  .room-fields {
+    padding-right: 13px;
+  }
+  .dimension-grid {
+    gap: 15px 8px;
+  }
+  .dimension-field > span,
+  .area-readout > span {
+    font-size: 10px;
+  }
+  .plan-label {
+    font-size: 6px;
+  }
+  .room-plan {
+    max-height: 280px;
+  }
+  .subtle-badge {
+    display: none;
+  }
+  .room-metrics > span {
+    gap: 5px;
+  }
+  .room-metrics > span + span {
+    padding-left: 13px;
+  }
+  .condition-grid {
+    grid-template-columns: 1fr;
+  }
+  .condition {
+    padding: 13px;
+  }
+  .condition > .toggle-row {
+    gap: 13px;
+  }
+  .condition > .toggle-row strong {
+    font-size: 12px;
+  }
+  .condition > .toggle-row small {
+    font-size: 10px;
+  }
+  .budget-card {
+    padding: 18px 16px;
+  }
+  .budget-heading h2 {
+    font-size: 13px;
+  }
+  .budget-total {
+    font-size: 35px;
+  }
+  .budget-lines > div {
+    font-size: 9px;
+  }
+  .budget-lines strong {
+    font-size: 10px;
+  }
+  .reserve-row,
+  .budget-controls > .toggle-row strong {
+    font-size: 10px;
+  }
+  .summary-cta {
+    font-size: 11px;
+  }
+  .inspiration-card h2 {
+    font-size: 21px;
+  }
+  .inspiration-card > .room-scene {
+    width: 211px;
+  }
+  .inspiration-caption {
+    font-size: 7px;
+  }
+  .project-toolbar {
+    padding-top: 10px;
+  }
+  .steps {
+    margin: 22px 0;
+  }
+  .step > span:nth-child(2) {
+    font-size: 12px;
+  }
+  .step small {
+    font-size: 9px;
+  }
+  .step-chevron {
+    margin-right: 12px;
+  }
+  .footer-demo {
+    display: none;
+  }
+  .product-grid,
+  .projects-grid {
+    gap: 15px;
+  }
+  .product-card-image .product-visual {
+    height: 180px;
+  }
+  .project-card-art {
+    height: 170px;
+  }
+  .project-card-art > .room-scene {
+    height: 190px;
+  }
+  .project-card-body {
+    padding: 16px 13px;
+  }
+  .project-card-body > h2 {
+    font-size: 15px;
+  }
+  .project-card-body > small {
+    font-size: 8px;
+  }
+  .project-card-body strong {
+    font-size: 18px;
+  }
+  .page-heading-row .button {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .preset-grid {
+    gap: 7px;
+  }
+  .preset {
+    padding: 14px 9px;
+  }
+  .preset strong {
+    font-size: 10px;
+  }
+  .preset small {
+    font-size: 9px;
+  }
+  .selected-material {
+    gap: 12px;
+    padding: 11px;
+  }
+  .selected-material > .product-visual {
+    width: 88px;
+    height: 130px;
+  }
+  .selected-material-bottom > strong {
+    font-size: 14px;
+  }
+  .selected-material-bottom strong small {
+    display: block;
+    margin: 4px 0 0;
+  }
+  .material-tags {
+    gap: 5px;
+  }
+  .material-tags > span {
+    font-size: 8px;
+  }
+  .guide-banner {
+    padding: 25px;
+  }
+  .guide-banner h2 {
+    font-size: 29px;
+  }
+  .toast {
+    left: calc(50% + 102px);
+  }
+}
+@media (max-width: 1050px) {
+  .sidebar {
+    width: 190px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .workspace {
+    margin-left: 190px;
+  }
+  .logo > span {
+    font-size: 23px;
+  }
+  .logo > svg {
+    width: 28px;
+  }
+  .nav-item {
+    font-size: 10px;
+    gap: 8px;
+  }
+  .sidebar-note {
+    padding: 14px 12px;
+  }
+  .sidebar-note h3 {
+    font-size: 15px;
+  }
+  .sidebar-note p {
+    font-size: 10px;
+  }
+  .sidebar-note button {
+    font-size: 10px;
+  }
+  .workspace-label {
+    font-size: 8px;
+  }
+  .topbar {
+    padding: 0 22px;
+  }
+  main {
+    padding: 25px 22px 0;
+  }
+  .page-heading h1 {
+    font-size: 29px;
+  }
+  .calculator-layout {
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 17px;
+  }
+  .project-options {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .project-options > label:first-child {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+  }
+  .project-options > label:first-child > span {
+    margin: 0;
+  }
+  .project-options select {
+    height: 31px;
+  }
+  .repair-option {
+    flex-basis: 100%;
+  }
+  .segmented button {
+    font-size: 10px;
+  }
+  .room-editor-body {
+    grid-template-columns: 1fr;
+    padding: 17px;
+  }
+  .room-fields {
+    padding-right: 0;
+  }
+  .dimension-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .dimension-field > span,
+  .area-readout > span {
+    font-size: 9px;
+  }
+  .input-unit input {
+    font-size: 12px;
+    padding-left: 8px;
+  }
+  .input-unit > span {
+    padding-right: 7px;
+    font-size: 10px;
+  }
+  .area-readout strong {
+    font-size: 23px;
+  }
+  .openings {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    padding-top: 0;
+    margin-top: 16px;
+  }
+  .counter-row {
+    flex: 1;
+    font-size: 11px;
+    gap: 7px;
+  }
+  .counter button {
+    width: 23px;
+  }
+  .field-note {
+    margin: 10px 0 15px;
+    line-height: 1.7;
+    font-size: 9px;
+  }
+  .field-note br {
+    display: none;
+  }
+  .plan-wrap {
+    min-height: 230px;
+  }
+  .room-plan {
+    max-height: 250px;
+  }
+  .plan-label {
+    font-size: 8px;
+  }
+  .room-metrics {
+    font-size: 9px;
+  }
+  .room-metrics b {
+    font-size: 10px;
+  }
+  .room-tabs {
+    gap: 6px;
+  }
+  .room-tab {
+    min-width: 99px;
+  }
+  .section-label {
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .section-label h2 {
+    font-size: 14px;
+  }
+  .section-label > span {
+    font-size: 10px;
+  }
+  .conditions .section-label {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .conditions .section-label h2 {
+    font-size: 12px;
+  }
+  .step small {
+    font-size: 8px;
+  }
+  .step > span:nth-child(2) {
+    font-size: 11px;
+  }
+  .step {
+    gap: 8px;
+  }
+  .step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+  .step-chevron {
+    margin-right: 5px;
+    width: 13px;
+  }
+  .breadcrumb {
+    font-size: 10px;
+    gap: 9px;
+  }
+  .breadcrumb button {
+    font-size: 10px;
+  }
+  .region-button {
+    font-size: 10px;
+  }
+  .topbar-actions {
+    gap: 12px;
+  }
+  .product-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .product-card-image .product-visual {
+    height: 220px;
+  }
+  .project-card-art {
+    height: 200px;
+  }
+  .project-card-art > .room-scene {
+    height: 215px;
+  }
+  .preset-grid {
+    grid-template-columns: 1fr;
+  }
+  .preset {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+  }
+  .preset > svg:first-child {
+    margin: 0;
+    width: 18px;
+  }
+  .preset strong {
+    font-size: 11px;
+    margin: 0;
+  }
+  .preset small {
+    margin-left: auto;
+    padding-right: 20px;
+    font-size: 9px;
+  }
+  .preset > svg:last-child {
+    top: 13px;
+  }
+  .selected-material {
+    align-items: stretch;
+  }
+  .selected-material > .product-visual {
+    width: 72px;
+    height: auto;
+    min-height: 155px;
+  }
+  .selected-material-info > .product-name-button {
+    font-size: 12px;
+  }
+  .selected-material-info > span {
+    font-size: 9px;
+  }
+  .selected-material-bottom {
+    align-items: center;
+  }
+  .selected-material-bottom .text-button {
+    font-size: 10px;
+    gap: 3px;
+  }
+  .estimate-actions > span {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .estimate-row {
+    gap: 9px;
+    padding: 12px 10px;
+  }
+  .estimate-row > .product-visual {
+    width: 34px;
+    height: 41px;
+  }
+  .estimate-row button {
+    font-size: 10px;
+  }
+  .estimate-row > strong {
+    font-size: 11px;
+  }
+  .estimate-category {
+    padding: 13px 10px;
+  }
+  .estimate-category h3 {
+    font-size: 11px;
+  }
+  .estimate-category > strong {
+    font-size: 11px;
+  }
+  .table-head {
+    padding: 12px 10px;
+    font-size: 8px;
+  }
+  .guide-banner > .room-scene {
+    width: 40%;
+    margin-right: -30px;
+  }
+  .guide-banner h2 {
+    font-size: 25px;
+  }
+  .guide-banner p {
+    font-size: 12px;
+  }
+  .guide-banner .eyebrow {
+    font-size: 8px;
+  }
+  .page-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .page-heading-row h1 {
+    font-size: 30px;
+  }
+  .toast {
+    left: calc(50% + 95px);
+  }
+}
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 230px;
+    padding: 30px 16px 20px;
+    transition: transform 0.25s ease;
+  }
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+  .sidebar-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #20331d66;
+    backdrop-filter: blur(2px);
+    z-index: 35;
+  }
+  .workspace {
+    margin-left: 0;
+  }
+  .sidebar .logo > span {
+    font-size: 27px;
+  }
+  .sidebar .logo > svg {
+    width: 35px;
+  }
+  .sidebar .logo small {
+    font-size: 6px;
+  }
+  .nav-item {
+    font-size: 12px;
+    gap: 12px;
+    padding: 0 14px;
+  }
+  .workspace-label {
+    font-size: 9px;
+  }
+  .sidebar-note h3 {
+    font-size: 16px;
+  }
+  .sidebar-note p {
+    font-size: 11px;
+  }
+  .sidebar-note button {
+    font-size: 11px;
+  }
+  .mobile-menu {
+    display: flex;
+    margin-right: 5px;
+  }
+  .breadcrumb > .mobile-menu {
+    padding: 6px;
+  }
+  .topbar {
+    height: 65px;
+    padding: 0 25px;
+  }
+  .topbar-actions {
+    gap: 15px;
+  }
+  .region-button {
+    font-size: 11px;
+  }
+  main {
+    padding: 28px 25px 0;
+  }
+  .page-heading h1 {
+    font-size: 33px;
+  }
+  .calculator-layout {
+    grid-template-columns: minmax(0, 1fr) 285px;
+    gap: 22px;
+  }
+  .project-options label > span {
+    font-size: 11px;
+  }
+  .project-toolbar {
+    padding: 10px 0 20px;
+  }
+  .sidebar-bottom {
+    padding-top: 30px;
+  }
+  .toast {
+    left: 50%;
+  }
+  .project-card-art {
+    height: 220px;
+  }
+  .project-card-art > .room-scene {
+    height: 230px;
+  }
+  .page-heading-row {
+    flex-direction: row;
+    align-items: center;
+  }
+  .page-heading-row h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 700px) {
+  .topbar {
+    padding: 0 18px;
+  }
+  .breadcrumb > button:not(.mobile-menu),
+  .breadcrumb > svg {
+    display: none;
+  }
+  .breadcrumb > span {
+    font-size: 11px;
+  }
+  .topbar-actions {
+    gap: 10px;
+  }
+  .topbar-divider {
+    display: none;
+  }
+  .region-button {
+    font-size: 10px;
+    gap: 4px;
+  }
+  .profile-button > svg {
+    display: none;
+  }
+  .profile-button > span {
+    width: 28px;
+    height: 28px;
+  }
+  .calculator-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .summary-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .inspiration-card {
+    display: none;
+  }
+  .budget-card {
+    padding: 22px;
+  }
+  .budget-heading {
+    justify-content: space-between;
+  }
+  .budget-heading h2 {
+    font-size: 16px;
+  }
+  .live-badge {
+    font-size: 9px;
+  }
+  .budget-total {
+    font-size: 42px;
+  }
+  .budget-subtitle {
+    font-size: 12px;
+  }
+  .budget-lines > div {
+    font-size: 12px;
+  }
+  .budget-lines strong {
+    font-size: 13px;
+  }
+  .reserve-row,
+  .budget-controls > .toggle-row strong {
+    font-size: 12px;
+  }
+  .summary-cta {
+    font-size: 13px;
+  }
+  .budget-disclaimer {
+    font-size: 10px;
+  }
+  .summary-assurance {
+    font-size: 10px;
+  }
+  .page-heading {
+    margin-bottom: 20px;
+  }
+  .page-heading h1 {
+    font-size: 32px;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    max-width: 540px;
+  }
+  .page-heading p {
+    font-size: 12px;
+    max-width: 400px;
+  }
+  .project-toolbar > .text-button {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  .project-title button {
+    font-size: 12px;
+  }
+  .project-title small {
+    font-size: 9px;
+  }
+  .project-icon {
+    height: 33px;
+    width: 33px;
+  }
+  .steps {
+    margin: 24px 0 26px;
+    justify-content: space-between;
+  }
+  .step {
+    flex: 0 1 auto;
+    padding: 0;
+    gap: 8px;
+  }
+  .step-chevron {
+    display: none;
+  }
+  .step > span:nth-child(2) {
+    font-size: 12px;
+  }
+  .step small {
+    font-size: 9px;
+  }
+  .step-number {
+    width: 33px;
+    height: 33px;
+  }
+  .project-options {
+    flex-wrap: nowrap;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  .project-options > label:first-child {
+    display: block;
+    width: auto;
+  }
+  .project-options > label:first-child > span {
+    margin-bottom: 10px;
+  }
+  .repair-option {
+    flex-basis: auto;
+  }
+  .project-options select {
+    height: 35px;
+  }
+  .segmented button {
+    font-size: 10px;
+    padding: 8px;
+  }
+  .room-tabs {
+    gap: 8px;
+  }
+  .room-tab {
+    min-width: 115px;
+  }
+  .room-tab strong {
+    font-size: 12px;
+  }
+  .room-tab small {
+    font-size: 11px;
+  }
+  .add-room {
+    min-width: 48px;
+  }
+  .room-editor-body {
+    grid-template-columns: 43% 57%;
+    padding: 19px 17px;
+  }
+  .room-fields {
+    padding-right: 18px;
+  }
+  .dimension-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 10px;
+  }
+  .dimension-field > span,
+  .area-readout > span {
+    font-size: 10px;
+  }
+  .input-unit input {
+    font-size: 14px;
+  }
+  .openings {
+    display: block;
+    padding-top: 6px;
+  }
+  .counter-row {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .counter button {
+    width: 27px;
+  }
+  .field-note {
+    font-size: 9px;
+    margin-top: 14px;
+    margin-bottom: 0;
+  }
+  .plan-wrap {
+    min-height: 285px;
+  }
+  .room-plan {
+    max-height: 280px;
+  }
+  .room-metrics {
+    font-size: 11px;
+  }
+  .room-metrics b {
+    font-size: 12px;
+  }
+  .room-metrics > span + span {
+    padding-left: 15px;
+  }
+  .section-label h2 {
+    font-size: 15px;
+  }
+  .section-label > span {
+    font-size: 11px;
+  }
+  .conditions .section-label h2 {
+    font-size: 14px;
+  }
+  .condition-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .condition {
+    padding: 14px 10px;
+  }
+  .condition > .toggle-row strong {
+    font-size: 10px;
+  }
+  .condition > .toggle-row small {
+    font-size: 8px;
+  }
+  .condition > .toggle-row {
+    gap: 5px;
+  }
+  .tip strong {
+    font-size: 12px;
+  }
+  .tip p {
+    font-size: 11px;
+  }
+  .footer {
+    margin-top: 28px;
+    padding: 21px 0;
+    font-size: 9px;
+  }
+  .footer > button {
+    font-size: 9px;
+  }
+  .preset-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .preset {
+    display: block;
+    padding: 15px 10px;
+  }
+  .preset > svg:first-child {
+    margin-bottom: 11px;
+    width: 21px;
+  }
+  .preset strong {
+    font-size: 11px;
+    margin-bottom: 7px;
+  }
+  .preset small {
+    padding: 0;
+    font-size: 9px;
+  }
+  .preset > svg:last-child {
+    right: 9px;
+  }
+  .selected-material > .product-visual {
+    width: 120px;
+    min-height: 145px;
+  }
+  .selected-material-info > .product-name-button {
+    font-size: 14px;
+  }
+  .selected-material-info > span {
+    font-size: 10px;
+  }
+  .selected-material-bottom > strong {
+    font-size: 17px;
+  }
+  .selected-material-bottom strong small {
+    display: inline;
+    margin-left: 5px;
+  }
+  .selected-material-bottom .text-button {
+    font-size: 12px;
+  }
+  .material-tags > span {
+    font-size: 9px;
+  }
+  .selected-material {
+    padding: 15px;
+    gap: 18px;
+  }
+  .estimate-row {
+    padding: 15px;
+    gap: 13px;
+  }
+  .estimate-row > .product-visual {
+    width: 43px;
+    height: 48px;
+  }
+  .estimate-row button {
+    font-size: 12px;
+  }
+  .estimate-row > strong {
+    font-size: 13px;
+  }
+  .estimate-category {
+    padding: 15px;
+  }
+  .estimate-category h3,
+  .estimate-category > strong {
+    font-size: 13px;
+  }
+  .table-head {
+    padding: 14px 15px;
+    font-size: 9px;
+  }
+  .estimate-actions > span {
+    width: auto;
+    margin-left: auto;
+    font-size: 9px;
+  }
+  .product-grid,
+  .projects-grid {
+    gap: 15px;
+  }
+  .product-card-image .product-visual {
+    height: 195px;
+  }
+  .page-heading-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .page-heading-row h1 {
+    font-size: 32px;
+  }
+  .page-tools {
+    gap: 15px;
+    margin-top: 22px;
+  }
+  .page-tools > span {
+    font-size: 10px;
+  }
+  .search-box {
+    width: 300px;
+  }
+  .sort-select {
+    gap: 4px;
+  }
+  .sort-select select {
+    font-size: 10px;
+  }
+  .sort-select svg {
+    display: none;
+  }
+  .filter-chips {
+    gap: 7px;
+  }
+  .filter-chips > button {
+    font-size: 10px;
+    padding: 9px 11px;
+  }
+  .filter-chips > span {
+    font-size: 10px;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .catalog-notice {
+    font-size: 10px;
+    align-items: flex-start;
+    gap: 9px;
+  }
+  .demo-tag {
+    font-size: 8px;
+  }
+  .guide-banner {
+    padding: 26px;
+    position: relative;
+    min-height: 250px;
+  }
+  .guide-banner > div {
+    position: relative;
+    z-index: 1;
+  }
+  .guide-banner > .room-scene {
+    position: absolute;
+    right: -8px;
+    bottom: -4px;
+    width: 230px;
+    opacity: 0.85;
+  }
+  .guide-banner h2 {
+    font-size: 30px;
+  }
+  .guide-banner p {
+    font-size: 12px;
+  }
+  .guide-banner .eyebrow {
+    font-size: 8px;
+  }
+  .guide-item > button {
+    gap: 17px;
+    padding: 22px 2px;
+  }
+  .guide-item h2 {
+    font-size: 16px;
+  }
+  .guide-content {
+    padding-left: 43px;
+    padding-right: 10px;
+  }
+  .guide-content p {
+    font-size: 13px;
+  }
+  .guide-number {
+    font-size: 23px;
+  }
+  .modal-backdrop {
+    padding: 20px;
+  }
+  .modal {
+    max-height: calc(100dvh - 40px);
+    padding: 23px;
+  }
+  .modal-heading h2 {
+    font-size: 20px;
+  }
+  .product-detail {
+    gap: 20px;
+  }
+  .product-detail .large {
+    height: 260px;
+  }
+  .product-detail h2 {
+    font-size: 21px;
+  }
+  .product-calculator {
+    padding: 14px;
+  }
+  .product-calc-result b {
+    font-size: 19px;
+  }
+  .product-calc-result strong {
+    font-size: 14px;
+  }
+  .replacement-grid {
+    gap: 10px;
+  }
+  .replacement-option > .product-visual {
+    height: 130px;
+  }
+}
+@media (max-width: 480px) {
+  main {
+    padding: 23px 17px 0;
+  }
+  .topbar {
+    padding: 0 12px;
+    height: 61px;
+  }
+  .breadcrumb {
+    gap: 5px;
+  }
+  .breadcrumb > span {
+    font-size: 10px;
+  }
+  .region-button {
+    font-size: 9px;
+    gap: 3px;
+    max-width: 140px;
+  }
+  .region-button > svg {
+    width: 12px;
+  }
+  .topbar-actions {
+    gap: 7px;
+  }
+  .mobile-menu {
+    margin-right: 0;
+  }
+  .page-heading .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.3px;
+  }
+  .page-heading h1 {
+    font-size: 29px;
+    letter-spacing: -1px;
+    margin-top: 13px;
+    max-width: 365px;
+  }
+  .page-heading p {
+    font-size: 12px;
+    line-height: 1.8;
+    max-width: 320px;
+    margin-top: 12px;
+  }
+  .project-toolbar {
+    gap: 9px;
+    padding: 8px 0 19px;
+  }
+  .project-title {
+    gap: 9px;
+  }
+  .project-title button {
+    font-size: 11px;
+    line-height: 1.6;
+    gap: 7px;
+  }
+  .project-title small {
+    font-size: 8px;
+    line-height: 1.5;
+  }
+  .project-icon {
+    height: 31px;
+    width: 31px;
+  }
+  .project-icon > svg {
+    width: 16px;
+  }
+  .project-toolbar > .text-button {
+    font-size: 9px;
+    gap: 3px;
+  }
+  .project-toolbar > .text-button > svg {
+    width: 12px;
+  }
+  .steps {
+    margin: 23px 0;
+    gap: 14px;
+  }
+  .step {
+    gap: 7px;
+  }
+  .step > span:nth-child(2) {
+    font-size: 10px;
+  }
+  .step small {
+    display: none;
+  }
+  .step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 9px;
+  }
+  .project-options {
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  .project-options > label:first-child {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+  }
+  .project-options > label:first-child > span {
+    margin: 0;
+    font-size: 11px;
+  }
+  .project-options select {
+    height: 33px;
+    min-width: 123px;
+    font-size: 12px;
+  }
+  .repair-option {
+    flex-basis: 100%;
+  }
+  .project-options label > span {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  .segmented button {
+    font-size: 10px;
+    padding: 9px 6px;
+  }
+  .section-label {
+    margin-bottom: 13px;
+  }
+  .section-label h2 {
+    font-size: 14px;
+  }
+  .section-label > span {
+    font-size: 10px;
+  }
+  .room-tabs {
+    margin-bottom: 14px;
+    gap: 7px;
+  }
+  .room-tab {
+    min-width: 111px;
+    min-height: 66px;
+    padding: 11px 9px;
+    gap: 8px;
+    flex: 0 0 auto;
+  }
+  .room-tab strong {
+    font-size: 11px;
+  }
+  .room-tab small {
+    font-size: 10px;
+  }
+  .room-tab svg {
+    width: 18px;
+  }
+  .add-room {
+    min-width: 44px;
+    flex-shrink: 0;
+  }
+  .panel-heading {
+    padding: 15px;
+  }
+  .panel-heading h2 {
+    font-size: 15px;
+  }
+  .room-editor-body {
+    display: flex;
+    flex-direction: column;
+    padding: 17px 15px;
+  }
+  .room-fields {
+    padding: 0;
+  }
+  .dimension-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .dimension-field > span,
+  .area-readout > span {
+    font-size: 9px;
+    margin-bottom: 8px;
+    white-space: normal;
+    min-height: 22px;
+    line-height: 1.5;
+  }
+  .dimension-field:nth-child(3) > span {
+    max-width: 65px;
+  }
+  .input-unit {
+    height: 39px;
+  }
+  .input-unit input {
+    font-size: 13px;
+    padding-left: 9px;
+  }
+  .input-unit > span {
+    font-size: 10px;
+    padding-right: 8px;
+  }
+  .area-readout strong {
+    font-size: 24px;
+    line-height: 39px;
+  }
+  .area-readout strong small {
+    font-size: 10px;
+  }
+  .openings {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 17px;
+    padding-top: 3px;
+  }
+  .counter-row {
+    margin-top: 10px;
+    font-size: 11px;
+    gap: 8px;
+  }
+  .counter button {
+    width: 24px;
+    height: 27px;
+  }
+  .counter {
+    height: 29px;
+  }
+  .counter > span {
+    font-size: 11px;
+    width: 20px;
+  }
+  .field-note {
+    font-size: 9px;
+    line-height: 1.7;
+    margin: 13px 0 18px;
+  }
+  .field-note br {
+    display: none;
+  }
+  .plan-wrap {
+    min-height: 255px;
+    width: 100%;
+  }
+  .room-plan {
+    max-height: 265px;
+  }
+  .plan-label {
+    font-size: 8px;
+  }
+  .plan-footnote {
+    font-size: 8px;
+  }
+  .room-metrics {
+    padding: 14px 10px;
+    font-size: 9px;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .room-metrics b {
+    font-size: 10px;
+  }
+  .room-metrics > span {
+    gap: 4px;
+  }
+  .room-metrics > span + span {
+    padding-left: 10px;
+  }
+  .conditions {
+    margin-top: 23px;
+  }
+  .conditions .section-label h2 {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .condition-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .condition {
+    padding: 15px 13px;
+    gap: 12px;
+  }
+  .condition > .toggle-row strong {
+    font-size: 12px;
+  }
+  .condition > .toggle-row small {
+    font-size: 10px;
+  }
+  .toggle {
+    height: 20px;
+    width: 35px;
+    padding: 2px;
+  }
+  .toggle > span {
+    height: 14px;
+    width: 14px;
+  }
+  .toggle.on > span {
+    transform: translateX(15px);
+  }
+  .tip {
+    padding: 15px 12px;
+    gap: 9px;
+  }
+  .tip strong {
+    font-size: 11px;
+  }
+  .tip p {
+    font-size: 10px;
+    line-height: 1.85;
+  }
+  .budget-card {
+    padding: 21px 18px;
+  }
+  .budget-heading h2 {
+    font-size: 15px;
+  }
+  .live-badge {
+    font-size: 8px;
+  }
+  .budget-total {
+    font-size: 41px;
+  }
+  .budget-lines > div {
+    font-size: 11px;
+  }
+  .budget-lines strong {
+    font-size: 12px;
+  }
+  .budget-controls > .toggle-row .toggle {
+    height: 20px;
+    width: 35px;
+  }
+  .budget-controls > .toggle-row .toggle span {
+    height: 14px;
+    width: 14px;
+  }
+  .budget-controls > .toggle-row .toggle.on > span {
+    transform: translateX(15px);
+  }
+  .summary-cta {
+    min-height: 48px;
+    font-size: 13px;
+  }
+  .footer {
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 8px;
+  }
+  .footer > button {
+    font-size: 9px;
+  }
+  .preset-grid {
+    gap: 7px;
+  }
+  .preset {
+    padding: 14px 9px;
+    min-height: 119px;
+  }
+  .preset strong {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .preset small {
+    font-size: 8px;
+    line-height: 1.8;
+  }
+  .preset > svg:last-child {
+    width: 12px;
+  }
+  .selected-material {
+    padding: 12px;
+    gap: 13px;
+  }
+  .selected-material > .product-visual {
+    width: 76px;
+    min-height: 150px;
+  }
+  .selected-material-info > .eyebrow {
+    font-size: 7px;
+    letter-spacing: 0.7px;
+  }
+  .selected-material-info > .product-name-button {
+    font-size: 12px;
+  }
+  .selected-material-info > span {
+    font-size: 9px;
+  }
+  .selected-material-bottom {
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 11px;
+    padding-top: 9px;
+  }
+  .selected-material-bottom > strong {
+    font-size: 15px;
+  }
+  .selected-material-bottom strong small {
+    font-size: 9px;
+    margin-left: 4px;
+  }
+  .selected-material-bottom .text-button {
+    font-size: 10px;
+    gap: 4px;
+  }
+  .material-tags {
+    margin-top: 8px;
+    gap: 5px;
+  }
+  .material-tags > span {
+    font-size: 8px;
+  }
+  .included {
+    padding: 15px 12px;
+    gap: 10px;
+  }
+  .included p {
+    font-size: 10px;
+  }
+  .included h3 {
+    font-size: 12px;
+  }
+  .estimate-intro h2 {
+    font-size: 20px;
+  }
+  .estimate-intro p {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+  .estimate-check {
+    height: 39px;
+    width: 39px;
+  }
+  .estimate-actions {
+    gap: 8px;
+  }
+  .estimate-actions .button {
+    font-size: 10px;
+  }
+  .estimate-actions > span {
+    width: 100%;
+    margin: 4px 0 0;
+  }
+  .estimate-row {
+    padding: 12px 10px;
+    gap: 8px;
+  }
+  .estimate-row > .product-visual {
+    width: 34px;
+    height: 42px;
+  }
+  .estimate-row button {
+    font-size: 10px;
+  }
+  .estimate-row small {
+    font-size: 8px;
+  }
+  .estimate-row > div > span {
+    font-size: 9px;
+  }
+  .estimate-row > strong {
+    font-size: 11px;
+  }
+  .estimate-category {
+    padding: 13px 11px;
+  }
+  .estimate-category h3,
+  .estimate-category > strong {
+    font-size: 11px;
+  }
+  .table-head {
+    padding: 13px 11px;
+    font-size: 8px;
+  }
+  .page-heading-row h1 {
+    font-size: 29px;
+  }
+  .page-heading-row {
+    gap: 18px;
+  }
+  .page-heading-row .button {
+    font-size: 12px;
+  }
+  .page-tools {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 23px 0 19px;
+  }
+  .search-box {
+    width: 100%;
+    min-height: 44px;
+  }
+  .search-box input {
+    font-size: 12px;
+  }
+  .page-tools > span {
+    font-size: 10px;
+  }
+  .sort-select {
+    margin-left: auto;
+  }
+  .sort-select select {
+    font-size: 11px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .product-card-image .product-visual {
+    height: 151px;
+  }
+  .product-card-info {
+    padding: 13px 11px;
+  }
+  .product-brand {
+    font-size: 7px;
+    letter-spacing: 0.2px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+    gap: 5px;
+    line-height: 1.5;
+  }
+  .product-brand > span:first-child {
+    max-width: 75px;
+  }
+  .product-brand > span:last-child {
+    font-size: 8px;
+  }
+  .product-brand svg {
+    width: 10px;
+  }
+  .product-card-info > .product-name-button {
+    font-size: 11px;
+    min-height: 40px;
+  }
+  .product-card-info > p {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+  .product-price {
+    padding-top: 10px;
+    margin-top: 12px;
+    align-items: center;
+    gap: 4px;
+  }
+  .product-price strong {
+    font-size: 17px;
+    white-space: nowrap;
+  }
+  .product-price strong small {
+    display: block;
+    font-size: 8px;
+    margin-top: 3px;
+  }
+  .product-calc-button {
+    width: 28px;
+    height: 29px;
+    flex-shrink: 0;
+  }
+  .product-calc-button > svg {
+    width: 16px;
+  }
+  .favorite-button {
+    width: 28px;
+    height: 28px;
+    top: 8px;
+    right: 8px;
+  }
+  .favorite-button > svg {
+    width: 15px;
+  }
+  .wet-badge {
+    font-size: 7px;
+    bottom: 8px;
+    left: 8px;
+    padding: 4px 5px;
+    gap: 3px;
+  }
+  .wet-badge > svg {
+    width: 10px;
+  }
+  .filter-chips {
+    gap: 6px;
+  }
+  .filter-chips > button {
+    font-size: 9px;
+    padding: 8px 10px;
+  }
+  .filter-chips > span {
+    font-size: 10px;
+  }
+  .catalog-notice {
+    flex-direction: column;
+    gap: 7px;
+    font-size: 10px;
+    padding: 12px;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 19px;
+  }
+  .project-card-art {
+    height: 230px;
+  }
+  .project-card-art > .room-scene {
+    height: 247px;
+  }
+  .project-card-body {
+    padding: 19px;
+  }
+  .project-card-body > small {
+    font-size: 9px;
+  }
+  .project-card-body > h2 {
+    font-size: 18px;
+  }
+  .project-card-body > p {
+    font-size: 11px;
+  }
+  .project-card-body strong {
+    font-size: 24px;
+  }
+  .new-project-card {
+    min-height: 260px;
+    padding: 28px 20px;
+  }
+  .guide-banner {
+    padding: 24px 20px;
+    min-height: 320px;
+    margin-top: 22px;
+  }
+  .guide-banner h2 {
+    font-size: 29px;
+  }
+  .guide-banner p {
+    font-size: 11px;
+    max-width: 190px;
+  }
+  .guide-banner p br {
+    display: none;
+  }
+  .guide-banner > .room-scene {
+    width: 215px;
+    bottom: -11px;
+    right: -15px;
+    opacity: 1;
+  }
+  .guide-banner > div {
+    align-self: flex-start;
+  }
+  .guide-banner .eyebrow {
+    font-size: 7px;
+    max-width: 240px;
+    line-height: 1.8;
+  }
+  .guide-item > button {
+    gap: 13px;
+    align-items: flex-start;
+    padding: 22px 0;
+  }
+  .guide-number {
+    font-size: 23px;
+    margin-top: 3px;
+  }
+  .guide-item h2 {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-top: 6px;
+  }
+  .guide-item small {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+  .guide-item small > span {
+    display: block;
+    margin-left: 0;
+    font-size: 8px;
+  }
+  .guide-plus {
+    height: 29px;
+    width: 29px;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .guide-plus svg {
+    width: 16px;
+  }
+  .guide-content {
+    padding: 0 0 22px 39px;
+  }
+  .guide-content p {
+    font-size: 12px;
+    line-height: 1.95;
+  }
+  .modal-backdrop {
+    padding: 12px;
+    align-items: center;
+  }
+  .modal {
+    padding: 21px 18px;
+    border-radius: 12px;
+    max-height: calc(100dvh - 24px);
+  }
+  .modal-heading {
+    margin-bottom: 17px;
+    gap: 12px;
+  }
+  .modal-heading h2 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .modal-description {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+  .room-type-grid {
+    gap: 8px;
+    margin: 18px 0 23px;
+  }
+  .room-type-grid > button {
+    padding: 16px 7px;
+    font-size: 10px;
+  }
+  .dialog-actions {
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .dialog-actions .button {
+    padding: 11px 13px;
+    font-size: 11px;
+  }
+  .form-field > input {
+    font-size: 14px;
+  }
+  .product-detail {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .product-detail .large {
+    height: 210px;
+  }
+  .detail-favorite {
+    font-size: 11px;
+    padding: 12px;
+  }
+  .product-detail h2 {
+    font-size: 25px;
+    margin-top: 10px;
+  }
+  .product-description {
+    font-size: 12px;
+  }
+  .product-detail .eyebrow {
+    font-size: 9px;
+  }
+  .product-calculator {
+    padding: 18px;
+  }
+  .product-calculator .dimension-field > span {
+    min-height: 0;
+    font-size: 11px;
+  }
+  .product-calculator h3 {
+    font-size: 14px;
+  }
+  .product-calculator .toggle-row strong {
+    font-size: 12px;
+  }
+  .product-calc-result b {
+    font-size: 26px;
+  }
+  .product-calc-result strong {
+    font-size: 19px;
+  }
+  .product-calc-result small {
+    font-size: 10px;
+  }
+  .product-detail .button.primary {
+    font-size: 12px;
+    padding: 13px 10px;
+  }
+  .product-detail .modal-note {
+    font-size: 11px;
+  }
+  .replacement-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+  .replacement-option > .product-visual {
+    height: 135px;
+  }
+  .replacement-option > strong {
+    font-size: 12px;
+  }
+  .replacement-option > span:not(.replacement-check) {
+    font-size: 13px;
+  }
+  .replacement-option > small {
+    font-size: 9px;
+  }
+  .toast {
+    width: calc(100vw - 28px);
+    max-width: 450px;
+    bottom: 17px;
+    font-size: 11px;
+    padding: 12px;
+    gap: 9px;
+  }
+  .toast > .icon-button {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .empty-state {
+    padding: 50px 12px;
+  }
+  .empty-state h2 {
+    font-size: 22px;
+  }
+  .empty-state p {
+    font-size: 12px;
+  }
+  .pack-label b {
+    font-size: 9px;
+  }
+  .pack-label > span {
+    font-size: 7px;
+  }
+  .pack-label small {
+    font-size: 4px;
+  }
+  .product-detail .pack-label b {
+    font-size: 13px;
+  }
+  .product-detail .pack-label > span {
+    font-size: 10px;
+  }
+  .product-detail .pack-label small {
+    font-size: 6px;
+  }
+  .selected-material .pack-label b,
+  .estimate-row .pack-label b {
+    font-size: 5px;
+  }
+  .selected-material .pack-label > span,
+  .estimate-row .pack-label > span {
+    font-size: 4px;
+  }
+  .room-plan.expanded {
+    height: 360px;
+    max-height: 60vh;
+  }
+}
+@media (max-width: 360px) {
+  main {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+  .page-heading h1 {
+    font-size: 27px;
+  }
+  .region-button {
+    max-width: 125px;
+    font-size: 8px;
+  }
+  .profile-button {
+    display: none;
+  }
+  .project-toolbar > .text-button {
+    font-size: 8px;
+  }
+  .project-title button {
+    font-size: 10px;
+  }
+  .project-title small {
+    font-size: 7px;
+  }
+  .step {
+    gap: 5px;
+  }
+  .step-number {
+    width: 25px;
+    height: 25px;
+  }
+  .step > span:nth-child(2) {
+    font-size: 9px;
+  }
+  .dimension-grid {
+    gap: 6px;
+  }
+  .dimension-field > span,
+  .area-readout > span {
+    font-size: 8px;
+  }
+  .room-metrics {
+    font-size: 8px;
+  }
+  .room-metrics b {
+    font-size: 9px;
+  }
+  .room-metrics > span + span {
+    padding-left: 7px;
+  }
+  .condition > .toggle-row strong {
+    font-size: 11px;
+  }
+  .budget-lines > div {
+    font-size: 10px;
+  }
+  .budget-lines strong {
+    font-size: 11px;
+  }
+  .product-card-info {
+    padding: 11px 9px;
+  }
+  .product-price strong {
+    font-size: 15px;
+  }
+  .product-card-image .product-visual {
+    height: 138px;
+  }
+  .room-type-grid {
+    gap: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  body {
+    background: white;
+    color: #222;
+  }
+  .sidebar,
+  .topbar,
+  .page-heading,
+  .project-toolbar > .text-button,
+  .steps,
+  .inspiration-card,
+  .budget-controls,
+  .summary-cta,
+  .summary-assurance,
+  .estimate-actions,
+  .back-step,
+  .footer,
+  .toast,
+  .modal-backdrop,
+  .room-tabs,
+  .project-options,
+  .room-editor,
+  .conditions,
+  .tip,
+  .skip-link {
+    display: none !important;
+  }
+  .workspace {
+    margin: 0;
+  }
+  main {
+    padding: 0;
+    max-width: none;
+  }
+  .project-toolbar {
+    padding: 0 0 16px;
+    margin-bottom: 20px;
+  }
+  .project-title small {
+    display: none;
+  }
+  .project-title button svg {
+    display: none;
+  }
+  .calculator-layout {
+    display: block;
+  }
+  .calculator-main {
+    width: 100%;
+  }
+  .estimate-table {
+    border-color: #ddd;
+  }
+  .estimate-category {
+    break-after: avoid;
+    background: #f5f5f2 !important;
+    print-color-adjust: exact;
+  }
+  .estimate-row {
+    break-inside: avoid;
+    padding: 9px 12px;
+  }
+  .estimate-row > .product-visual {
+    display: none;
+  }
+  .estimate-row button {
+    font-size: 11px;
+  }
+  .estimate-row small {
+    font-size: 9px;
+  }
+  .estimate-row > strong {
+    font-size: 11px;
+  }
+  .estimate-intro {
+    margin-top: 0;
+  }
+  .summary-column {
+    display: block;
+    margin-top: 24px;
+    break-inside: avoid;
+  }
+  .budget-card {
+    max-width: 100%;
+    padding: 18px;
+    border: 1px solid #ddd;
+    break-inside: avoid;
+  }
+  .budget-heading .live-badge {
+    display: none;
+  }
+  .budget-lines {
+    display: none;
+  }
+  .budget-bar {
+    display: none;
+  }
+  .budget-total {
+    font-size: 30px;
+  }
+  .budget-disclaimer {
+    text-align: left;
+    font-size: 10px;
+    margin-left: 0;
+  }
+  .product-visual {
+    print-color-adjust: exact;
+  }
+  .project-title button {
+    font-size: 19px;
+  }
+  .estimate-actions + * {
+    margin-top: 10px;
+  }
+  button {
+    color: inherit;
+  }
+  h2,
+  h3 {
+    color: #222;
+  }
+}
