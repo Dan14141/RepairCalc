@@ -443,11 +443,15 @@ export default function App() {
             <CircleHelp size={18} /> Как это работает <ArrowUpRight size={15} />
           </button>
           <div className="partner">
-            МАТЕРИАЛЫ ДЛЯ ВАШИХ ИДЕЙ
             <span>
-              <House size={17} fill="currentColor" /> МАКСИДОМ
+              <svg width="38" height="17" viewBox="-1 -1 133 44" fill="currentColor" aria-hidden="true">
+                <path d="m12 28 14-14 14 14-14 14Zm26-14L52 0l14 14-14 14Zm26 14 14-14 14 14-14 14Zm26-14L104 0l14 14-14 14Zm15 14 13-13 13 13-13 14Z" />
+                <g fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round">
+                  <path d="M26 14H14L0 28l14 14h12M0 28h12M14 14 28 0h24M26 14 40 0M26 14h12M40 28h12l14-14h12M40 28l14 14h24M52 28l14 14M52 28h12M66 14 80 0h24M78 14 92 0M78 14h12M92 28h12l14 14h-12L92 28" />
+                </g>
+              </svg>
+              МАКСИДОМ
             </span>
-            <small>Демонстрация по материалам кейса</small>
           </div>
         </div>
       </aside>
@@ -503,8 +507,8 @@ export default function App() {
             <>
               <section className="page-heading">
                 <div>
-                  <div className="eyebrow">
-                    <span /> ВАШ ДОМ. ВАШ ПЛАН.
+                  <div className="eyebrow1">
+                    <span />
                   </div>
                   <h1>
                     Хороший ремонт
@@ -532,7 +536,7 @@ export default function App() {
                         ? 'Сохраняем изменения…'
                         : saved
                           ? settings.mode === 'mock'
-                            ? 'Сохранено в этом браузере · MOCK'
+                            ? 'Сохранено в этом браузере'
                             : 'Сохранено на сервере'
                           : 'Не сохранено — повторите запрос'}
                     </small>
@@ -684,7 +688,6 @@ export default function App() {
                               <Expand size={15} />
                             </button>
                             <RoomPlan room={room} />
-                            <span className="plan-footnote">Схематично · мебель для масштаба</span>
                           </div>
                         </div>
                         <div className="room-metrics">
@@ -923,16 +926,12 @@ export default function App() {
                 </div>
                 <aside className="summary-column">
                   <div className="inspiration-card">
-                    <span className="inspiration-eyebrow">МЕСТО ДЛЯ НОВОГО</span>
                     <h2>
                       Сначала — план.
                       <br />
-                      Потом — ваш дом.
+                      Потом — ремонтваш дом.
                     </h2>
                     <RoomScene />
-                    <span className="inspiration-caption">
-                      <span /> Продумано до мелочей
-                    </span>
                   </div>
                   <div className="budget-card panel">
                     <RequestState
@@ -943,9 +942,6 @@ export default function App() {
                     />
                     <div className="budget-heading">
                       <h2>Ориентир по бюджету</h2>
-                      <span className="live-badge">
-                        <span /> В реальном времени
-                      </span>
                     </div>
                     <div className="budget-total" data-testid="budget-total">
                       {calculationRequest.data ? money(calculation.total) : '—'}
@@ -1016,17 +1012,8 @@ export default function App() {
                       {step === 2 ? <ArrowDownToLine size={17} /> : <ArrowRight size={17} />}
                     </button>
                     <p className="budget-disclaimer">
-                      {settings.mode === 'mock' ? 'Демонстрационные цены. ' : 'Расчёт получен с сервера. '}
                       Итоговая стоимость зависит от материалов и условий работ.
                     </p>
-                  </div>
-                  <div className="summary-assurance">
-                    <ShieldCheck size={16} />
-                    <span>
-                      Проект остаётся с вами.
-                      <br />
-                      Изменения сохраняются автоматически.
-                    </span>
                   </div>
                 </aside>
               </div>
@@ -1037,9 +1024,6 @@ export default function App() {
             <>
               <section className="page-heading page-heading-row">
                 <div>
-                  <div className="eyebrow">
-                    <span /> ОТ ИДЕИ К ДОМУ
-                  </div>
                   <h1>
                     Ваши большие планы<span className="accent-dot">.</span>
                   </h1>
@@ -1178,11 +1162,8 @@ export default function App() {
           {(page === 'catalog' || page === 'favorites') && (
             <>
               <section className="page-heading">
-                <div className="eyebrow">
-                  <span /> ДЕТАЛИ СОЗДАЮТ ЦЕЛОЕ
-                </div>
                 <h1>
-                  {page === 'catalog' ? 'Материалы с характером' : 'То, что вам приглянулось'}
+                  {page === 'catalog' ? 'Найдите идеальные материалы' : 'То, что вам приглянулось'}
                   <span className="accent-dot">.</span>
                 </h1>
                 <p>
@@ -1191,12 +1172,7 @@ export default function App() {
                     : 'Сохранённые материалы для ваших будущих решений.'}
                 </p>
               </section>
-              <div className="catalog-notice">
-                <span className="demo-tag">
-                  {settings.mode === 'mock' ? 'ДЕМОКАТАЛОГ' : 'СЕРВЕРНЫЙ КАТАЛОГ'}
-                </span>
-                Примеры товаров и цен для знакомства с калькулятором. Не оферта магазина.
-              </div>
+
               <div className="page-tools">
                 <div className="search-box">
                   <Search size={18} />
@@ -1285,9 +1261,6 @@ export default function App() {
           {page === 'guide' && (
             <>
               <section className="page-heading">
-                <div className="eyebrow">
-                  <span /> ЗНАТЬ — ЗНАЧИТ СПЛАНИРОВАТЬ
-                </div>
                 <h1>
                   Чуть больше уверенности<span className="accent-dot">.</span>
                 </h1>
@@ -1341,20 +1314,7 @@ export default function App() {
               </div>
             </>
           )}
-          <footer className="footer">
-            <span>
-              RepairCalc <span className="footer-dot">·</span> Больше ясности. Меньше лишнего.
-            </span>
-            <button
-              onClick={() => {
-                setMobileMenu(false);
-                setDialog('help');
-              }}
-            >
-              О проекте <ArrowUpRight size={13} />
-            </button>
-            <span className="footer-demo">Фронтенд-демонстрация / 2026</span>
-          </footer>
+          <footer className="footer" aria-hidden="true" />
         </main>
       </div>
 
@@ -1418,7 +1378,7 @@ export default function App() {
       {dialog === 'region' && (
         <Modal title="Ваш город" close={() => setDialog(null)}>
           <p className="modal-description">
-            Выберите город проекта. В демоверсии цены одинаковы для всех регионов.
+            Выберите город проекта.
           </p>
           <div className="region-list">
             {regions.map((city) => (
@@ -1476,14 +1436,6 @@ export default function App() {
                 <p>{text}</p>
               </div>
             ))}
-          </div>
-          <div className="info-box">
-            <strong>О демонстрации</strong>
-            <p>
-              Фронтенд по кейсу RepairCalc / «Максидом». В режиме MOCK используются локальные ответы, включая
-              ML-рекомендации и привязки. В NOT MOCK данные запрашиваются с настроенного сервера. Модель и
-              бэкенд в этот проект не входят.
-            </p>
           </div>
         </Modal>
       )}

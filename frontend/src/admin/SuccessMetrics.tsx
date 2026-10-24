@@ -57,14 +57,6 @@ export function SuccessMetrics() {
           Обновить метрики
         </button>
       </div>
-      <div className="admin-report-notice">
-        <SourceBadge />
-        <p>
-          {settings.mode === 'mock'
-            ? 'Демонстрационный отчёт. Значения иллюстрируют метрики и не являются результатами работающей модели или действий в этой сессии.'
-            : 'Отчёт сервера по размеченной выборке и событиям за указанный период.'}
-        </p>
-      </div>
       <RequestState
         loading={query.status === 'loading'}
         error={query.error}
@@ -144,7 +136,6 @@ export function SuccessMetrics() {
             <div className="admin-section-heading">
               <div>
                 <h3 id="matching-quality-title">Качество матчинга по топ-категориям</h3>
-                <p>Precision / recall / F1 на размеченном сабсете. Цель MVP: F1 ≥ 0,8.</p>
               </div>
             </div>
             {rows.length ? (
@@ -195,10 +186,6 @@ export function SuccessMetrics() {
                 Нет размеченной выборки. Добавьте результаты оценки топ-категорий.
               </p>
             )}
-            <p className="admin-method">
-              Precision = TP / (TP + FP); recall = TP / (TP + FN); F1 = 2TP / (2TP + FP + FN). TP — верные
-              привязки, FP — ошибочные, FN — пропущенные. При нулевом знаменателе — «нет данных».
-            </p>
           </section>
 
           <section className="panel admin-report-section" aria-labelledby="consumption-title">
@@ -206,7 +193,7 @@ export function SuccessMetrics() {
               <div>
                 <h3 id="consumption-title">Точность расчёта расхода</h3>
                 <p>
-                  MAE по количеству: среднее абсолютное отклонение от эталонных смет. Чем меньше, тем лучше.
+                  MAE по количеству: среднее абсолютное отклонение от эталонных смет.
                 </p>
               </div>
             </div>
@@ -239,10 +226,6 @@ export function SuccessMetrics() {
             ) : (
               <p className="admin-empty">Нет эталонных смет для сравнения.</p>
             )}
-            <p className="admin-method">
-              MAE = Σ |расчёт − эталон| / число сравниваемых строк. Разные единицы не усредняются. Допустимое
-              отклонение необходимо согласовать по каждой группе материалов.
-            </p>
           </section>
 
           <section className="panel admin-report-section" aria-labelledby="journey-title">

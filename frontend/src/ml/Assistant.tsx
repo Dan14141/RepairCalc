@@ -37,9 +37,6 @@ export function SmartAssistant({
   return (
     <>
       <section className="page-heading">
-        <div className="eyebrow">
-          <span /> УМНЫЙ ПОМОЩНИК
-        </div>
         <h1>
           У каждого решения
           <br />
@@ -593,11 +590,6 @@ export function Recommendations({
               </ul>
             </details>
           )}
-          <p className="ml-provenance">
-            {settings.mode === 'mock'
-              ? 'MOCK: рекомендации, оценки соответствия и справочные источники — демонстрационные ответы. Локальная модель не запускается.'
-              : 'Рекомендации и оценки соответствия получены от сервера. Проверьте исходные характеристики перед покупкой.'}
-          </p>
         </>
       )}
       {explanation && (
