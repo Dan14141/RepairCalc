@@ -30,9 +30,6 @@ export function Admin() {
   return (
     <>
       <section className="page-heading">
-        <div className="eyebrow">
-          <span /> РЕСУРСЫ ДЛЯ ПЕРСОНАЛА
-        </div>
         <h1>
           Админка<span className="accent-dot">.</span>
         </h1>

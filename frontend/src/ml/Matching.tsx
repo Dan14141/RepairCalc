@@ -83,19 +83,6 @@ export function MatchingStudio() {
   }
   return (
     <>
-      <div className="ml-studio-banner">
-        <span className="ml-icon">
-          <Layers3 size={24} />
-        </span>
-        <div>
-          <h2>От характеристик — к назначению</h2>
-          <p>
-            Один материал может подходить для нескольких работ и помещений. Сопоставьте товары, уточните
-            привязки и подтвердите результат.
-          </p>
-        </div>
-        <SourceBadge />
-      </div>
       <div className="ml-metrics">
         <div>
           <span>Товаров в каталоге</span>
@@ -288,11 +275,6 @@ export function MatchingStudio() {
           )}
         </div>
       )}
-      <p className="ml-provenance">
-        {settings.mode === 'mock'
-          ? 'MOCK: сопоставления и проценты — примеры для проверки интерфейса, а не измеренные метрики модели. Подтверждения сохраняются в локальной заглушке.'
-          : 'Предложения получены от ML-сервиса. Подтверждения и исправления отправляются на сервер.'}
-      </p>
       {editing && (
         <AssignmentDialog
           key={editing.productId}

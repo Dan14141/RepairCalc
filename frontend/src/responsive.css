@@ -941,10 +941,12 @@
     font-size: 11px;
   }
   .footer {
-    margin-top: 28px;
-    padding: 21px 0;
-    font-size: 9px;
-  }
+  margin: 0;              /* без зазора, иначе в нём может просвечивать другой фон */
+  height: 64px;           /* высота пустого «поля» внизу, подберите свою */
+  background: transparent; /* или тот же цвет, что у страницы, например var(--bg) */
+  border: 0;
+  box-shadow: none;
+}
   .footer > button {
     font-size: 9px;
   }

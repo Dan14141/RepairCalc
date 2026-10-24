@@ -29,12 +29,9 @@ export function RoomIcon({ type, size = 20 }: { type: RoomType; size?: number })
 export function Logo() {
   return (
     <div className="logo">
-      <svg viewBox="0 0 40 40" aria-hidden="true">
-        <path d="m7 14 13-8 13 8v17H7Z M20 6v25 M7 14l13 8 13-8" />
-      </svg>
       <span>
-        repair<span className="logo-light">calc</span>
-        <small>ПРОСТРАНСТВО ДЛЯ ПЛАНОВ</small>
+        Repair<span className="logo-light">Calc</span>
+        <small>УМНЫЙ КАЛЬКУЛЯТОР</small>
       </span>
     </div>
   );

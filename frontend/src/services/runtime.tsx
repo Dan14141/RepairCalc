@@ -316,8 +316,8 @@ export function RequestState({
 export function SourceBadge() {
   const { settings } = useRuntime();
   return (
-    <span className={`ml-source ${settings.mode}`}>
-      {settings.mode === 'mock' ? 'MOCK · пример ответа' : 'API · ответ сервера'}
+    <span className={`ml-sourc ${settings.mode}`}>
+      {settings.mode === 'mock' ? '' : ''}
     </span>
   );
 }
