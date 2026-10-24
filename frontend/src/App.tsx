@@ -929,7 +929,7 @@ export default function App() {
                     <h2>
                       Сначала — план.
                       <br />
-                      Потом — ремонтваш дом.
+                      Потом — ремонт.
                     </h2>
                     <RoomScene />
                   </div>
@@ -1799,9 +1799,6 @@ function ProductDialog({
               ремонта и условий комнаты.
             </p>
           )}
-          <span className="detail-demo">
-            {settings.mode === 'mock' ? 'MOCK · демонстрационный товар и цена' : 'NOT MOCK · данные сервера'}
-          </span>
         </div>
       </div>
     </Modal>
