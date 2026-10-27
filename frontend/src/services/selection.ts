@@ -7,7 +7,9 @@ export function compatible(product: Product, room: Pick<Room, 'wet' | 'heavy'>) 
 }
 export function roomWithCatalog(room: Room, catalog: Product[]): Room {
   const select = (category: 'floor' | 'walls', previous: string) => {
-    const available = catalog.filter((product) => product.category === category && compatible(product, room));
+    const available = catalog.filter(
+      (product) => product.category === category && product.coverage > 0 && compatible(product, room),
+    );
     if (!available.length)
       throw new ApiError(
         `В каталоге нет подходящего материала для ${category === 'floor' ? 'пола' : 'стен'} этой комнаты. Измените условия или дополните каталог.`,

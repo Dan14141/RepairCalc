@@ -2,6 +2,7 @@
 import datetime as dt
 from decimal import Decimal
 import json
+import os
 from pathlib import Path
 import unittest
 import urllib.request
@@ -138,9 +139,12 @@ class StorageTests(unittest.TestCase):
         anonymous.close()
 
     def test_09_pgadmin_http(self):
-        for host in ['localhost','127.0.0.1','192.168.3.100']:
-            with urllib.request.urlopen('http://'+host+':5443/misc/ping',timeout=5) as response:self.assertEqual(response.read(),b'PING')
-        with urllib.request.urlopen('http://localhost:5443/login',timeout=5) as response:self.assertIn(b'csrfToken',response.read())
+        # Local deployments bind to loopback. Extra LAN endpoints are opt-in.
+        urls = os.getenv('PGADMIN_TEST_URLS', 'http://localhost:5443,http://127.0.0.1:5443').split(',')
+        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+        for base in urls:
+            with opener.open(base.strip().rstrip('/')+'/misc/ping',timeout=5) as response:self.assertEqual(response.read(),b'PING')
+            with opener.open(base.strip().rstrip('/')+'/login',timeout=5) as response:self.assertIn(b'csrfToken',response.read())
 
     def test_10_region_cycles_and_missing_quantities(self):
         f=self.fixture(False)

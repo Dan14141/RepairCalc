@@ -1,5 +1,5 @@
 export type RoomType = 'living' | 'kitchen' | 'bathroom' | 'bedroom' | 'kids' | 'balcony';
-export type Category = 'floor' | 'walls' | 'prep' | 'electric';
+export type Category = 'floor' | 'walls' | 'prep' | 'electric' | 'other';
 export type Product = {
   id: string;
   name: string;
@@ -246,7 +246,7 @@ export const products: Product[] = [
 ];
 export const productById = (id: string) => products.find((p) => p.id === id)!;
 export const money = (n: number) =>
-  new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 }).format(n) + ' ₽';
+  new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 2 }).format(n) + ' ₽';
 export const number = (n: number) => new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 2 }).format(n);
 export function plural(n: number, forms: [string, string, string]) {
   const last = n % 10;

@@ -8,8 +8,15 @@ export type RuntimeSettings = {
 };
 export type Guide = { title: string; tag: string; time: string; text: string };
 export type Workspace = { projects: Project[]; favorites: string[] };
-export type Bootstrap = Workspace & { products: Product[]; regions: string[]; guides: Guide[] };
+export type Bootstrap = Workspace & {
+  products: Product[];
+  regions: string[];
+  guides: Guide[];
+  catalogTotal?: number;
+};
+export type CatalogPage = { products: Product[]; total: number; page: number; size: number };
 export type Estimate = {
+  warnings?: string[];
   items: { product: Product; quantity: number; cost: number; rooms: string[]; surface: number }[];
   materials: number;
   labor: number;
@@ -85,6 +92,7 @@ export const workTypes: { id: WorkType; name: string }[] = [
   { id: 'electrical', name: 'Электромонтаж' },
 ];
 export interface RepairApi {
+  catalog(params: URLSearchParams, signal: AbortSignal): Promise<CatalogPage>;
   metrics(signal: AbortSignal): Promise<MetricsReport>;
   bootstrap(signal: AbortSignal): Promise<Bootstrap>;
   saveWorkspace(value: Workspace, signal: AbortSignal): Promise<Workspace>;

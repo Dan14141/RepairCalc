@@ -11,5 +11,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'Docker startup failed.' }
     & $pythonPath scripts/manage.py migrate
     if ($LASTEXITCODE -ne 0) { throw 'Migration failed.' }
+    & $pythonPath scripts/configure_backend.py
+    if ($LASTEXITCODE -ne 0) { throw 'Backend configuration failed.' }
     docker compose ps
 } finally { Pop-Location }

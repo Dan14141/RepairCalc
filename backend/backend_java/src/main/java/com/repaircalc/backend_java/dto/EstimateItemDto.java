@@ -1,11 +1,13 @@
 package com.repaircalc.backend_java.dto;
 
+import java.math.BigDecimal;
+
 import java.util.List;
 
 public record EstimateItemDto(
         ProductDto product,
         int quantity,
-        int cost,
+        BigDecimal cost,
         List<String> rooms,
         double surface
 ) {}

@@ -1,11 +1,13 @@
 package com.repaircalc.backend_java.dto;
 
+import java.math.BigDecimal;
+
 public record ProductDto(
         String id,
         String name,
         String brand,
         String category, // "floor", "walls", "prep", "electric"
-        int price,
+        BigDecimal price,
         String unit,
         double coverage,
         String color,

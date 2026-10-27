@@ -101,7 +101,7 @@ test('mock report identifies sample data, shows category goals, MAE and business
   page,
 }) => {
   await page.goto('/#admin/metrics');
-  await expect(page.getByText(/Демонстрационный отчёт/)).toBeVisible();
+  await expect(page.getByText(/Демонстрационный размеченный сабсет/)).toBeVisible();
   await expect(page.getByRole('article', { name: 'Качество матчинга', exact: true })).toContainText('0,75');
   await expect(page.getByRole('article', { name: 'Качество матчинга', exact: true })).toContainText('2 из 3');
   await expect(page.getByRole('article', { name: 'Автоматические привязки' })).toContainText('72%');

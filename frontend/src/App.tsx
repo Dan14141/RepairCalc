@@ -136,6 +136,7 @@ export default function App() {
     total: 0,
     totalArea: project.rooms.reduce((sum, r) => sum + area(r), 0),
     categories: categories.map((c) => ({ ...c, total: 0 })),
+    warnings: [] as string[],
   };
   function createRoom(type: RoomType, name?: string) {
     return roomWithCatalog(baseCreateRoom(type, name), products);
@@ -153,7 +154,7 @@ export default function App() {
     updateRoom(product.category === 'floor' ? { floor: product.id } : { wall: product.id });
     notify(`Материал выбран для комнаты «${room.name}»`);
   }
-  const visibleProducts = useMemo(
+  const localProducts = useMemo(
     () =>
       products
         .filter(
@@ -167,6 +168,28 @@ export default function App() {
         ),
     [page, filter, search, sort, favorites, products],
   );
+  const remoteCatalog = settings.mode === 'http' && initialData.catalogTotal !== undefined;
+  const [catalogPage, setCatalogPage] = useState(0);
+  const catalogKey = JSON.stringify([page, filter, search, sort, favorites]);
+  useEffect(() => setCatalogPage(0), [catalogKey]);
+  const catalogParams = new URLSearchParams({
+    search,
+    category: filter,
+    sort,
+    page: String(catalogPage),
+    size: '48',
+  });
+  if (page === 'favorites') catalogParams.set('ids', favorites.length ? favorites.join(',') : '__empty__');
+  const catalogRequest = useQuery(
+    `catalog:${remoteCatalog}:${page}:${catalogParams}`,
+    (signal) =>
+      remoteCatalog && (page === 'catalog' || page === 'favorites')
+        ? api.catalog(catalogParams, signal)
+        : Promise.resolve({ products: [], total: 0, page: 0, size: 48 }),
+    150,
+  );
+  const visibleProducts = remoteCatalog ? catalogRequest.data?.products || [] : localProducts;
+  const catalogTotal = remoteCatalog ? catalogRequest.data?.total || 0 : localProducts.length;
   useEffect(() => {
     const listener = () => {
       setPage(getPage());
@@ -276,6 +299,7 @@ export default function App() {
       ['Материалы', '', '', '', '', calculation.materials],
       ['Работы (ориентировочно)', '', '', '', '', calculation.labor],
       ['Итого', '', '', '', '', calculation.total],
+      ...(calculation.warnings || []).map((warning) => ['Примечание', warning]),
     ];
     const blob = new Blob(['\uFEFF' + lines.map((row) => row.map(escape).join(';')).join('\r\n')], {
       type: 'text/csv;charset=utf-8',
@@ -949,6 +973,11 @@ export default function App() {
                     <p className="budget-subtitle">
                       На {roomCount(project.rooms.length)} · {number(calculation.totalArea)} м²
                     </p>
+                    {(calculation.warnings || []).map((warning) => (
+                      <p className="budget-disclaimer" key={warning}>
+                        {warning}
+                      </p>
+                    ))}
                     <div className="budget-bar">
                       {calculation.categories
                         .filter((c) => c.total > 0)
@@ -1218,9 +1247,17 @@ export default function App() {
                     {c.name}
                   </button>
                 ))}
-                <span>{visibleProducts.length} позиций</span>
+                <span>{catalogTotal} позиций</span>
               </div>
-              <div className="product-grid">
+              {remoteCatalog && (
+                <RequestState
+                  loading={catalogRequest.status === 'loading'}
+                  error={catalogRequest.error}
+                  retry={catalogRequest.refresh}
+                  label="Загружаем каталог…"
+                />
+              )}
+              <div className="product-grid" aria-busy={remoteCatalog && catalogRequest.status === 'loading'}>
                 {visibleProducts.map((p) => (
                   <ProductCard
                     key={p.id}
@@ -1231,7 +1268,28 @@ export default function App() {
                   />
                 ))}
               </div>
-              {!visibleProducts.length && (
+              {remoteCatalog && catalogTotal > 48 && (
+                <nav className="page-tools" aria-label="Страницы каталога">
+                  <button
+                    className="button secondary"
+                    disabled={catalogPage === 0}
+                    onClick={() => setCatalogPage((n) => n - 1)}
+                  >
+                    Предыдущая страница
+                  </button>
+                  <span>
+                    Страница {catalogPage + 1} из {Math.ceil(catalogTotal / 48)}
+                  </span>
+                  <button
+                    className="button secondary"
+                    disabled={(catalogPage + 1) * 48 >= catalogTotal}
+                    onClick={() => setCatalogPage((n) => n + 1)}
+                  >
+                    Следующая страница
+                  </button>
+                </nav>
+              )}
+              {!visibleProducts.length && (!remoteCatalog || catalogRequest.status === 'success') && (
                 <EmptyState
                   title={
                     page === 'favorites' && !favorites.length
@@ -1377,9 +1435,7 @@ export default function App() {
       )}
       {dialog === 'region' && (
         <Modal title="Ваш город" close={() => setDialog(null)}>
-          <p className="modal-description">
-            Выберите город проекта.
-          </p>
+          <p className="modal-description">Выберите город проекта.</p>
           <div className="region-list">
             {regions.map((city) => (
               <button
@@ -1478,7 +1534,11 @@ export default function App() {
           <div className="replacement-grid">
             {products
               .filter(
-                (p) => p.category === dialog.category && (!room.wet || p.wet) && (!room.heavy || p.heavy),
+                (p) =>
+                  p.category === dialog.category &&
+                  p.coverage > 0 &&
+                  (!room.wet || p.wet) &&
+                  (!room.heavy || p.heavy),
               )
               .map((p) => (
                 <button
@@ -1495,7 +1555,9 @@ export default function App() {
                   <span>
                     {money(p.price)} / {p.unit}
                   </span>
-                  <small>{number(p.coverage)} м² в упаковке</small>
+                  <small>
+                    {number(p.coverage)} м² / {p.unit}
+                  </small>
                   {p.id === (dialog.category === 'floor' ? room.floor : room.wall) && (
                     <span className="replacement-check">
                       <Check size={16} />
@@ -1592,7 +1654,13 @@ function ProductCard({
         <button className="product-name-button" onClick={open}>
           {p.name}
         </button>
-        <p>{p.category === 'electric' ? 'Цена за одну точку' : `${number(p.coverage)} м² / ${p.unit}`}</p>
+        <p>
+          {p.coverage <= 0
+            ? 'Расход требует уточнения'
+            : p.category === 'electric'
+              ? 'Цена за одну точку'
+              : `${number(p.coverage)} м² / ${p.unit}`}
+        </p>
         <div className="product-price">
           <strong>
             {money(p.price)} <small>/ {p.unit}</small>
@@ -1718,11 +1786,12 @@ function ProductDialog({
   const calculationInput = { surface, reserve: withReserve ? reserve : 0 };
   const result = useQuery(
     `product:${p.id}:${JSON.stringify(calculationInput)}`,
-    (signal) => api.productCalculation(p.id, calculationInput, signal),
+    (signal) =>
+      p.coverage > 0 ? api.productCalculation(p.id, calculationInput, signal) : Promise.resolve(null),
     100,
   );
   const suitable = (!room.wet || p.wet) && (!room.heavy || p.heavy);
-  const selectable = p.category === 'floor' || p.category === 'walls';
+  const selectable = p.coverage > 0 && (p.category === 'floor' || p.category === 'walls');
   return (
     <Modal title="Материал в деталях" close={close} wide>
       <div className="product-detail">
@@ -1746,41 +1815,45 @@ function ProductDialog({
           <div className="detail-price">
             {money(p.price)} <span>/ {p.unit}</span>
           </div>
-          <div className="product-calculator">
-            <h3>
-              <Calculator size={17} /> Сколько понадобится?
-            </h3>
-            <DimensionInput
-              label={p.category === 'electric' ? 'Количество точек' : 'Площадь поверхности'}
-              value={surface}
-              min={1}
-              max={1000}
-              unit={p.category === 'electric' ? 'шт.' : 'м²'}
-              onChange={setSurface}
-            />
-            {p.category !== 'electric' && (
-              <Toggle
-                label={`С запасом ${reserve}%`}
-                checked={withReserve}
-                onChange={() => setWithReserve((v) => !v)}
+          {p.coverage > 0 ? (
+            <div className="product-calculator">
+              <h3>
+                <Calculator size={17} /> Сколько понадобится?
+              </h3>
+              <DimensionInput
+                label={p.category === 'electric' ? 'Количество точек' : 'Площадь поверхности'}
+                value={surface}
+                min={1}
+                max={1000}
+                unit={p.category === 'electric' ? 'шт.' : 'м²'}
+                onChange={setSurface}
               />
-            )}
-            <RequestState
-              loading={result.status === 'loading'}
-              error={result.error}
-              retry={result.refresh}
-              label="Рассчитываем количество…"
-            />
-            <div className="product-calc-result" aria-live="polite">
-              <span>
-                <strong>
-                  {result.data?.quantity ?? '—'} {p.unit}
-                </strong>
-                <small>Округлено до целого</small>
-              </span>
-              <b>{result.data ? money(result.data.total) : '—'}</b>
+              {p.category !== 'electric' && (
+                <Toggle
+                  label={`С запасом ${reserve}%`}
+                  checked={withReserve}
+                  onChange={() => setWithReserve((v) => !v)}
+                />
+              )}
+              <RequestState
+                loading={result.status === 'loading'}
+                error={result.error}
+                retry={result.refresh}
+                label="Рассчитываем количество…"
+              />
+              <div className="product-calc-result" aria-live="polite">
+                <span>
+                  <strong>
+                    {result.data?.quantity ?? '—'} {p.unit}
+                  </strong>
+                  <small>Округлено до целого</small>
+                </span>
+                <b>{result.data ? money(result.data.total) : '—'}</b>
+              </div>
             </div>
-          </div>
+          ) : (
+            <p className="modal-note">Для расчёта количества нужны уточнённые характеристики товара.</p>
+          )}
           {selectable ? (
             <>
               <button className="button primary full-width" disabled={!suitable} onClick={apply}>
@@ -1794,10 +1867,12 @@ function ProductDialog({
               </p>
             </>
           ) : (
-            <p className="modal-note">
-              Подготовительные материалы и электрика добавляются в смету автоматически в зависимости от типа
-              ремонта и условий комнаты.
-            </p>
+            p.coverage > 0 && (
+              <p className="modal-note">
+                Подготовительные материалы и электрика добавляются в смету автоматически в зависимости от типа
+                ремонта и условий комнаты.
+              </p>
+            )
           )}
         </div>
       </div>

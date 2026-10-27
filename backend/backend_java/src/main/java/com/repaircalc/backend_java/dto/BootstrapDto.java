@@ -7,5 +7,6 @@ public record BootstrapDto(
         List<String> favorites,
         List<ProductDto> products,
         List<String> regions,
-        List<GuideDto> guides
+        List<GuideDto> guides,
+        long catalogTotal
 ) {}

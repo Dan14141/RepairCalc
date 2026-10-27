@@ -8,6 +8,8 @@ server/CONNECTIONS.private.md
 server/client-ca.crt
 server/ca.key
 .env
+**/secret data.txt
+server/products_final.json
 .env.*
 !.env.example
 

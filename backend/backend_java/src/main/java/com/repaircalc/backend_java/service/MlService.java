@@ -18,7 +18,10 @@ public class MlService {
 
     // 1. Подбор рекомендаций (Recommendations)
     public RecommendationResultDto getRecommendations(RecommendationInputDto input) {
+        if (input == null || !List.of(5,10,15).contains(input.reserve()))
+            throw new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.BAD_REQUEST,"Некорректный запас");
         RoomDto room = input.room();
+        CalculationService.validateRoom(room);
         List<ProductDto> products = dataService.getProducts();
         List<String> categories = List.of("floor", "walls");
         List<RecommendationResultDto.GroupDto> groups = new ArrayList<>();
@@ -36,7 +39,7 @@ public class MlService {
                             excluded.add(new RecommendationResultDto.ExcludedDto(p.id(), room.wet() && !p.wet() ? "Не подтверждена влагостойкость" : "Не рассчитан на высокую нагрузку"));
                             return null;
                         }
-                        int quantity = (int) Math.ceil((surface * (1 + input.reserve() / 100.0)) / p.coverage());
+                        int quantity = ProductService.quantity(p, surface, input.reserve());
                         double score = p.id().equals("floor".equals(category) ? room.floor() : room.wall()) ? 0.96 : p.heavy() ? 0.93 : 0.89;
 
                         List<RecommendationResultDto.EvidenceDto> evidence = List.of(
@@ -48,11 +51,11 @@ public class MlService {
                                 p.heavy() ? "Выдерживает нагрузку" : "Обычная нагрузка",
                                 quantity + " " + p.unit() + " с запасом " + input.reserve() + "%"
                         );
-                        return new RecommendationResultDto.CandidateDto(p.id(), score, reasons, "Учтите особенности основания.", quantity, quantity * p.price(), evidence);
+                        return new RecommendationResultDto.CandidateDto(p.id(), score, reasons, "Учтите особенности основания.", quantity, p.price().multiply(java.math.BigDecimal.valueOf(quantity)), evidence);
                     })
                     .filter(Objects::nonNull)
                     .sorted((a, b) -> {
-                        if ("budget".equals(input.priority())) return Integer.compare(a.total(), b.total());
+                        if ("budget".equals(input.priority())) return a.total().compareTo(b.total());
                         return Double.compare(b.score(), a.score());
                     })
                     .collect(Collectors.toList());

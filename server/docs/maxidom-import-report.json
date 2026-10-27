@@ -1,0 +1,17 @@
+{
+  "source_rows": 88790,
+  "unique_products": 88746,
+  "duplicate_rows": 44,
+  "duplicate_skus": 44,
+  "missing_units": 7525,
+  "calculable_products": 3352,
+  "categories": {
+    "other": 84243,
+    "floor": 1509,
+    "walls": 2361,
+    "electric": 528,
+    "prep": 105
+  },
+  "duplicate_policy": "first source row; conflicting SKUs excluded from calculations",
+  "sha256": "590a500be31d7a8d56e625c231ef978fc1a1a7b6d0a2e65eb33b88d68eee175e"
+}

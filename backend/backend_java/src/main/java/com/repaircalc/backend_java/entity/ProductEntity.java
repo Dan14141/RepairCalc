@@ -3,6 +3,8 @@ package com.repaircalc.backend_java.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "products")
@@ -12,7 +14,8 @@ public class ProductEntity {
     private String name;
     private String brand;
     private String category;
-    private int price;
+    @Column(precision = 18, scale = 2)
+    private BigDecimal price;
     private String unit;
     private double coverage;
     private String color;
@@ -20,7 +23,10 @@ public class ProductEntity {
     private boolean wet;
     private boolean heavy;
     private String rating;
+    @Column(columnDefinition = "text")
     private String description;
+    private String sourceCategory;
+    private String url;
 
     // Пустой конструктор нужен для Hibernate
     public ProductEntity() {}
@@ -34,8 +40,8 @@ public class ProductEntity {
     public void setBrand(String brand) { this.brand = brand; }
     public String getCategory() { return category; }
     public void setCategory(String category) { this.category = category; }
-    public int getPrice() { return price; }
-    public void setPrice(int price) { this.price = price; }
+    public BigDecimal getPrice() { return price; }
+    public void setPrice(BigDecimal price) { this.price = price; }
     public String getUnit() { return unit; }
     public void setUnit(String unit) { this.unit = unit; }
     public double getCoverage() { return coverage; }
@@ -52,4 +58,6 @@ public class ProductEntity {
     public void setRating(String rating) { this.rating = rating; }
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
+    public String getSourceCategory() { return sourceCategory; }
+    public String getUrl() { return url; }
 }

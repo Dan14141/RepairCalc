@@ -12,6 +12,7 @@ import {
   type RecommendationResult,
   type ProductCalculation,
   type Workspace,
+  type CatalogPage,
 } from './contracts';
 import { mockRequest } from './mock';
 import { decodeMetrics } from './metrics';
@@ -33,10 +34,9 @@ function isProduct(v: unknown): v is Product {
     ['id', 'name', 'brand', 'unit', 'color', 'texture', 'rating', 'description'].every(
       (k) => typeof v[k] === 'string',
     ) &&
-    ['floor', 'walls', 'prep', 'electric'].includes(String(v.category)) &&
-    whole(v.price) &&
+    ['floor', 'walls', 'prep', 'electric', 'other'].includes(String(v.category)) &&
+    nonnegative(v.price) &&
     nonnegative(v.coverage) &&
-    v.coverage > 0 &&
     typeof v.wet === 'boolean' &&
     typeof v.heavy === 'boolean'
   );
@@ -82,6 +82,7 @@ export function decodeBootstrap(v: unknown): Bootstrap {
     !object(v) ||
     !Array.isArray(v.products) ||
     !v.products.every(isProduct) ||
+    (v.catalogTotal !== undefined && !whole(v.catalogTotal)) ||
     !strings(v.regions) ||
     !Array.isArray(v.guides) ||
     !v.guides.every(
@@ -107,13 +108,14 @@ function decodeEstimate(v: unknown): Estimate {
   if (
     !object(v) ||
     !['materials', 'labor', 'total', 'totalArea'].every((k) => nonnegative(v[k])) ||
+    (v.warnings !== undefined && !strings(v.warnings)) ||
     !Array.isArray(v.items) ||
     !v.items.every(
       (r) =>
         object(r) &&
         isProduct(r.product) &&
         whole(r.quantity) &&
-        whole(r.cost) &&
+        nonnegative(r.cost) &&
         strings(r.rooms) &&
         nonnegative(r.surface),
     ) ||
@@ -148,7 +150,7 @@ function decodeRecommendations(v: unknown): RecommendationResult {
             strings(c.reasons) &&
             typeof c.tradeoff === 'string' &&
             whole(c.quantity) &&
-            whole(c.total) &&
+            nonnegative(c.total) &&
             Array.isArray(c.evidence) &&
             c.evidence.every(
               (e) => object(e) && ['title', 'excerpt', 'source'].every((k) => typeof e[k] === 'string'),
@@ -190,7 +192,8 @@ function decodeAssignments(v: unknown): Assignment[] {
   return v;
 }
 function decodeProductCalc(v: unknown): ProductCalculation {
-  if (!object(v) || !whole(v.quantity) || !whole(v.total) || typeof v.unit !== 'string') return invalid();
+  if (!object(v) || !whole(v.quantity) || !nonnegative(v.total) || typeof v.unit !== 'string')
+    return invalid();
   return v as ProductCalculation;
 }
 
@@ -283,6 +286,19 @@ export function createApi(settings: RuntimeSettings, log: (entry: RequestLog) =>
     }
   }
   return {
+    catalog: (params, signal) =>
+      request('GET', `/catalog?${params}`, undefined, signal, (v): CatalogPage => {
+        if (
+          !object(v) ||
+          !Array.isArray(v.products) ||
+          !v.products.every(isProduct) ||
+          !whole(v.total) ||
+          !whole(v.page) ||
+          !whole(v.size)
+        )
+          return invalid();
+        return v as CatalogPage;
+      }),
     metrics: (signal) => request('GET', '/admin/metrics', undefined, signal, decodeMetrics),
     bootstrap: (signal) => request('GET', '/bootstrap', undefined, signal, decodeBootstrap),
     saveWorkspace: (value, signal) => request('PUT', '/workspace', value, signal, decodeWorkspace),

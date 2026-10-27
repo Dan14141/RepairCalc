@@ -127,7 +127,7 @@ test('mobile workflow and pages do not overflow at 390px', async ({ page }) => {
   expect(await overflow()).toBe(false);
   await page.getByRole('button', { name: 'Открыть меню' }).click();
   await page.getByRole('button', { name: 'Каталог материалов', exact: true }).click();
-  await expect(page.getByRole('heading', { name: /Материалы с характером/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Найдите идеальные материалы/ })).toBeVisible();
   expect(await overflow()).toBe(false);
   await page.getByRole('button', { name: 'Рассчитать: Ламинат Дуб натуральный' }).click();
   await expect(page.getByRole('dialog')).toBeVisible();

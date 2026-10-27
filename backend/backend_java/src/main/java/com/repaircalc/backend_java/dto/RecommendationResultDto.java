@@ -1,5 +1,7 @@
 package com.repaircalc.backend_java.dto;
 
+import java.math.BigDecimal;
+
 import java.util.List;
 
 public record RecommendationResultDto(
@@ -14,7 +16,7 @@ public record RecommendationResultDto(
             List<String> reasons,
             String tradeoff,
             int quantity,
-            int total,
+            BigDecimal total,
             List<EvidenceDto> evidence
     ) {}
     public record EvidenceDto(String title, String excerpt, String source) {}

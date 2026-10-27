@@ -1,7 +1,7 @@
 package com.repaircalc.backend_java.controller;
 
 import com.repaircalc.backend_java.dto.BootstrapDto;
-import com.repaircalc.backend_java.dto.WorkspaceDto; // <-- ВОТ ЭТА СТРОКА
+import com.repaircalc.backend_java.dto.WorkspaceDto;
 import com.repaircalc.backend_java.service.DataService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +29,8 @@ public class BootstrapController {
                 ws.favorites(),
                 dataService.getProducts(),
                 List.of("Санкт-Петербург", "Москва", "Казань"),
-                dataService.getGuides()
+                dataService.getGuides(),
+                dataService.catalogCount()
         );
     }
 }

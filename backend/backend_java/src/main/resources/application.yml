@@ -2,25 +2,27 @@ server:
   port: 8000
   servlet:
     context-path: /api/v1
+  compression:
+    enabled: true
 
 spring:
   application:
     name: repaircalc-backend
-
-  #datasource:
-   # url: jdbc:postgresql://127.0.0.1:5433/repaircalc
-    #username: repaircalc_app
-    #password: a1a1ce614ab855ce7a1ce1e98a4c5be5a53028d54504b6b5
-    #driver-class-name: org.postgresql.Driver
-
+  config:
+    import: optional:file:../../server/.secrets/backend.properties
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://127.0.0.1:5433/repaircalc?currentSchema=repaircalc}
+    username: ${DB_USERNAME:repaircalc_app}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
-    show-sql: true
+      ddl-auto: validate
+    open-in-view: false
+    show-sql: false
     properties:
       hibernate:
-        format_sql: true
-
+        default_schema: repaircalc
   web:
     cors:
       allowed-origins: "http://127.0.0.1:4173,http://localhost:4173"
