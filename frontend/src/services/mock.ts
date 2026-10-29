@@ -1,5 +1,7 @@
 import { compatible } from './selection';
 import { mockMetrics } from './mockMetrics';
+import { summarizeEngagement, type StoredEvent } from './engagement';
+import type { EngagementEvent } from './contracts';
 import {
   createRoom,
   estimate,
@@ -27,6 +29,7 @@ import {
 
 const workspaceKey = 'repaircalc.mock.workspace.v2';
 const assignmentKey = 'repaircalc.mock.assignments.v1';
+const engagementKey = 'repaircalc.mock.engagement.v1';
 function read<T>(key: string, fallback: T): T {
   try {
     const value = JSON.parse(localStorage.getItem(key) || 'null');
@@ -250,8 +253,25 @@ export async function mockRequest(
     );
     return structuredClone(value);
   }
+  if (path === '/engagement/events') {
+    const event = body as EngagementEvent;
+    const events = read<StoredEvent[]>(engagementKey, []);
+    const existing = events.find((e) => e.id === event.id);
+    if (existing) {
+      const { createdAt: _, ...saved } = existing;
+      if (JSON.stringify(saved) !== JSON.stringify(event))
+        throw new ApiError('Событие уже сохранено.', 'mock');
+    } else {
+      persist(engagementKey, [...events, { ...event, createdAt: new Date().toISOString() }]);
+    }
+    return { id: event.id };
+  }
   await abortableDelay(settings.delay, signal);
-  if (path === '/admin/metrics') return structuredClone(mockMetrics);
+  if (path === '/admin/metrics')
+    return {
+      ...structuredClone(mockMetrics),
+      engagement: summarizeEngagement(read<StoredEvent[]>(engagementKey, [])),
+    };
   if (path.startsWith('/ml/') && settings.scenario === 'ml-error')
     throw new ApiError(
       'Тестовая ошибка ML-сервиса. Верните обычный сценарий в тестовой панели или повторите запрос.',

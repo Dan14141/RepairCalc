@@ -25,7 +25,16 @@ export type Estimate = {
   categories: { id: Category; name: string; color: string; total: number }[];
 };
 export type ProductCalculation = { quantity: number; unit: string; total: number };
+export type EngagementEvent = { id: string; visitorId: string } & (
+  { kind: 'share'; projectId: string; method: 'native' | 'clipboard' } | { kind: 'rating'; rating: number }
+);
+export type EngagementMetrics = {
+  since: string | null;
+  shares: { total: number; visitors: number };
+  ratings: { total: number; distribution: number[] };
+};
 export type MetricsReport = {
+  engagement?: EngagementMetrics;
   generatedAt: string;
   period: { from: string; to: string };
   modelVersion: string;
@@ -92,6 +101,7 @@ export const workTypes: { id: WorkType; name: string }[] = [
   { id: 'electrical', name: 'Электромонтаж' },
 ];
 export interface RepairApi {
+  recordEngagement(event: EngagementEvent, signal: AbortSignal): Promise<{ id: string }>;
   catalog(params: URLSearchParams, signal: AbortSignal): Promise<CatalogPage>;
   metrics(signal: AbortSignal): Promise<MetricsReport>;
   bootstrap(signal: AbortSignal): Promise<Bootstrap>;

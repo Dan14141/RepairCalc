@@ -64,6 +64,7 @@ import {
 } from './data';
 import { Recommendations, RoomBrief, SmartAssistant } from './ml/Assistant';
 import { Admin } from './admin/Admin';
+import { ShareEstimate } from './ShareEstimate';
 import { roomWithCatalog, compatible } from './services/selection';
 import { RequestState, useBootstrap, useQuery, useRuntime, useWorkspaceSave } from './services/runtime';
 import type { ParsedRoom } from './services/contracts';
@@ -885,6 +886,7 @@ export default function App() {
                         </div>
                       </div>
                       <div className="estimate-actions">
+                        <ShareEstimate project={project} estimate={calculationRequest.data} />
                         <button
                           className="button secondary"
                           disabled={!calculationRequest.data}

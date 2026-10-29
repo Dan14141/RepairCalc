@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { RatingPrompt } from './RatingPrompt';
 import {
   ArrowRight,
   BookOpen,
@@ -619,6 +620,22 @@ export function Recommendations({
             </div>
           </div>
         </Modal>
+      )}
+      {compact && (
+        <RatingPrompt
+          available={
+            !!query.data?.groups.some((group) =>
+              group.candidates.some((candidate) =>
+                products.some(
+                  (product) =>
+                    product.id === candidate.productId &&
+                    product.category === group.category &&
+                    compatible(product, room),
+                ),
+              ),
+            )
+          }
+        />
       )}
     </section>
   );

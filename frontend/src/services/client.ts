@@ -238,6 +238,7 @@ export function createApi(settings: RuntimeSettings, log: (entry: RequestLog) =>
           method,
           signal: controller.signal,
           credentials: 'omit',
+          keepalive: path === '/engagement/events',
           headers:
             body === undefined
               ? { Accept: 'application/json' }
@@ -286,6 +287,10 @@ export function createApi(settings: RuntimeSettings, log: (entry: RequestLog) =>
     }
   }
   return {
+    recordEngagement: (event, signal) =>
+      request('POST', '/engagement/events', event, signal, (v) =>
+        object(v) && v.id === event.id ? { id: event.id } : invalid(),
+      ),
     catalog: (params, signal) =>
       request('GET', `/catalog?${params}`, undefined, signal, (v): CatalogPage => {
         if (

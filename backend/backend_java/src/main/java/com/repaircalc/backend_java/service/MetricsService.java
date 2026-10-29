@@ -7,6 +7,8 @@ import java.util.List;
 
 @Service
 public class MetricsService {
+    private final EngagementService engagement;
+    public MetricsService(EngagementService engagement) { this.engagement = engagement; }
     public MetricsReportDto getMetrics() {
         return new MetricsReportDto(
                 "2026-10-23T09:00:00Z",
@@ -24,7 +26,8 @@ public class MetricsService {
                 new MetricsReportDto.AutomationDto(864, 1200),
                 new MetricsReportDto.EstimatesDto(180, 432, 4.8),
                 new MetricsReportDto.JourneyDto(250, 180, 1080),
-                new MetricsReportDto.RequestsDto(2000, 24)
+                new MetricsReportDto.RequestsDto(2000, 24),
+                engagement.metrics()
         );
     }
 }

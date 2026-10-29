@@ -64,6 +64,26 @@ export function decodeMetrics(v: unknown): MetricsReport {
   )
     return invalid();
   const report = v as MetricsReport;
+  if (v.engagement !== undefined) {
+    const e = v.engagement;
+    if (
+      !object(e) ||
+      !(e.since === null || date(e.since)) ||
+      !object(e.shares) ||
+      !count(e.shares.total) ||
+      !count(e.shares.visitors) ||
+      e.shares.visitors > e.shares.total ||
+      (e.shares.total > 0 && e.shares.visitors === 0) ||
+      !object(e.ratings) ||
+      !count(e.ratings.total) ||
+      !Array.isArray(e.ratings.distribution) ||
+      e.ratings.distribution.length !== 5 ||
+      !e.ratings.distribution.every(count) ||
+      e.ratings.distribution.reduce((sum: number, n: number) => sum + n, 0) !== e.ratings.total ||
+      (e.shares.total + e.ratings.total === 0) !== (e.since === null)
+    )
+      return invalid();
+  }
   if (
     !unique(report.matching) ||
     !unique(report.consumption) ||

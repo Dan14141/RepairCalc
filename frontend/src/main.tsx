@@ -11,6 +11,7 @@ import './responsive.css';
 import './theme.css';
 import './ml/ml.css';
 import './admin/admin.css';
+import './ml/rating.css';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

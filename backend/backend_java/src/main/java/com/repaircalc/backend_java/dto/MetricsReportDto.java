@@ -13,7 +13,8 @@ public record MetricsReportDto(
         AutomationDto automation,
         EstimatesDto estimates,
         JourneyDto journey,
-        RequestsDto requests
+        RequestsDto requests,
+        EngagementMetricsDto engagement
 ) {
     public record PeriodDto(String from, String to) {}
     public record MatchingDto(String id, String name, int tp, int fp, int fn) {}

@@ -192,9 +192,7 @@ export function SuccessMetrics() {
             <div className="admin-section-heading">
               <div>
                 <h3 id="consumption-title">Точность расчёта расхода</h3>
-                <p>
-                  MAE по количеству: среднее абсолютное отклонение от эталонных смет.
-                </p>
+                <p>MAE по количеству: среднее абсолютное отклонение от эталонных смет.</p>
               </div>
             </div>
             {report.consumption.length ? (
@@ -286,6 +284,68 @@ export function SuccessMetrics() {
                 </li>
               </ul>
             </details>
+          </section>
+          <section className="panel admin-report-section" aria-labelledby="engagement-title">
+            <div className="admin-section-heading">
+              <div>
+                <h3 id="engagement-title">Отправки смет и оценки ИИ</h3>
+                <p>
+                  {settings.mode === 'mock'
+                    ? 'Действия в MOCK в этом браузере.'
+                    : 'Сохранённые действия пользователей.'}{' '}
+                  За всё время{report.engagement?.since ? `, с ${date(report.engagement.since)}` : ''}.
+                </p>
+              </div>
+            </div>
+            <div className="admin-metric-grid">
+              <MetricCard title="Отправки смет" value={format(report.engagement?.shares.total ?? null, 0)}>
+                <p>Успешные копирования и передачи сметы в системное меню отправки.</p>
+              </MetricCard>
+              <MetricCard
+                title="Поделились сметой"
+                value={format(report.engagement?.shares.visitors ?? null, 0)}
+              >
+                <p>Уникальные браузеры с хотя бы одной отправкой.</p>
+              </MetricCard>
+              <MetricCard
+                title="Средняя оценка ИИ"
+                value={format(
+                  report.engagement
+                    ? ratio(
+                        report.engagement.ratings.distribution.reduce(
+                          (sum, count, index) => sum + count * (index + 1),
+                          0,
+                        ),
+                        report.engagement.ratings.total,
+                      )
+                    : null,
+                )}
+                unit="из 5"
+              >
+                <p>Среднее по сохранённым оценкам подбора.</p>
+              </MetricCard>
+              <MetricCard title="Оценок подбора" value={format(report.engagement?.ratings.total ?? null, 0)}>
+                <p>Одна оценка на результат подбора; повторы отправки не учитываются.</p>
+              </MetricCard>
+            </div>
+            {report.engagement ? (
+              <div className="rating-distribution" role="group" aria-label="Распределение оценок ИИ">
+                {report.engagement.ratings.distribution.map((count, index) => (
+                  <div key={index}>
+                    <span>{index + 1} ★</span>
+                    <meter
+                      aria-label={`${index + 1} из 5`}
+                      min={0}
+                      max={Math.max(1, report.engagement!.ratings.total)}
+                      value={count}
+                    />
+                    <strong>{format(count, 0)}</strong>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p>Сервер ещё не передаёт статистику отправок и оценок.</p>
+            )}
           </section>
         </>
       )}
