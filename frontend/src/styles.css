@@ -1287,6 +1287,7 @@ main {
   display: block;
   width: 100%;
   height: auto;
+  object-fit: contain;
 }
 .inspiration-card > .room-scene {
   position: absolute;
@@ -3194,7 +3195,7 @@ main {
   text-wrap: balance;
 }
 .inspiration-card > .room-scene {
-  width: 230px;
+  width: 280px;
   right: -7px;
   bottom: -9px;
 }

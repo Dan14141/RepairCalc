@@ -12,6 +12,7 @@ server/ca.key
 server/products_final.json
 .env.*
 !.env.example
+reports/
 
 # Локальные данные разработки (из исходного гит-игнора)
 frontend/docs/chat.json

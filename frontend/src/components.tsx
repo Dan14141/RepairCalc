@@ -13,6 +13,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react';
 import { area, number, type Product, type Room, type RoomType } from './data';
+import roomSceneImage from './assets/scandinavian-room.webp';
 
 export const roomIcons = {
   living: Sofa,
@@ -362,77 +363,17 @@ export function RoomPlan({ room, expanded = false }: { room: Room; expanded?: bo
   );
 }
 
-export function RoomScene({ variant = 'green' }: { variant?: 'green' | 'clay' }) {
-  const id = useId();
+export function RoomScene() {
   return (
-    <svg viewBox="0 0 440 300" className={`room-scene ${variant}`} aria-hidden="true">
-      <defs>
-        <linearGradient id={`${id}wall`} x1="0" y1="0" x2="1" y2="1">
-          <stop stopColor="var(--drawing-pigment-55)" />
-          <stop offset="1" stopColor="var(--drawing-pigment-56)" />
-        </linearGradient>
-        <linearGradient id={`${id}floor`} x1="0" y1="0" x2="1" y2="1">
-          <stop stopColor="var(--drawing-pigment-57)" />
-          <stop offset="1" stopColor="var(--drawing-pigment-58)" />
-        </linearGradient>
-        <filter id={`${id}shadow`}>
-          <feGaussianBlur stdDeviation="7" />
-        </filter>
-      </defs>
-      <ellipse cx="238" cy="253" rx="168" ry="22" fill="var(--drawing-pigment-59)" opacity=".12" filter={`url(#${id}shadow)`} />
-      <path d="m42 184 176 88 187-99-178-89Z" fill={`url(#${id}floor)`} />
-      <path d="m42 184 176 88v9L42 193Z" fill="var(--drawing-pigment-60)" />
-      <path d="m218 272 187-99v9L218 281Z" fill="var(--drawing-pigment-61)" />
-      <path d="M42 184V48l185-9v145l-9 88Z" fill={`url(#${id}wall)`} />
-      <path d="M42 48 219 137l8-4V39Z" fill="var(--drawing-pigment-62)" />
-      <path d="M42 48v136l176 88V137Z" fill="var(--drawing-pigment-63)" />
-      <path d="M218 137 405 38v135L218 272Z" fill="var(--drawing-pigment-64)" />
-      <path
-        d="m230 264 175-93m-156 104 156-84M63 194l187-99m-166 110 187-99m-166 110 187-99m-166 110 187-99m-165 110 187-99m-166 110 187-99m-166 110 187-99"
-        fill="none"
-        stroke="var(--drawing-pigment-65)"
-        strokeWidth=".7"
-        opacity=".25"
-      />
-      <path d="M275 114v66l80-42V72Z" fill="var(--drawing-pigment-66)" stroke="var(--drawing-pigment-67)" strokeWidth="7" />
-      <path d="m282 120 66-35v48l-66 35Z" fill="var(--drawing-pigment-68)" />
-      <path d="m315 99 0 52m-33-8 66-35" stroke="var(--drawing-pigment-69)" strokeWidth="3" />
-      <path d="m284 169 60-32 45 57-60 32Z" fill="var(--drawing-pigment-70)" opacity=".5" />
-      <path d="m118 191 93 47 80-42-96-46Z" fill="var(--drawing-pigment-71)" />
-      <path d="m120 195 91 45 78-41" fill="none" stroke="var(--drawing-pigment-72)" strokeWidth="2" />
-      <path d="m74 160 78 39 58-30-78-39Z" fill="var(--drawing-pigment-73)" />
-      <path d="M74 160v29l78 39v-29Z" fill="var(--drawing-pigment-74)" />
-      <path d="m152 199 58-30v29l-58 30Z" fill="var(--drawing-pigment-75)" />
-      <path d="M77 136v29l76 39v-29Z" fill="var(--drawing-pigment-76)" />
-      <path d="m77 136 10-6 76 39-10 6Z" fill="var(--drawing-pigment-77)" />
-      <path d="m153 175 10-6v28l-10 7Z" fill="var(--drawing-pigment-78)" />
-      <path d="m89 167 35 17 21-11-35-17Z" fill="var(--drawing-pigment-79)" stroke="var(--drawing-pigment-80)" />
-      <path d="m127 187 26 13 39-21-27-13Z" fill="var(--drawing-pigment-81)" stroke="var(--drawing-pigment-80)" />
-      <path d="m73 162 10-5 17 9v18l-10 5-17-9Z" fill="var(--drawing-pigment-82)" />
-      <path d="m151 203 10-5 43-23v16l-43 23-10 5Z" fill="var(--drawing-pigment-83)" />
-      <path d="m189 206 35 17 38-20-35-17Z" fill="var(--drawing-pigment-84)" />
-      <path d="m189 206 35 17v6l-35-17Z" fill="var(--drawing-pigment-85)" />
-      <path d="m224 223 38-20v6l-38 20Z" fill="var(--drawing-pigment-86)" />
-      <path d="m196 214v16m58-18v14m-30 2v14" stroke="var(--drawing-pigment-87)" strokeWidth="3" />
-      <ellipse cx="228" cy="201" rx="10" ry="5" fill="var(--drawing-pigment-88)" />
-      <path d="M225 199v-12h7v12" fill="var(--drawing-pigment-89)" />
-      <path d="m229 186-8-13m8 13 6-19" stroke="var(--drawing-pigment-90)" strokeWidth="1.5" />
-      <path d="m294 194 66-35v28l-66 35Z" fill="var(--drawing-pigment-91)" />
-      <path d="m285 190 66-35 9 4-66 35Z" fill="var(--drawing-pigment-92)" />
-      <path d="m285 190 9 4v28l-9-4Z" fill="var(--drawing-pigment-93)" />
-      <path d="m316 184v22m23-34v22" stroke="var(--drawing-pigment-94)" />
-      <path d="m300 177 40-21v-30l-40 21Z" fill="var(--drawing-pigment-95)" />
-      <path d="m304 171 31-16v-20l-31 16Z" fill="var(--drawing-pigment-96)" />
-      <path d="m359 183 10 5 12-6-2-25-18 2Z" fill="var(--drawing-pigment-97)" />
-      <ellipse cx="370" cy="158" rx="10" ry="5" fill="var(--drawing-pigment-98)" />
-      <path d="m369 160-1-48m1 33-16-13m16 4 15-13" stroke="var(--drawing-pigment-99)" strokeWidth="2.5" />
-      <ellipse cx="354" cy="129" rx="7" ry="16" transform="rotate(-45 354 129)" fill="var(--drawing-pigment-100)" />
-      <ellipse cx="380" cy="118" rx="7" ry="18" transform="rotate(35 380 118)" fill="var(--drawing-pigment-101)" />
-      <ellipse cx="366" cy="109" rx="8" ry="18" transform="rotate(-10 366 109)" fill="var(--drawing-pigment-102)" />
-      <path d="m122 113 28 14V91l-28-14Z" fill="var(--drawing-pigment-103)" stroke="var(--drawing-pigment-104)" strokeWidth="2" />
-      <path d="m128 108 16 8V98l-16-8Z" fill="var(--drawing-pigment-105)" />
-      <circle cx="138" cy="102" r="5" fill="var(--drawing-pigment-106)" />
-    </svg>
+    <img
+      src={roomSceneImage}
+      className="room-scene"
+      width={1491}
+      height={1055}
+      alt=""
+      aria-hidden="true"
+      decoding="async"
+    />
   );
 }
 

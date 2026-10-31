@@ -39,7 +39,7 @@
     height: 248px;
   }
   .inspiration-card > .room-scene {
-    width: 256px;
+    width: 310px;
   }
   .budget-card {
     padding: var(--space-lg);
@@ -207,7 +207,7 @@
     text-wrap: balance;
   }
   .inspiration-card > .room-scene {
-    width: 211px;
+    width: 256px;
   }
   .inspiration-caption {
     font-size: 12px;
@@ -1113,17 +1113,18 @@
     padding: 28px;
     position: relative;
     min-height: 250px;
+    flex-direction: column;
+    align-items: stretch;
   }
   .guide-banner > div {
     position: relative;
     z-index: 1;
   }
   .guide-banner > .room-scene {
-    position: absolute;
-    right: -8px;
-    bottom: -4px;
+    position: static;
+    align-self: flex-end;
     width: 230px;
-    opacity: 0.85;
+    margin: 0;
   }
   .guide-banner h2 {
     font-size: 30px;
@@ -1848,9 +1849,6 @@
   }
   .guide-banner > .room-scene {
     width: 215px;
-    bottom: -11px;
-    right: -15px;
-    opacity: 1;
   }
   .guide-banner > div {
     align-self: flex-start;

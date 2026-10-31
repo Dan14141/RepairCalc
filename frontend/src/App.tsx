@@ -437,27 +437,7 @@ export default function App() {
           </button>
         </nav>
         <div className="sidebar-bottom">
-          <div className="sidebar-note">
-            <Sparkles className="tiny-stars" size={24} aria-hidden="true" />
-            <h3>
-              Большие перемены.
-              <br />
-              Понятный план.
-            </h3>
-            <p>
-              От первой идеи до последней
-              <br />
-              банки краски — всё учтём.
-            </p>
-            <button
-              onClick={() => {
-                setMobileMenu(false);
-                setDialog('new-project');
-              }}
-            >
-              Начать новый проект <Plus size={15} />
-            </button>
-          </div>
+
           <button
             className="help-link"
             onClick={() => {
@@ -1100,7 +1080,7 @@ export default function App() {
                           navigate('calculator');
                         }}
                       >
-                        <RoomScene variant={i % 2 ? 'clay' : 'green'} />
+                        <RoomScene />
                         <span className="project-status">
                           <span /> В работе
                         </span>
