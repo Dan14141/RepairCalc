@@ -1,0 +1,129 @@
+/* Hallmark ? shape: app screen ? genre: modern-minimal ? theme: brand ? redesign: restyle ? v2.0.0 */
+/* Hallmark ? pre-emit critique: existing room plan kept; numeric labels use the shared font token */
+.room-plan {
+  --plan-paper: var(--color-paper-2);
+  --plan-floor: color-mix(in srgb, var(--color-paper-2), var(--color-ink) 5%);
+  --plan-ink: var(--color-ink);
+  --plan-line: color-mix(in srgb, var(--color-ink) 48%, var(--color-paper-2));
+  --plan-fill: var(--color-surface);
+  --plan-tint: var(--color-paper-3);
+  --plan-accent: var(--color-sidebar);
+  background: var(--plan-paper);
+}
+
+.room-plan.expanded {
+  background: var(--plan-paper);
+}
+
+.room-plan .plan-room {
+  transform-origin: 0 0;
+}
+
+.room-plan .plan-room *,
+.room-plan .plan-dimensions path {
+  vector-effect: non-scaling-stroke;
+}
+
+.room-plan .plan-floor {
+  fill: var(--plan-floor);
+}
+.room-plan .plan-floor-joint {
+  fill: none;
+  stroke: var(--plan-line);
+  stroke-opacity: 0.25;
+}
+.room-plan .plan-wall {
+  fill: none;
+  stroke: var(--plan-ink);
+  stroke-width: 5;
+  stroke-linejoin: miter;
+}
+.room-plan .plan-gap {
+  fill: none;
+  stroke: var(--plan-floor);
+  stroke-width: 7;
+}
+.room-plan .plan-glass {
+  fill: none;
+  stroke: var(--plan-line);
+  stroke-width: 1;
+}
+.room-plan .plan-leaf {
+  fill: none;
+  stroke: var(--plan-ink);
+  stroke-width: 1.25;
+}
+.room-plan .plan-swing {
+  fill: none;
+  stroke: var(--plan-line);
+  stroke-width: 0.8;
+  stroke-dasharray: 3 3;
+}
+.room-plan .plan-fixture {
+  fill: var(--plan-fill);
+  stroke: var(--plan-ink);
+  stroke-width: 0.85;
+}
+.room-plan .plan-tint {
+  fill: var(--plan-tint);
+}
+.room-plan .plan-detail {
+  fill: none;
+  stroke: var(--plan-ink);
+  stroke-width: 0.7;
+}
+.room-plan .plan-rug {
+  fill: var(--plan-accent);
+  fill-opacity: 0.06;
+  stroke: var(--plan-accent);
+  stroke-opacity: 0.4;
+  stroke-width: 0.8;
+  stroke-dasharray: 3 3;
+}
+
+.room-plan .plan-furniture {
+  animation: plan-appear 0.35s ease-out;
+}
+@keyframes plan-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.room-plan .plan-dimensions path {
+  fill: none;
+  stroke: var(--plan-line);
+  stroke-width: 0.8;
+}
+.room-plan .plan-measure,
+.room-plan .plan-caption {
+  font-family: var(--font-numeric);
+  font-size: 11px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  fill: var(--plan-ink);
+  letter-spacing: 0;
+}
+.room-plan .plan-measure {
+  paint-order: stroke;
+  stroke: var(--plan-paper);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+.room-plan .plan-caption {
+  fill: var(--plan-line);
+}
+.room-plan .plan-area {
+  fill: var(--plan-ink);
+  font-size: 15px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-plan * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

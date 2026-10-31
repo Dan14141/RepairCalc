@@ -1,11 +1,6 @@
-/* Hallmark · shape: app screen · genre: modern-minimal · theme: brand · redesign: restyle · copy: verbatim · v2.0.0 */
+/* Hallmark · shape: app screen · genre: modern-minimal · theme: brand · redesign: restyle · copy: edited · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, kept composition by request and improved reading and interaction */
 /* Semantic text colours meet AA contrast on the paper, white and sage surfaces. */
-:root {
-  --orange: #b95838;
-  --text-secondary: #5e6c54;
-  --text-accent: #935136;
-}
 .workspace p,
 .workspace small,
 .workspace .eyebrow,
@@ -104,7 +99,7 @@
 .product-calc-result small,
 .detail-demo {
   color: var(--text-secondary);
-  text-wrap: balance;
+  text-wrap: pretty;
   font-variant-numeric: tabular-nums;
 }
 .room-tab.active,
@@ -188,26 +183,26 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--space-md);
-    padding: var(--space-sm) 20px max(var(--space-sm), env(safe-area-inset-bottom));
+    padding: var(--space-sm) var(--space-20) max(var(--space-sm), env(safe-area-inset-bottom));
     border-top: 1px solid var(--legacy-mobile-budget-bar-edge);
     background: var(--legacy-mobile-budget-bar-surface);
-    backdrop-filter: blur(14px);
-    box-shadow: 0 -4px 25px var(--legacy-mobile-budget-bar-shadow);
+    backdrop-filter: none;
+    box-shadow: none;
   }
   .mobile-budget-bar small {
     display: block;
-    font-size: 12px;
+    font-size: var(--text-xs);
     color: var(--text-secondary);
     margin-bottom: var(--space-2xs);
   }
   .mobile-budget-bar strong {
-    font-family: var(--font-display);
+    font-family: var(--font-numeric);
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.6px;
   }
   .mobile-budget-bar .button {
-    font-size: 12px;
+    font-size: var(--text-xs);
     min-height: 43px;
     padding: var(--space-sm) var(--space-md);
   }

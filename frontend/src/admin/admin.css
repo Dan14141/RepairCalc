@@ -1,4 +1,4 @@
-/* Hallmark · shape: app screen · genre: modern-minimal · theme: brand · redesign: restyle · copy: verbatim · v2.0.0 */
+/* Hallmark · shape: app screen · genre: modern-minimal · theme: brand · redesign: restyle · copy: edited · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, kept composition by request and improved reading and interaction */
 /* Hallmark · answered F16 · base.css themes selection and scrollbar for every RepairCalc screen at runtime */
 @import "../tokens.css";
@@ -10,7 +10,7 @@
   display: grid;
   gap: var(--space-sm);
   max-width: 460px;
-  margin: 20px 0;
+  margin: var(--space-20) 0;
 }
 .rating-distribution > div {
   display: grid;
@@ -30,9 +30,9 @@
   display: flex;
   gap: var(--space-xs);
   padding: var(--space-2xs);
-  margin-bottom: 28px;
+  margin-bottom: var(--space-28);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   background: var(--legacy-admin-tabs-surface);
 }
 .admin-tabs > button {
@@ -42,15 +42,15 @@
   gap: var(--space-xs);
   min-height: 46px;
   padding: var(--space-sm) var(--space-lg);
-  border-radius: 8px;
+  border-radius: var(--radius-input);
   color: var(--legacy-rating-prompt-rating-prompt-status-ink);
-  font-size: 13px;
-  font-weight: 500;
+  font-size: var(--text-caption);
+  font-weight: 400;
 }
 .admin-tabs > button[aria-selected='true'] {
   background: var(--green);
   color: var(--legacy-mobile-close-hover-ink);
-  box-shadow: 0 2px 6px var(--legacy-admin-tabs-buttonaria-selectedtrue-shadow);
+  box-shadow: none;
 }
 .admin-tabs > button:hover:not([aria-selected='true']) {
   background: var(--legacy-admin-tabs-button-hover-surface);
@@ -61,7 +61,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
-  margin-bottom: 20px;
+  margin-bottom: var(--space-20);
 }
 .admin-section-heading h2 {
   font-size: 24px;
@@ -73,8 +73,8 @@
   text-wrap: balance;
 }
 .admin-metrics p {
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: var(--text-sm);
+  line-height: 1.6;
 }
 .admin-section-heading p {
   margin-top: var(--space-xs);
@@ -85,8 +85,8 @@
   gap: var(--space-sm);
   background: var(--legacy-admin-report-notice-surface);
   border: 1px solid var(--legacy-admin-tabs-button-hover-surface);
-  padding: var(--space-md) 20px;
-  border-radius: 10px;
+  padding: var(--space-md) var(--space-20);
+  border-radius: var(--radius-card);
   margin-bottom: var(--space-lg);
 }
 .admin-report-notice .ml-source {
@@ -96,10 +96,10 @@
 .admin-report-meta {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr 1fr;
-  gap: 20px;
+  gap: var(--space-20);
   margin: 0 0 var(--space-lg);
-  font-size: 12px;
-  line-height: 1.7;
+  font-size: var(--text-xs);
+  line-height: 1.6;
 }
 .admin-report-meta > div {
   min-width: 0;
@@ -111,7 +111,7 @@
 }
 .admin-report-meta dd {
   margin: 0;
-  font-weight: 500;
+  font-weight: 400;
 }
 .admin-metric-grid {
   display: grid;
@@ -120,16 +120,16 @@
   margin-bottom: var(--space-lg);
 }
 .admin-metric-card {
-  padding: 20px;
+  padding: var(--space-20);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   background: var(--legacy-mobile-close-hover-ink);
   min-width: 0;
 }
 .admin-metric-card h3 {
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.7;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  line-height: 1.6;
   text-wrap: balance;
 }
 .admin-metric-value {
@@ -138,7 +138,7 @@
   align-items: baseline;
   gap: var(--space-xs);
   font:
-    600 34px / 1.3 var(--font-display);
+    600 34px / 1.3 var(--font-numeric);
   letter-spacing: -1px;
   margin: var(--space-md) 0 var(--space-sm);
   font-variant-numeric: tabular-nums;
@@ -153,17 +153,17 @@
 }
 .admin-metric-goal {
   display: block;
-  font-size: 12px;
+  font-size: var(--text-xs);
   color: var(--legacy-admin-report-meta-dt-ink);
-  line-height: 1.8;
+  line-height: 1.6;
   margin-top: var(--space-sm);
 }
 .admin-status {
   display: inline-block;
-  font-size: 12px;
+  font-size: var(--text-xs);
   line-height: 1.5;
   padding: var(--space-2xs) var(--space-xs);
-  border-radius: 5px;
+  border-radius: var(--radius-input);
   background: var(--legacy-admin-status-surface);
   color: var(--legacy-admin-status-ink);
 }
@@ -182,12 +182,12 @@
 .admin-table-scroll {
   overflow-x: auto;
   border: 1px solid var(--line);
-  border-radius: 9px;
+  border-radius: var(--radius-card);
 }
 .admin-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: var(--text-xs);
   text-align: left;
 }
 .admin-table caption {
@@ -195,8 +195,8 @@
   padding: var(--space-sm) var(--space-md);
   color: var(--legacy-admin-report-meta-dt-ink);
   background: var(--legacy-admin-table-caption-surface);
-  font-size: 12px;
-  line-height: 1.7;
+  font-size: var(--text-xs);
+  line-height: 1.6;
 }
 .admin-table th,
 .admin-table td {
@@ -205,13 +205,13 @@
   line-height: 1.6;
 }
 .admin-table thead th {
-  font-weight: 500;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: var(--text-xs);
   color: var(--legacy-admin-report-meta-dt-ink);
   white-space: nowrap;
 }
 .admin-table tbody th {
-  font-weight: 500;
+  font-weight: 400;
   min-width: 165px;
 }
 .admin-table td {
@@ -219,13 +219,13 @@
   white-space: nowrap;
 }
 .admin-metrics .admin-method {
-  font-size: 12px;
+  font-size: var(--text-xs);
   margin-top: var(--space-md);
 }
 .admin-empty {
-  padding: 20px;
+  padding: var(--space-20);
   border: 1px dashed var(--legacy-admin-empty-edge);
-  border-radius: 8px;
+  border-radius: var(--radius-card);
 }
 .admin-secondary-metrics {
   display: grid;
@@ -237,15 +237,15 @@
 }
 .admin-methodology {
   margin-top: var(--space-lg);
-  font-size: 12px;
-  line-height: 1.8;
+  font-size: var(--text-xs);
+  line-height: 1.6;
 }
 .admin-methodology summary {
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 400;
 }
 .admin-methodology ul {
-  padding-left: 20px;
+  padding-left: var(--space-20);
   margin-bottom: 0;
   color: var(--legacy-admin-report-meta-dt-ink);
 }
@@ -268,7 +268,7 @@
     flex: 1;
     padding: var(--space-sm) var(--space-xs);
     gap: var(--space-xs);
-    font-size: 12px;
+    font-size: var(--text-xs);
   }
   .admin-tabs svg {
     width: 15px;
@@ -289,7 +289,7 @@
   }
   .admin-report-meta {
     gap: var(--space-md);
-    font-size: 12px;
+    font-size: var(--text-xs);
   }
   .admin-metric-grid,
   .admin-secondary-metrics {
@@ -299,14 +299,14 @@
     padding: var(--space-md);
   }
   .admin-metric-card h3 {
-    font-size: 12px;
+    font-size: var(--text-xs);
     text-wrap: balance;
   }
   .admin-metric-value {
     font-size: 29px;
   }
   .admin-metrics p {
-    font-size: 14px;
+    font-size: var(--text-sm);
   }
   .admin-report-section {
     padding: var(--space-md);

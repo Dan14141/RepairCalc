@@ -516,7 +516,7 @@ export default function App() {
                     Хороший ремонт
                     <br className="mobile-break" /> начинается с плана<span className="accent-dot">.</span>
                   </h1>
-                  <p>Расскажите о пространстве — мы поможем рассчитать всё остальное.</p>
+                  <p>Укажите размеры комнат, чтобы рассчитать материалы и стоимость ремонта.</p>
                 </div>
                 <span className="heading-mark" aria-hidden="true">
                   ⌘
@@ -548,7 +548,7 @@ export default function App() {
                   Все проекты <ArrowUpRight size={15} />
                 </button>
               </div>
-              <div className="steps" aria-label="Этапы расчёта">
+              <div className="steps" role="group" aria-label="Этапы расчёта">
                 {['Помещения', 'Материалы', 'Ваша смета'].map((title, i) => (
                   <button
                     key={title}
@@ -706,7 +706,7 @@ export default function App() {
                       </section>
                       <section className="conditions">
                         <div className="section-label">
-                          <h2>У каждого пространства свой характер</h2>
+                          <h2>Условия в комнате</h2>
                           <CircleHelp size={15} aria-label="Условия влияют на выбор материалов" />
                         </div>
                         <div className="condition-grid">
@@ -886,7 +886,7 @@ export default function App() {
                             <section key={category.id}>
                               <div className="estimate-category">
                                 <h3>
-                                  <span style={{ background: category.color }} />
+                                  <span style={{ background: `var(--color-chart-${category.id}, var(--color-chart-electric))` }} />
                                   {category.name}
                                 </h3>
                                 <strong>{money(category.total)}</strong>
@@ -959,7 +959,7 @@ export default function App() {
                           <span
                             key={c.id}
                             style={{
-                              background: c.color,
+                              background: `var(--color-chart-${c.id}, var(--color-chart-electric))`,
                               width: `${(c.total / calculation.materials) * 100}%`,
                             }}
                           />
@@ -969,7 +969,7 @@ export default function App() {
                       {calculation.categories.map((c) => (
                         <div key={c.id}>
                           <span>
-                            <i style={{ background: c.color }} />
+                            <i style={{ background: `var(--color-chart-${c.id}, var(--color-chart-electric))` }} />
                             {c.name}
                           </span>
                           <strong>{money(c.total)}</strong>
@@ -1030,7 +1030,7 @@ export default function App() {
                   <h1>
                     Ваши большие планы<span className="accent-dot">.</span>
                   </h1>
-                  <p>Каждому пространству — свой продуманный проект.</p>
+                  <p>Здесь хранятся комнаты, выбранные материалы и сметы ваших проектов.</p>
                 </div>
                 <button
                   className="button primary"
@@ -1138,7 +1138,7 @@ export default function App() {
                     <span>
                       <Plus size={26} />
                     </span>
-                    <h3>Здесь начинается что-то новое</h3>
+                    <h3>Ещё один проект</h3>
                     <p>
                       Квартира, дом или одна комната.
                       <br />
@@ -1172,7 +1172,7 @@ export default function App() {
                 <p>
                   {page === 'catalog'
                     ? 'Выбирайте фактуры, сравнивайте и рассчитывайте нужное количество.'
-                    : 'Сохранённые материалы для ваших будущих решений.'}
+                    : 'Сохранённые материалы: сравните цены и рассчитайте нужное количество.'}
                 </p>
               </section>
 
@@ -1351,7 +1351,7 @@ export default function App() {
       </div>
 
       {page === 'calculator' && !mobileMenu && (
-        <div className="mobile-budget-bar" aria-label="Бюджет проекта">
+        <div className="mobile-budget-bar" role="group" aria-label="Бюджет проекта">
           <div>
             <small>Ориентир по бюджету</small>
             <strong>{calculationRequest.data ? money(calculation.total) : '—'}</strong>
@@ -1433,12 +1433,12 @@ export default function App() {
             <span>Г</span>
             <div>
               <h3>Гость</h3>
-              <p>Ваше пространство для планов</p>
+              <p>Ваши проекты и выбранные материалы</p>
             </div>
           </div>
           <p className="modal-description">
             {settings.mode === 'mock'
-              ? 'Проекты и избранное сохраняются в локальной заглушке этого браузера.'
+              ? 'Проекты и избранное сохраняются в этом браузере.'
               : 'Проекты и избранное сохраняются на настроенном сервере.'}{' '}
             Для переноса сметы на другое устройство скачайте CSV.
           </p>
@@ -1473,7 +1473,7 @@ export default function App() {
         <Modal title="Удалить проект?" close={() => setDialog(null)}>
           <p className="modal-description">
             «{project.name}» и его помещения будут удалены{' '}
-            {settings.mode === 'mock' ? 'из локальной заглушки' : 'на сервере'}. Скачанные сметы сохранятся.
+            {settings.mode === 'mock' ? 'из этого браузера' : 'на сервере'}. Скачанные сметы сохранятся.
           </p>
           <div className="dialog-actions">
             <button className="button secondary" onClick={() => setDialog(null)}>
@@ -1668,10 +1668,10 @@ function NameDialog({
     <Modal
       title={
         kind === 'new-room'
-          ? 'Добавим новое пространство'
+          ? 'Добавить комнату'
           : kind === 'rename'
             ? 'Название вашего проекта'
-            : 'С чего начнём перемены?'
+            : 'Новый проект'
       }
       close={close}
     >

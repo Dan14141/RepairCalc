@@ -43,19 +43,19 @@ export function SmartAssistant({
           <br />
           есть объяснение<span className="accent-dot">.</span>
         </h1>
-        <p>Опишите пространство, проверьте детали и выберите материалы с понятным обоснованием.</p>
+        <p>Опишите комнату: размеры, влажность и пожелания к отделке.</p>
       </section>
       <div className="ml-journey">
         <span>
-          <b>01</b>Понять задачу
+          <b>01</b>Описание комнаты
         </span>
         <ArrowRight size={15} />
         <span>
-          <b>02</b>Предложить решение
+          <b>02</b>Подбор материалов
         </span>
         <ArrowRight size={15} />
         <span>
-          <b>03</b>Оставить выбор вам
+          <b>03</b>Ваш выбор
         </span>
       </div>
       <RoomBrief addRoom={addRoom} />
@@ -396,7 +396,7 @@ export function Recommendations({
           <Sparkles size={21} />
         </span>
         <div>
-          <h2>ML-подбор для вашего пространства</h2>
+          <h2>Материалы для вашей комнаты</h2>
           <p>Подходящие покрытия, причины выбора и честные ограничения.</p>
         </div>
         <SourceBadge />

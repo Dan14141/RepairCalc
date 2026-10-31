@@ -3,12 +3,12 @@
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: clip; }
 html { scrollbar-color: var(--color-input-edge) var(--color-paper); scroll-padding-top: var(--space-lg); }
-body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: var(--leading-body); font-variant-numeric: lining-nums tabular-nums; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); }
 ::selection { background: var(--color-paper-3); color: var(--color-ink); }
 :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
-h1, h2, h3 { font-family: var(--font-display); font-synthesis: none; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
-p { text-wrap: pretty; }
+h1, h2, h3 { font-family: var(--font-body); font-synthesis: none; overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+p { text-wrap: pretty; max-width: var(--measure-copy); }
 img, video { max-width: 100%; height: auto; }
 [hidden] { display: none !important; }
 button, input, select, textarea { font: inherit; }
