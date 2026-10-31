@@ -154,9 +154,6 @@ function WorkspaceBoundary({ children }: { children: ReactNode }) {
               <LoaderCircle className="spin" size={29} />
             )}
           </span>
-          <span className="ml-overline">
-            {settings.mode === 'mock' ? 'MOCK · ЛОКАЛЬНЫЕ ДАННЫЕ' : 'NOT MOCK · СЕРВЕРНЫЕ ДАННЫЕ'}
-          </span>
           <h1>
             {error
               ? 'Не удалось загрузить мастерскую'
@@ -164,6 +161,9 @@ function WorkspaceBoundary({ children }: { children: ReactNode }) {
                 ? 'Место для первого проекта'
                 : 'Открываем вашу мастерскую'}
           </h1>
+          <span className="ml-overline">
+            {settings.mode === 'mock' ? 'MOCK, локальные данные' : 'NOT MOCK, серверные данные'}
+          </span>
           <p>
             {error ||
               (data
@@ -435,8 +435,8 @@ function SettingsDialog({ close }: { close: () => void }) {
                   {item.method} {item.path}
                 </b>
                 <small>
-                  {item.source === 'mock' ? 'MOCK' : 'NOT MOCK'} · {item.time}
-                  {item.duration !== undefined ? ` · ${item.duration} мс` : ''}
+                  {item.source === 'mock' ? 'MOCK' : 'NOT MOCK'}, {item.time}
+                  {item.duration !== undefined ? `, ${item.duration} мс` : ''}
                 </small>
               </span>
               <em>

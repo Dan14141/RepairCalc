@@ -61,8 +61,8 @@ export function SmartAssistant({
       <RoomBrief addRoom={addRoom} />
       <section className="ml-project-context">
         <div>
-          <span className="ml-overline">ТЕКУЩИЙ ПРОЕКТ</span>
           <h2>{project.name}</h2>
+          <span className="ml-overline">Текущий проект</span>
         </div>
         <label>
           <span>Подобрать для</span>
@@ -314,7 +314,7 @@ export function RoomBrief({
               )}
               <div className="ml-review-footer">
                 <span>
-                  {number(review.length * review.width)} м² ·{' '}
+                  {number(review.length * review.width)} м²,{' '}
                   {roomTypes.find((t) => t.id === review.type)?.name}
                 </span>
                 <button
@@ -484,7 +484,7 @@ export function Recommendations({
                 <article className="ml-recommendation panel" key={group.category}>
                   <div className="ml-card-top">
                     <span className="ml-overline">
-                      {group.category === 'floor' ? 'ДЛЯ ПОЛА' : 'ДЛЯ СТЕН'}
+                      {group.category === 'floor' ? 'Для пола' : 'Для стен'}
                     </span>
                     <span className="ml-score">
                       <Sparkles size={12} />
@@ -555,7 +555,7 @@ export function Recommendations({
                             <div>
                               <strong>{alternative.name}</strong>
                               <small>
-                                {money(candidate.total)} · {Math.round(candidate.score * 100)}%
+                                {money(candidate.total)}, {Math.round(candidate.score * 100)}%
                               </small>
                             </div>
                             <button

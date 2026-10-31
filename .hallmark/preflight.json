@@ -1,0 +1,31 @@
+{
+  "scanned": "2026-10-31",
+  "mode": "redesign",
+  "depth": "restyle",
+  "scope": "app",
+  "findings": {
+    "fonts": "Golos Text / Manrope Variable, frontend/src/main.tsx:3",
+    "palette": "Green #293b32, accent #b95838, frontend/src/styles.css:16 / theme.css:2",
+    "framework": "React 19 and Vite 7, frontend/package.json:1",
+    "screens": [
+      "/",
+      "#catalog",
+      "#assistant",
+      "#projects",
+      "#favorites",
+      "#guide",
+      "#admin/matching",
+      "#admin/metrics"
+    ]
+  },
+  "preserve": [
+    "All screen layout and source wiring",
+    "Existing content and sample data",
+    "Pre-existing removal of room Tip in App.tsx"
+  ],
+  "introduce": [
+    "Design tokens",
+    "Unified spacing and typography",
+    "Focus, disabled and error treatments"
+  ]
+}

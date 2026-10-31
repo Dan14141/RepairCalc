@@ -1,0 +1,11 @@
+shots/
+before/
+before.json
+before.txt
+compare.html
+scaffold/
+*.mjs
+legacy-token-map.json
+static.json
+after.json
+review-details/

@@ -79,7 +79,7 @@ export function SuccessMetrics() {
             <div>
               <dt>Размеченный сабсет</dt>
               <dd>
-                {report.dataset} · {format(report.labeledProducts, 0)} товаров
+                {report.dataset}, {format(report.labeledProducts, 0)} товаров
               </dd>
             </div>
             <div>
@@ -114,7 +114,7 @@ export function SuccessMetrics() {
               unit="сек в среднем"
             >
               <p>
-                P95: {format(report.estimates.p95Seconds)} сек · {format(report.estimates.completed, 0)}{' '}
+                P95: {format(report.estimates.p95Seconds)} сек, {format(report.estimates.completed, 0)}{' '}
                 успешных расчётов.
               </p>
               <span className="admin-metric-goal">Цель: сокращать время</span>
@@ -125,7 +125,7 @@ export function SuccessMetrics() {
               unit="в среднем"
             >
               <p>
-                От выбора комнаты до готовой корзины · {format(report.journey.completed, 0)} завершённых
+                От выбора комнаты до готовой корзины, {format(report.journey.completed, 0)} завершённых
                 сценариев.
               </p>
               <span className="admin-metric-goal">Цель: сокращать число кликов</span>
@@ -153,7 +153,11 @@ export function SuccessMetrics() {
                       <th scope="col">Precision</th>
                       <th scope="col">Recall</th>
                       <th scope="col">F1</th>
-                      <th scope="col">TP / FP / FN</th>
+                      <th scope="col">
+                        <abbr title="Истинноположительные">TP</abbr> /{' '}
+                        <abbr title="Ложноположительные">FP</abbr> /{' '}
+                        <abbr title="Ложноотрицательные">FN</abbr>
+                      </th>
                       <th scope="col">Цель MVP</th>
                     </tr>
                   </thead>

@@ -1,43 +1,46 @@
+/* Hallmark · shape: app screen · genre: modern-minimal · theme: brand · redesign: restyle · copy: verbatim · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, kept composition by request and improved reading and interaction */
 .rating-prompt {
   position: fixed;
   right: 22px;
   bottom: 22px;
   z-index: 25;
   width: 268px;
-  max-width: calc(100vw - 28px);
-  padding: 12px 14px;
-  border: 1px solid var(--line);
+  max-width: calc(100% - 28px);
+  padding: var(--space-sm) var(--space-md);
+  border: 0;
   border-radius: 14px;
-  background: #fdfdf8;
+  background: var(--legacy-rating-prompt-surface);
   color: var(--ink);
-  box-shadow: 0 8px 30px #293b3226;
+  box-shadow: 0 8px 30px var(--legacy-rating-prompt-shadow);
 }
 .rating-prompt-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: var(--space-xs);
 }
 .rating-prompt-heading h2 {
   font-size: 16px;
   font-weight: 600;
+  text-wrap: balance;
 }
 .rating-prompt-heading .icon-button {
   width: 32px;
   height: 32px;
 }
 .rating-prompt .rating-stars {
-  gap: 3px;
+  gap: var(--space-2xs);
 }
 .rating-prompt .rating-prompt-status,
 .rating-prompt .rating-prompt-error p {
-  margin: 4px 0 0;
-  color: #526249;
-  font-size: 11px;
+  margin: var(--space-2xs) 0 0;
+  color: var(--legacy-rating-prompt-rating-prompt-status-ink);
+  font-size: 12px;
   line-height: 1.6;
 }
 .rating-prompt-error .text-button {
-  margin-top: 6px;
+  margin-top: var(--space-xs);
   font-size: 12px;
 }
 body:has(.rating-prompt) .test-mode-fab {
@@ -51,10 +54,10 @@ body:has([role='dialog'], .sidebar.is-open) .rating-prompt {
   .rating-prompt {
     right: 14px;
     bottom: calc(88px + env(safe-area-inset-bottom));
-    max-width: calc(100vw - 80px);
+    max-width: calc(100% - 80px);
   }
   .rating-prompt .rating-stars {
-    gap: 2px;
+    gap: var(--space-3xs);
   }
   .rating-prompt .rating-stars button {
     width: 40px;
@@ -66,7 +69,7 @@ body:has([role='dialog'], .sidebar.is-open) .rating-prompt {
     bottom: calc(88px + env(safe-area-inset-bottom));
     width: 42px;
     height: 42px;
-    padding: 10px;
+    padding: var(--space-sm);
   }
   body:has(.rating-prompt) .test-mode-fab > span {
     display: none;

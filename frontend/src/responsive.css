@@ -1,3 +1,5 @@
+/* Hallmark · shape: app screen · genre: modern-minimal · theme: brand · redesign: restyle · copy: verbatim · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, kept composition by request and improved reading and interaction */
 @media (min-width: 1600px) {
   .sidebar {
     width: 252px;
@@ -5,32 +7,33 @@
     padding-right: 20px;
   }
   .workspace {
-    margin-left: 252px;
+    margin-left: var(--legacy-workspace-offset-wide);
   }
   main {
-    padding: 40px 48px 0;
+    padding: var(--space-xl) 48px 0;
   }
   .topbar {
     padding: 0 48px;
   }
   .page-heading h1 {
     font-size: 43px;
+    text-wrap: balance;
   }
   .calculator-layout {
     grid-template-columns: minmax(0, 1fr) 355px;
-    gap: 30px;
+    gap: 32px;
   }
   .room-editor-body {
-    padding: 24px;
+    padding: var(--space-lg);
   }
   .room-fields {
-    padding-right: 30px;
+    padding-right: 32px;
   }
   .room-plan {
     max-height: 310px;
   }
   .dimension-grid {
-    gap: 22px 15px;
+    gap: var(--space-lg) var(--space-md);
   }
   .inspiration-card {
     height: 248px;
@@ -39,10 +42,10 @@
     width: 256px;
   }
   .budget-card {
-    padding: 23px;
+    padding: var(--space-lg);
   }
   .budget-lines > div {
-    font-size: 11px;
+    font-size: 12px;
   }
   .nav-item {
     font-size: 13px;
@@ -54,13 +57,13 @@
 @media (max-width: 1250px) {
   .sidebar {
     width: 205px;
-    padding: 27px 12px 18px;
+    padding: 28px var(--space-sm) 20px;
   }
   .workspace {
-    margin-left: 205px;
+    margin-left: var(--legacy-workspace-offset-medium);
   }
   .logo-button {
-    padding: 0 8px;
+    padding: 0 var(--space-xs);
   }
   .logo > span {
     font-size: 25px;
@@ -69,60 +72,61 @@
     width: 30px;
   }
   .logo small {
-    font-size: 5px;
+    font-size: 12px;
   }
   .nav-item {
-    font-size: 11px;
-    padding: 0 11px;
-    gap: 10px;
+    font-size: 12px;
+    padding: 0 var(--space-sm);
+    gap: var(--space-sm);
   }
   .workspace-label {
-    padding-left: 11px;
+    padding-left: var(--space-sm);
   }
   .topbar {
-    padding: 0 26px;
+    padding: 0 28px;
   }
   main {
-    padding: 27px 26px 0;
+    padding: 28px 28px 0;
   }
   .page-heading h1 {
     font-size: 32px;
+    text-wrap: balance;
   }
   .page-heading p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .calculator-layout {
     grid-template-columns: minmax(0, 1fr) 285px;
     gap: 20px;
   }
   .project-options {
-    gap: 12px;
+    gap: var(--space-sm);
   }
   .project-options select {
     min-width: 94px;
   }
   .project-options label > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .segmented button {
-    font-size: 9px;
+    font-size: 12px;
   }
   .option-divider {
     display: none;
   }
   .room-tab {
-    padding: 12px 10px;
+    padding: var(--space-sm) var(--space-sm);
     min-width: 101px;
-    gap: 7px;
+    gap: var(--space-xs);
   }
   .room-tab strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   .room-tab svg {
     width: 18px;
   }
   .room-tab small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .add-room {
     min-width: 49px;
@@ -132,20 +136,20 @@
   }
   .room-editor-body {
     grid-template-columns: 46% 54%;
-    padding: 16px 14px;
+    padding: var(--space-md) var(--space-md);
   }
   .room-fields {
-    padding-right: 13px;
+    padding-right: var(--space-sm);
   }
   .dimension-grid {
-    gap: 15px 8px;
+    gap: var(--space-md) var(--space-xs);
   }
   .dimension-field > span,
   .area-readout > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .plan-label {
-    font-size: 6px;
+    font-size: 12px;
   }
   .room-plan {
     max-height: 280px;
@@ -154,78 +158,81 @@
     display: none;
   }
   .room-metrics > span {
-    gap: 5px;
+    gap: var(--space-2xs);
   }
   .room-metrics > span + span {
-    padding-left: 13px;
+    padding-left: var(--space-sm);
   }
   .condition-grid {
     grid-template-columns: 1fr;
   }
   .condition {
-    padding: 13px;
+    padding: var(--space-sm);
   }
   .condition > .toggle-row {
-    gap: 13px;
+    gap: var(--space-sm);
   }
   .condition > .toggle-row strong {
     font-size: 12px;
   }
   .condition > .toggle-row small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .budget-card {
-    padding: 18px 16px;
+    padding: 20px var(--space-md);
   }
   .budget-heading h2 {
     font-size: 13px;
+    text-wrap: balance;
   }
   .budget-total {
     font-size: 35px;
+    font-variant-numeric: tabular-nums;
   }
   .budget-lines > div {
-    font-size: 9px;
+    font-size: 12px;
   }
   .budget-lines strong {
-    font-size: 10px;
+    font-size: 12px;
   }
   .reserve-row,
   .budget-controls > .toggle-row strong {
-    font-size: 10px;
+    font-size: 12px;
   }
   .summary-cta {
-    font-size: 11px;
+    font-size: 12px;
   }
   .inspiration-card h2 {
     font-size: 21px;
+    text-wrap: balance;
   }
   .inspiration-card > .room-scene {
     width: 211px;
   }
   .inspiration-caption {
-    font-size: 7px;
+    font-size: 12px;
   }
   .project-toolbar {
-    padding-top: 10px;
+    padding-top: var(--space-sm);
   }
   .steps {
-    margin: 22px 0;
+    margin: var(--space-lg) 0;
   }
   .step > span:nth-child(2) {
     font-size: 12px;
   }
   .step small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .step-chevron {
-    margin-right: 12px;
+    margin-right: var(--space-sm);
   }
   .footer-demo {
     display: none;
   }
   .product-grid,
   .projects-grid {
-    gap: 15px;
+    gap: var(--space-md);
   }
   .product-card-image .product-visual {
     height: 180px;
@@ -237,36 +244,37 @@
     height: 190px;
   }
   .project-card-body {
-    padding: 16px 13px;
+    padding: var(--space-md) var(--space-sm);
   }
   .project-card-body > h2 {
     font-size: 15px;
+    text-wrap: balance;
   }
   .project-card-body > small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .project-card-body strong {
     font-size: 18px;
   }
   .page-heading-row .button {
-    font-size: 11px;
+    font-size: 12px;
     white-space: nowrap;
   }
   .preset-grid {
-    gap: 7px;
+    gap: var(--space-xs);
   }
   .preset {
-    padding: 14px 9px;
+    padding: var(--space-md) var(--space-xs);
   }
   .preset strong {
-    font-size: 10px;
+    font-size: 12px;
   }
   .preset small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .selected-material {
-    gap: 12px;
-    padding: 11px;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
   }
   .selected-material > .product-visual {
     width: 88px;
@@ -277,19 +285,20 @@
   }
   .selected-material-bottom strong small {
     display: block;
-    margin: 4px 0 0;
+    margin: var(--space-2xs) 0 0;
   }
   .material-tags {
-    gap: 5px;
+    gap: var(--space-2xs);
   }
   .material-tags > span {
-    font-size: 8px;
+    font-size: 12px;
   }
   .guide-banner {
-    padding: 25px;
+    padding: var(--space-lg);
   }
   .guide-banner h2 {
     font-size: 29px;
+    text-wrap: balance;
   }
   .toast {
     left: calc(50% + 102px);
@@ -298,11 +307,11 @@
 @media (max-width: 1050px) {
   .sidebar {
     width: 190px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
   }
   .workspace {
-    margin-left: 190px;
+    margin-left: var(--legacy-workspace-offset-compact);
   }
   .logo > span {
     font-size: 23px;
@@ -311,47 +320,49 @@
     width: 28px;
   }
   .nav-item {
-    font-size: 10px;
-    gap: 8px;
+    font-size: 12px;
+    gap: var(--space-xs);
   }
   .sidebar-note {
-    padding: 14px 12px;
+    padding: var(--space-md) var(--space-sm);
   }
   .sidebar-note h3 {
     font-size: 15px;
+    text-wrap: balance;
   }
   .sidebar-note p {
-    font-size: 10px;
+    font-size: 14px;
   }
   .sidebar-note button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .workspace-label {
-    font-size: 8px;
+    font-size: 12px;
   }
   .topbar {
-    padding: 0 22px;
+    padding: 0 var(--space-lg);
   }
   main {
-    padding: 25px 22px 0;
+    padding: var(--space-lg) var(--space-lg) 0;
   }
   .page-heading h1 {
     font-size: 29px;
+    text-wrap: balance;
   }
   .calculator-layout {
     grid-template-columns: minmax(0, 1fr) 270px;
-    gap: 17px;
+    gap: var(--space-md);
   }
   .project-options {
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 22px;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
   }
   .project-options > label:first-child {
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 15px;
+    gap: var(--space-md);
   }
   .project-options > label:first-child > span {
     margin: 0;
@@ -363,53 +374,54 @@
     flex-basis: 100%;
   }
   .segmented button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .room-editor-body {
     grid-template-columns: 1fr;
-    padding: 17px;
+    padding: var(--space-md);
   }
   .room-fields {
     padding-right: 0;
   }
   .dimension-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
+    gap: var(--space-xs);
   }
   .dimension-field > span,
   .area-readout > span {
-    font-size: 9px;
+    font-size: 12px;
   }
   .input-unit input {
     font-size: 12px;
-    padding-left: 8px;
+    padding-left: var(--space-xs);
   }
   .input-unit > span {
-    padding-right: 7px;
-    font-size: 10px;
+    padding-right: var(--space-xs);
+    font-size: 12px;
   }
   .area-readout strong {
     font-size: 23px;
+    font-variant-numeric: tabular-nums;
   }
   .openings {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     padding-top: 0;
-    margin-top: 16px;
+    margin-top: var(--space-md);
   }
   .counter-row {
     flex: 1;
-    font-size: 11px;
-    gap: 7px;
+    font-size: 12px;
+    gap: var(--space-xs);
   }
   .counter button {
     width: 23px;
   }
   .field-note {
-    margin: 10px 0 15px;
+    margin: var(--space-sm) 0 var(--space-md);
     line-height: 1.7;
-    font-size: 9px;
+    font-size: 12px;
   }
   .field-note br {
     display: none;
@@ -421,16 +433,16 @@
     max-height: 250px;
   }
   .plan-label {
-    font-size: 8px;
+    font-size: 12px;
   }
   .room-metrics {
-    font-size: 9px;
+    font-size: 12px;
   }
   .room-metrics b {
-    font-size: 10px;
+    font-size: 12px;
   }
   .room-tabs {
-    gap: 6px;
+    gap: var(--space-xs);
   }
   .room-tab {
     min-width: 99px;
@@ -438,13 +450,14 @@
   .section-label {
     align-items: baseline;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: var(--space-xs);
   }
   .section-label h2 {
     font-size: 14px;
+    text-wrap: balance;
   }
   .section-label > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .conditions .section-label {
     flex-wrap: nowrap;
@@ -452,37 +465,38 @@
   }
   .conditions .section-label h2 {
     font-size: 12px;
+    text-wrap: balance;
   }
   .step small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .step > span:nth-child(2) {
-    font-size: 11px;
+    font-size: 12px;
   }
   .step {
-    gap: 8px;
+    gap: var(--space-xs);
   }
   .step-number {
     width: 30px;
     height: 30px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .step-chevron {
-    margin-right: 5px;
+    margin-right: var(--space-2xs);
     width: 13px;
   }
   .breadcrumb {
-    font-size: 10px;
-    gap: 9px;
+    font-size: 12px;
+    gap: var(--space-xs);
   }
   .breadcrumb button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .region-button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .topbar-actions {
-    gap: 12px;
+    gap: var(--space-sm);
   }
   .product-grid,
   .projects-grid {
@@ -503,21 +517,21 @@
   .preset {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
   }
   .preset > svg:first-child {
     margin: 0;
     width: 18px;
   }
   .preset strong {
-    font-size: 11px;
+    font-size: 12px;
     margin: 0;
   }
   .preset small {
     margin-left: auto;
     padding-right: 20px;
-    font-size: 9px;
+    font-size: 12px;
   }
   .preset > svg:last-child {
     top: 13px;
@@ -534,58 +548,60 @@
     font-size: 12px;
   }
   .selected-material-info > span {
-    font-size: 9px;
+    font-size: 12px;
   }
   .selected-material-bottom {
     align-items: center;
   }
   .selected-material-bottom .text-button {
-    font-size: 10px;
-    gap: 3px;
+    font-size: 12px;
+    gap: var(--space-2xs);
   }
   .estimate-actions > span {
     width: 100%;
-    margin: 5px 0;
+    margin: var(--space-2xs) 0;
   }
   .estimate-row {
-    gap: 9px;
-    padding: 12px 10px;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-sm);
   }
   .estimate-row > .product-visual {
     width: 34px;
     height: 41px;
   }
   .estimate-row button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .estimate-row > strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   .estimate-category {
-    padding: 13px 10px;
+    padding: var(--space-sm) var(--space-sm);
   }
   .estimate-category h3 {
-    font-size: 11px;
+    font-size: 12px;
+    text-wrap: balance;
   }
   .estimate-category > strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   .table-head {
-    padding: 12px 10px;
-    font-size: 8px;
+    padding: var(--space-sm) var(--space-sm);
+    font-size: 12px;
   }
   .guide-banner > .room-scene {
     width: 40%;
-    margin-right: -30px;
+    margin-right: -32px;
   }
   .guide-banner h2 {
     font-size: 25px;
+    text-wrap: balance;
   }
   .guide-banner p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .guide-banner .eyebrow {
-    font-size: 8px;
+    font-size: 12px;
   }
   .page-heading-row {
     align-items: flex-start;
@@ -593,6 +609,7 @@
   }
   .page-heading-row h1 {
     font-size: 30px;
+    text-wrap: balance;
   }
   .toast {
     left: calc(50% + 95px);
@@ -602,7 +619,7 @@
   .sidebar {
     transform: translateX(-100%);
     width: 230px;
-    padding: 30px 16px 20px;
+    padding: 32px var(--space-md) 20px;
     transition: transform 0.25s ease;
   }
   .sidebar.is-open {
@@ -612,7 +629,7 @@
     display: block;
     position: fixed;
     inset: 0;
-    background: #20331d66;
+    background: var(--legacy-sidebar-scrim-surface);
     backdrop-filter: blur(2px);
     z-index: 35;
   }
@@ -626,60 +643,62 @@
     width: 35px;
   }
   .sidebar .logo small {
-    font-size: 6px;
+    font-size: 12px;
   }
   .nav-item {
     font-size: 12px;
-    gap: 12px;
-    padding: 0 14px;
+    gap: var(--space-sm);
+    padding: 0 var(--space-md);
   }
   .workspace-label {
-    font-size: 9px;
+    font-size: 12px;
   }
   .sidebar-note h3 {
     font-size: 16px;
+    text-wrap: balance;
   }
   .sidebar-note p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .sidebar-note button {
-    font-size: 11px;
+    font-size: 12px;
   }
   .mobile-menu {
     display: flex;
-    margin-right: 5px;
+    margin-right: var(--space-2xs);
   }
   .breadcrumb > .mobile-menu {
-    padding: 6px;
+    padding: var(--space-xs);
   }
   .topbar {
     height: 65px;
-    padding: 0 25px;
+    padding: 0 var(--space-lg);
   }
   .topbar-actions {
-    gap: 15px;
+    gap: var(--space-md);
   }
   .region-button {
-    font-size: 11px;
+    font-size: 12px;
   }
   main {
-    padding: 28px 25px 0;
+    padding: 28px var(--space-lg) 0;
   }
   .page-heading h1 {
     font-size: 33px;
+    text-wrap: balance;
   }
   .calculator-layout {
     grid-template-columns: minmax(0, 1fr) 285px;
-    gap: 22px;
+    gap: var(--space-lg);
   }
   .project-options label > span {
-    font-size: 11px;
+    font-size: 12px;
   }
   .project-toolbar {
-    padding: 10px 0 20px;
+    padding: var(--space-sm) 0 20px;
   }
   .sidebar-bottom {
-    padding-top: 30px;
+    padding-top: 32px;
   }
   .toast {
     left: 50%;
@@ -696,28 +715,29 @@
   }
   .page-heading-row h1 {
     font-size: 28px;
+    text-wrap: balance;
   }
 }
 @media (max-width: 700px) {
   .topbar {
-    padding: 0 18px;
+    padding: 0 20px;
   }
   .breadcrumb > button:not(.mobile-menu),
   .breadcrumb > svg {
     display: none;
   }
   .breadcrumb > span {
-    font-size: 11px;
+    font-size: 12px;
   }
   .topbar-actions {
-    gap: 10px;
+    gap: var(--space-sm);
   }
   .topbar-divider {
     display: none;
   }
   .region-button {
-    font-size: 10px;
-    gap: 4px;
+    font-size: 12px;
+    gap: var(--space-2xs);
   }
   .profile-button > svg {
     display: none;
@@ -728,30 +748,32 @@
   }
   .calculator-layout {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: var(--space-lg);
   }
   .summary-column {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: var(--space-md);
   }
   .inspiration-card {
     display: none;
   }
   .budget-card {
-    padding: 22px;
+    padding: var(--space-lg);
   }
   .budget-heading {
     justify-content: space-between;
   }
   .budget-heading h2 {
     font-size: 16px;
+    text-wrap: balance;
   }
   .live-badge {
-    font-size: 9px;
+    font-size: 12px;
   }
   .budget-total {
     font-size: 42px;
+    font-variant-numeric: tabular-nums;
   }
   .budget-subtitle {
     font-size: 12px;
@@ -770,10 +792,10 @@
     font-size: 13px;
   }
   .budget-disclaimer {
-    font-size: 10px;
+    font-size: 12px;
   }
   .summary-assurance {
-    font-size: 10px;
+    font-size: 12px;
   }
   .page-heading {
     margin-bottom: 20px;
@@ -783,33 +805,34 @@
     line-height: 1.3;
     letter-spacing: -1px;
     max-width: 540px;
+    text-wrap: balance;
   }
   .page-heading p {
-    font-size: 12px;
+    font-size: 14px;
     max-width: 400px;
   }
   .project-toolbar > .text-button {
-    font-size: 10px;
+    font-size: 12px;
     white-space: nowrap;
   }
   .project-title button {
     font-size: 12px;
   }
   .project-title small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .project-icon {
     height: 33px;
     width: 33px;
   }
   .steps {
-    margin: 24px 0 26px;
+    margin: var(--space-lg) 0 28px;
     justify-content: space-between;
   }
   .step {
     flex: 0 1 auto;
     padding: 0;
-    gap: 8px;
+    gap: var(--space-xs);
   }
   .step-chevron {
     display: none;
@@ -818,7 +841,7 @@
     font-size: 12px;
   }
   .step small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .step-number {
     width: 33px;
@@ -826,15 +849,15 @@
   }
   .project-options {
     flex-wrap: nowrap;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
   }
   .project-options > label:first-child {
     display: block;
     width: auto;
   }
   .project-options > label:first-child > span {
-    margin-bottom: 10px;
+    margin-bottom: var(--space-sm);
   }
   .repair-option {
     flex-basis: auto;
@@ -843,11 +866,11 @@
     height: 35px;
   }
   .segmented button {
-    font-size: 10px;
-    padding: 8px;
+    font-size: 12px;
+    padding: var(--space-xs);
   }
   .room-tabs {
-    gap: 8px;
+    gap: var(--space-xs);
   }
   .room-tab {
     min-width: 115px;
@@ -856,43 +879,43 @@
     font-size: 12px;
   }
   .room-tab small {
-    font-size: 11px;
+    font-size: 12px;
   }
   .add-room {
     min-width: 48px;
   }
   .room-editor-body {
     grid-template-columns: 43% 57%;
-    padding: 19px 17px;
+    padding: 20px var(--space-md);
   }
   .room-fields {
-    padding-right: 18px;
+    padding-right: 20px;
   }
   .dimension-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 18px 10px;
+    gap: 20px var(--space-sm);
   }
   .dimension-field > span,
   .area-readout > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .input-unit input {
     font-size: 14px;
   }
   .openings {
     display: block;
-    padding-top: 6px;
+    padding-top: var(--space-xs);
   }
   .counter-row {
     font-size: 12px;
-    margin-top: 10px;
+    margin-top: var(--space-sm);
   }
   .counter button {
     width: 27px;
   }
   .field-note {
-    font-size: 9px;
-    margin-top: 14px;
+    font-size: 12px;
+    margin-top: var(--space-md);
     margin-bottom: 0;
   }
   .plan-wrap {
@@ -902,43 +925,45 @@
     max-height: 280px;
   }
   .room-metrics {
-    font-size: 11px;
+    font-size: 12px;
   }
   .room-metrics b {
     font-size: 12px;
   }
   .room-metrics > span + span {
-    padding-left: 15px;
+    padding-left: var(--space-md);
   }
   .section-label h2 {
     font-size: 15px;
+    text-wrap: balance;
   }
   .section-label > span {
-    font-size: 11px;
+    font-size: 12px;
   }
   .conditions .section-label h2 {
     font-size: 14px;
+    text-wrap: balance;
   }
   .condition-grid {
     grid-template-columns: 1fr 1fr;
   }
   .condition {
-    padding: 14px 10px;
+    padding: var(--space-md) var(--space-sm);
   }
   .condition > .toggle-row strong {
-    font-size: 10px;
+    font-size: 12px;
   }
   .condition > .toggle-row small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .condition > .toggle-row {
-    gap: 5px;
+    gap: var(--space-2xs);
   }
   .tip strong {
     font-size: 12px;
   }
   .tip p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .footer {
   margin: 0;              /* без зазора, иначе в нём может просвечивать другой фон */
@@ -948,26 +973,26 @@
   box-shadow: none;
 }
   .footer > button {
-    font-size: 9px;
+    font-size: 12px;
   }
   .preset-grid {
     grid-template-columns: repeat(3, 1fr);
   }
   .preset {
     display: block;
-    padding: 15px 10px;
+    padding: var(--space-md) var(--space-sm);
   }
   .preset > svg:first-child {
-    margin-bottom: 11px;
+    margin-bottom: var(--space-sm);
     width: 21px;
   }
   .preset strong {
-    font-size: 11px;
-    margin-bottom: 7px;
+    font-size: 12px;
+    margin-bottom: var(--space-xs);
   }
   .preset small {
     padding: 0;
-    font-size: 9px;
+    font-size: 12px;
   }
   .preset > svg:last-child {
     right: 9px;
@@ -980,28 +1005,28 @@
     font-size: 14px;
   }
   .selected-material-info > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .selected-material-bottom > strong {
     font-size: 17px;
   }
   .selected-material-bottom strong small {
     display: inline;
-    margin-left: 5px;
+    margin-left: var(--space-2xs);
   }
   .selected-material-bottom .text-button {
     font-size: 12px;
   }
   .material-tags > span {
-    font-size: 9px;
+    font-size: 12px;
   }
   .selected-material {
-    padding: 15px;
-    gap: 18px;
+    padding: var(--space-md);
+    gap: 20px;
   }
   .estimate-row {
-    padding: 15px;
-    gap: 13px;
+    padding: var(--space-md);
+    gap: var(--space-sm);
   }
   .estimate-row > .product-visual {
     width: 43px;
@@ -1014,24 +1039,25 @@
     font-size: 13px;
   }
   .estimate-category {
-    padding: 15px;
+    padding: var(--space-md);
   }
   .estimate-category h3,
   .estimate-category > strong {
     font-size: 13px;
+    text-wrap: balance;
   }
   .table-head {
-    padding: 14px 15px;
-    font-size: 9px;
+    padding: var(--space-md) var(--space-md);
+    font-size: 12px;
   }
   .estimate-actions > span {
     width: auto;
     margin-left: auto;
-    font-size: 9px;
+    font-size: 12px;
   }
   .product-grid,
   .projects-grid {
-    gap: 15px;
+    gap: var(--space-md);
   }
   .product-card-image .product-visual {
     height: 195px;
@@ -1042,48 +1068,49 @@
   }
   .page-heading-row h1 {
     font-size: 32px;
+    text-wrap: balance;
   }
   .page-tools {
-    gap: 15px;
-    margin-top: 22px;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
   }
   .page-tools > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .search-box {
     width: 300px;
   }
   .sort-select {
-    gap: 4px;
+    gap: var(--space-2xs);
   }
   .sort-select select {
-    font-size: 10px;
+    font-size: 12px;
   }
   .sort-select svg {
     display: none;
   }
   .filter-chips {
-    gap: 7px;
+    gap: var(--space-xs);
   }
   .filter-chips > button {
-    font-size: 10px;
-    padding: 9px 11px;
+    font-size: 12px;
+    padding: var(--space-xs) var(--space-sm);
   }
   .filter-chips > span {
-    font-size: 10px;
+    font-size: 12px;
     width: 100%;
-    margin-top: 8px;
+    margin-top: var(--space-xs);
   }
   .catalog-notice {
-    font-size: 10px;
+    font-size: 12px;
     align-items: flex-start;
-    gap: 9px;
+    gap: var(--space-xs);
   }
   .demo-tag {
-    font-size: 8px;
+    font-size: 12px;
   }
   .guide-banner {
-    padding: 26px;
+    padding: 28px;
     position: relative;
     min-height: 250px;
   }
@@ -1100,39 +1127,43 @@
   }
   .guide-banner h2 {
     font-size: 30px;
+    text-wrap: balance;
   }
   .guide-banner p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .guide-banner .eyebrow {
-    font-size: 8px;
+    font-size: 12px;
   }
   .guide-item > button {
-    gap: 17px;
-    padding: 22px 2px;
+    gap: var(--space-md);
+    padding: var(--space-lg) var(--space-3xs);
   }
   .guide-item h2 {
     font-size: 16px;
+    text-wrap: balance;
   }
   .guide-content {
-    padding-left: 43px;
-    padding-right: 10px;
+    padding-left: 44px;
+    padding-right: var(--space-sm);
   }
   .guide-content p {
-    font-size: 13px;
+    font-size: 14px;
   }
   .guide-number {
     font-size: 23px;
+    font-variant-numeric: tabular-nums;
   }
   .modal-backdrop {
     padding: 20px;
   }
   .modal {
     max-height: calc(100dvh - 40px);
-    padding: 23px;
+    padding: var(--space-lg);
   }
   .modal-heading h2 {
     font-size: 20px;
+    text-wrap: balance;
   }
   .product-detail {
     gap: 20px;
@@ -1142,18 +1173,21 @@
   }
   .product-detail h2 {
     font-size: 21px;
+    text-wrap: balance;
   }
   .product-calculator {
-    padding: 14px;
+    padding: var(--space-md);
   }
   .product-calc-result b {
     font-size: 19px;
+    font-variant-numeric: tabular-nums;
   }
   .product-calc-result strong {
     font-size: 14px;
+    font-variant-numeric: tabular-nums;
   }
   .replacement-grid {
-    gap: 10px;
+    gap: var(--space-sm);
   }
   .replacement-option > .product-visual {
     height: 130px;
@@ -1161,62 +1195,63 @@
 }
 @media (max-width: 480px) {
   main {
-    padding: 23px 17px 0;
+    padding: var(--space-lg) var(--space-md) 0;
   }
   .topbar {
-    padding: 0 12px;
+    padding: 0 var(--space-sm);
     height: 61px;
   }
   .breadcrumb {
-    gap: 5px;
+    gap: var(--space-2xs);
   }
   .breadcrumb > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .region-button {
-    font-size: 9px;
-    gap: 3px;
+    font-size: 12px;
+    gap: var(--space-2xs);
     max-width: 140px;
   }
   .region-button > svg {
     width: 12px;
   }
   .topbar-actions {
-    gap: 7px;
+    gap: var(--space-xs);
   }
   .mobile-menu {
     margin-right: 0;
   }
   .page-heading .eyebrow {
-    font-size: 8px;
-    letter-spacing: 1.3px;
+    font-size: 12px;
+    letter-spacing: 0;
   }
   .page-heading h1 {
     font-size: 29px;
     letter-spacing: -1px;
-    margin-top: 13px;
+    margin-top: var(--space-sm);
     max-width: 365px;
+    text-wrap: balance;
   }
   .page-heading p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.8;
     max-width: 320px;
-    margin-top: 12px;
+    margin-top: var(--space-sm);
   }
   .project-toolbar {
-    gap: 9px;
-    padding: 8px 0 19px;
+    gap: var(--space-xs);
+    padding: var(--space-xs) 0 20px;
   }
   .project-title {
-    gap: 9px;
+    gap: var(--space-xs);
   }
   .project-title button {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.6;
-    gap: 7px;
+    gap: var(--space-xs);
   }
   .project-title small {
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.5;
   }
   .project-icon {
@@ -1227,21 +1262,21 @@
     width: 16px;
   }
   .project-toolbar > .text-button {
-    font-size: 9px;
-    gap: 3px;
+    font-size: 12px;
+    gap: var(--space-2xs);
   }
   .project-toolbar > .text-button > svg {
     width: 12px;
   }
   .steps {
-    margin: 23px 0;
-    gap: 14px;
+    margin: var(--space-lg) 0;
+    gap: var(--space-md);
   }
   .step {
-    gap: 7px;
+    gap: var(--space-xs);
   }
   .step > span:nth-child(2) {
-    font-size: 10px;
+    font-size: 12px;
   }
   .step small {
     display: none;
@@ -1249,22 +1284,22 @@
   .step-number {
     width: 28px;
     height: 28px;
-    font-size: 9px;
+    font-size: 12px;
   }
   .project-options {
     flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
   }
   .project-options > label:first-child {
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 15px;
+    gap: var(--space-md);
   }
   .project-options > label:first-child > span {
     margin: 0;
-    font-size: 11px;
+    font-size: 12px;
   }
   .project-options select {
     height: 33px;
@@ -1275,38 +1310,39 @@
     flex-basis: 100%;
   }
   .project-options label > span {
-    font-size: 11px;
-    margin-bottom: 8px;
+    font-size: 12px;
+    margin-bottom: var(--space-xs);
   }
   .segmented button {
-    font-size: 10px;
-    padding: 9px 6px;
+    font-size: 12px;
+    padding: var(--space-xs) var(--space-xs);
   }
   .section-label {
-    margin-bottom: 13px;
+    margin-bottom: var(--space-sm);
   }
   .section-label h2 {
     font-size: 14px;
+    text-wrap: balance;
   }
   .section-label > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .room-tabs {
-    margin-bottom: 14px;
-    gap: 7px;
+    margin-bottom: var(--space-md);
+    gap: var(--space-xs);
   }
   .room-tab {
     min-width: 111px;
     min-height: 66px;
-    padding: 11px 9px;
-    gap: 8px;
+    padding: var(--space-sm) var(--space-xs);
+    gap: var(--space-xs);
     flex: 0 0 auto;
   }
   .room-tab strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   .room-tab small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .room-tab svg {
     width: 18px;
@@ -1316,27 +1352,28 @@
     flex-shrink: 0;
   }
   .panel-heading {
-    padding: 15px;
+    padding: var(--space-md);
   }
   .panel-heading h2 {
     font-size: 15px;
+    text-wrap: balance;
   }
   .room-editor-body {
     display: flex;
     flex-direction: column;
-    padding: 17px 15px;
+    padding: var(--space-md) var(--space-md);
   }
   .room-fields {
     padding: 0;
   }
   .dimension-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
+    gap: var(--space-xs);
   }
   .dimension-field > span,
   .area-readout > span {
-    font-size: 9px;
-    margin-bottom: 8px;
+    font-size: 12px;
+    margin-bottom: var(--space-xs);
     white-space: normal;
     min-height: 22px;
     line-height: 1.5;
@@ -1349,30 +1386,32 @@
   }
   .input-unit input {
     font-size: 13px;
-    padding-left: 9px;
+    padding-left: var(--space-xs);
   }
   .input-unit > span {
-    font-size: 10px;
-    padding-right: 8px;
+    font-size: 12px;
+    padding-right: var(--space-xs);
   }
   .area-readout strong {
     font-size: 24px;
     line-height: 39px;
+    font-variant-numeric: tabular-nums;
   }
   .area-readout strong small {
-    font-size: 10px;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
   }
   .openings {
     display: flex;
     gap: 20px;
     justify-content: space-between;
-    margin-top: 17px;
-    padding-top: 3px;
+    margin-top: var(--space-md);
+    padding-top: var(--space-2xs);
   }
   .counter-row {
-    margin-top: 10px;
-    font-size: 11px;
-    gap: 8px;
+    margin-top: var(--space-sm);
+    font-size: 12px;
+    gap: var(--space-xs);
   }
   .counter button {
     width: 24px;
@@ -1382,13 +1421,13 @@
     height: 29px;
   }
   .counter > span {
-    font-size: 11px;
+    font-size: 12px;
     width: 20px;
   }
   .field-note {
-    font-size: 9px;
+    font-size: 12px;
     line-height: 1.7;
-    margin: 13px 0 18px;
+    margin: var(--space-sm) 0 20px;
   }
   .field-note br {
     display: none;
@@ -1401,51 +1440,52 @@
     max-height: 265px;
   }
   .plan-label {
-    font-size: 8px;
+    font-size: 12px;
   }
   .plan-footnote {
-    font-size: 8px;
+    font-size: 12px;
   }
   .room-metrics {
-    padding: 14px 10px;
-    font-size: 9px;
-    gap: 8px;
+    padding: var(--space-md) var(--space-sm);
+    font-size: 12px;
+    gap: var(--space-xs);
     justify-content: space-between;
   }
   .room-metrics b {
-    font-size: 10px;
+    font-size: 12px;
   }
   .room-metrics > span {
-    gap: 4px;
+    gap: var(--space-2xs);
   }
   .room-metrics > span + span {
-    padding-left: 10px;
+    padding-left: var(--space-sm);
   }
   .conditions {
-    margin-top: 23px;
+    margin-top: var(--space-lg);
   }
   .conditions .section-label h2 {
     font-size: 12px;
     line-height: 1.6;
+    text-wrap: balance;
   }
   .condition-grid {
     grid-template-columns: 1fr;
-    gap: 9px;
+    gap: var(--space-xs);
   }
   .condition {
-    padding: 15px 13px;
-    gap: 12px;
+    padding: var(--space-md) var(--space-sm);
+    gap: var(--space-sm);
   }
   .condition > .toggle-row strong {
     font-size: 12px;
   }
   .condition > .toggle-row small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .toggle {
     height: 20px;
     width: 35px;
-    padding: 2px;
+    padding: var(--space-3xs);
   }
   .toggle > span {
     height: 14px;
@@ -1455,30 +1495,32 @@
     transform: translateX(15px);
   }
   .tip {
-    padding: 15px 12px;
-    gap: 9px;
+    padding: var(--space-md) var(--space-sm);
+    gap: var(--space-xs);
   }
   .tip strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   .tip p {
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.85;
   }
   .budget-card {
-    padding: 21px 18px;
+    padding: 20px 20px;
   }
   .budget-heading h2 {
     font-size: 15px;
+    text-wrap: balance;
   }
   .live-badge {
-    font-size: 8px;
+    font-size: 12px;
   }
   .budget-total {
     font-size: 41px;
+    font-variant-numeric: tabular-nums;
   }
   .budget-lines > div {
-    font-size: 11px;
+    font-size: 12px;
   }
   .budget-lines strong {
     font-size: 12px;
@@ -1500,87 +1542,89 @@
   }
   .footer {
     flex-wrap: wrap;
-    gap: 6px;
-    font-size: 8px;
+    gap: var(--space-xs);
+    font-size: 12px;
   }
   .footer > button {
-    font-size: 9px;
+    font-size: 12px;
   }
   .preset-grid {
-    gap: 7px;
+    gap: var(--space-xs);
   }
   .preset {
-    padding: 14px 9px;
+    padding: var(--space-md) var(--space-xs);
     min-height: 119px;
   }
   .preset strong {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.6;
   }
   .preset small {
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.8;
   }
   .preset > svg:last-child {
     width: 12px;
   }
   .selected-material {
-    padding: 12px;
-    gap: 13px;
+    padding: var(--space-sm);
+    gap: var(--space-sm);
   }
   .selected-material > .product-visual {
     width: 76px;
     min-height: 150px;
   }
   .selected-material-info > .eyebrow {
-    font-size: 7px;
-    letter-spacing: 0.7px;
+    font-size: 12px;
+    letter-spacing: 0;
   }
   .selected-material-info > .product-name-button {
     font-size: 12px;
   }
   .selected-material-info > span {
-    font-size: 9px;
+    font-size: 12px;
   }
   .selected-material-bottom {
-    gap: 5px;
+    gap: var(--space-2xs);
     flex-wrap: wrap;
-    margin-top: 11px;
-    padding-top: 9px;
+    margin-top: var(--space-sm);
+    padding-top: var(--space-xs);
   }
   .selected-material-bottom > strong {
     font-size: 15px;
   }
   .selected-material-bottom strong small {
-    font-size: 9px;
-    margin-left: 4px;
+    font-size: 12px;
+    margin-left: var(--space-2xs);
   }
   .selected-material-bottom .text-button {
-    font-size: 10px;
-    gap: 4px;
+    font-size: 12px;
+    gap: var(--space-2xs);
   }
   .material-tags {
-    margin-top: 8px;
-    gap: 5px;
+    margin-top: var(--space-xs);
+    gap: var(--space-2xs);
   }
   .material-tags > span {
-    font-size: 8px;
+    font-size: 12px;
   }
   .included {
-    padding: 15px 12px;
-    gap: 10px;
+    padding: var(--space-md) var(--space-sm);
+    gap: var(--space-sm);
   }
   .included p {
-    font-size: 10px;
+    font-size: 14px;
   }
   .included h3 {
     font-size: 12px;
+    text-wrap: balance;
   }
   .estimate-intro h2 {
     font-size: 20px;
+    text-wrap: balance;
   }
   .estimate-intro p {
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.7;
   }
   .estimate-check {
@@ -1588,59 +1632,61 @@
     width: 39px;
   }
   .estimate-actions {
-    gap: 8px;
+    gap: var(--space-xs);
   }
   .estimate-actions .button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .estimate-actions > span {
     width: 100%;
-    margin: 4px 0 0;
+    margin: var(--space-2xs) 0 0;
   }
   .estimate-row {
-    padding: 12px 10px;
-    gap: 8px;
+    padding: var(--space-sm) var(--space-sm);
+    gap: var(--space-xs);
   }
   .estimate-row > .product-visual {
     width: 34px;
     height: 42px;
   }
   .estimate-row button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .estimate-row small {
-    font-size: 8px;
+    font-size: 12px;
   }
   .estimate-row > div > span {
-    font-size: 9px;
+    font-size: 12px;
   }
   .estimate-row > strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   .estimate-category {
-    padding: 13px 11px;
+    padding: var(--space-sm) var(--space-sm);
   }
   .estimate-category h3,
   .estimate-category > strong {
-    font-size: 11px;
+    font-size: 12px;
+    text-wrap: balance;
   }
   .table-head {
-    padding: 13px 11px;
-    font-size: 8px;
+    padding: var(--space-sm) var(--space-sm);
+    font-size: 12px;
   }
   .page-heading-row h1 {
     font-size: 29px;
+    text-wrap: balance;
   }
   .page-heading-row {
-    gap: 18px;
+    gap: 20px;
   }
   .page-heading-row .button {
     font-size: 12px;
   }
   .page-tools {
     flex-wrap: wrap;
-    gap: 12px;
-    margin: 23px 0 19px;
+    gap: var(--space-sm);
+    margin: var(--space-lg) 0 20px;
   }
   .search-box {
     width: 100%;
@@ -1650,63 +1696,66 @@
     font-size: 12px;
   }
   .page-tools > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .sort-select {
     margin-left: auto;
   }
   .sort-select select {
-    font-size: 11px;
+    font-size: 12px;
   }
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    gap: var(--space-sm);
   }
   .product-card-image .product-visual {
     height: 151px;
   }
   .product-card-info {
-    padding: 13px 11px;
+    padding: var(--space-sm) var(--space-sm);
   }
   .product-brand {
-    font-size: 7px;
-    letter-spacing: 0.2px;
-    margin-bottom: 8px;
+    font-size: 12px;
+    letter-spacing: 0;
+    margin-bottom: var(--space-xs);
     align-items: flex-start;
-    gap: 5px;
+    gap: var(--space-2xs);
     line-height: 1.5;
   }
   .product-brand > span:first-child {
     max-width: 75px;
   }
   .product-brand > span:last-child {
-    font-size: 8px;
+    font-size: 12px;
   }
   .product-brand svg {
     width: 10px;
   }
   .product-card-info > .product-name-button {
-    font-size: 11px;
+    font-size: 12px;
     min-height: 40px;
   }
   .product-card-info > p {
-    font-size: 9px;
+    font-size: 14px;
     line-height: 1.6;
   }
   .product-price {
-    padding-top: 10px;
-    margin-top: 12px;
+    padding-top: var(--space-sm);
+    margin-top: var(--space-sm);
     align-items: center;
-    gap: 4px;
+    gap: var(--space-2xs);
+    font-variant-numeric: tabular-nums;
   }
   .product-price strong {
     font-size: 17px;
     white-space: nowrap;
+    font-variant-numeric: tabular-nums;
   }
   .product-price strong small {
     display: block;
-    font-size: 8px;
-    margin-top: 3px;
+    font-size: 12px;
+    margin-top: var(--space-2xs);
+    font-variant-numeric: tabular-nums;
   }
   .product-calc-button {
     width: 28px;
@@ -1726,34 +1775,34 @@
     width: 15px;
   }
   .wet-badge {
-    font-size: 7px;
+    font-size: 12px;
     bottom: 8px;
     left: 8px;
-    padding: 4px 5px;
-    gap: 3px;
+    padding: var(--space-2xs) var(--space-2xs);
+    gap: var(--space-2xs);
   }
   .wet-badge > svg {
     width: 10px;
   }
   .filter-chips {
-    gap: 6px;
+    gap: var(--space-xs);
   }
   .filter-chips > button {
-    font-size: 9px;
-    padding: 8px 10px;
+    font-size: 12px;
+    padding: var(--space-xs) var(--space-sm);
   }
   .filter-chips > span {
-    font-size: 10px;
+    font-size: 12px;
   }
   .catalog-notice {
     flex-direction: column;
-    gap: 7px;
-    font-size: 10px;
-    padding: 12px;
+    gap: var(--space-xs);
+    font-size: 12px;
+    padding: var(--space-sm);
   }
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 19px;
+    gap: 20px;
   }
   .project-card-art {
     height: 230px;
@@ -1762,16 +1811,17 @@
     height: 247px;
   }
   .project-card-body {
-    padding: 19px;
+    padding: 20px;
   }
   .project-card-body > small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .project-card-body > h2 {
     font-size: 18px;
+    text-wrap: balance;
   }
   .project-card-body > p {
-    font-size: 11px;
+    font-size: 14px;
   }
   .project-card-body strong {
     font-size: 24px;
@@ -1781,15 +1831,16 @@
     padding: 28px 20px;
   }
   .guide-banner {
-    padding: 24px 20px;
+    padding: var(--space-lg) 20px;
     min-height: 320px;
-    margin-top: 22px;
+    margin-top: var(--space-lg);
   }
   .guide-banner h2 {
     font-size: 29px;
+    text-wrap: balance;
   }
   .guide-banner p {
-    font-size: 11px;
+    font-size: 14px;
     max-width: 190px;
   }
   .guide-banner p br {
@@ -1805,143 +1856,151 @@
     align-self: flex-start;
   }
   .guide-banner .eyebrow {
-    font-size: 7px;
+    font-size: 12px;
     max-width: 240px;
     line-height: 1.8;
   }
   .guide-item > button {
-    gap: 13px;
+    gap: var(--space-sm);
     align-items: flex-start;
-    padding: 22px 0;
+    padding: var(--space-lg) 0;
   }
   .guide-number {
     font-size: 23px;
-    margin-top: 3px;
+    margin-top: var(--space-2xs);
+    font-variant-numeric: tabular-nums;
   }
   .guide-item h2 {
     font-size: 15px;
     line-height: 1.65;
-    margin-top: 6px;
+    margin-top: var(--space-xs);
+    text-wrap: balance;
   }
   .guide-item small {
-    font-size: 9px;
+    font-size: 12px;
     line-height: 1.6;
   }
   .guide-item small > span {
     display: block;
     margin-left: 0;
-    font-size: 8px;
+    font-size: 12px;
   }
   .guide-plus {
     height: 29px;
     width: 29px;
     flex-shrink: 0;
-    margin-top: 5px;
+    margin-top: var(--space-2xs);
   }
   .guide-plus svg {
     width: 16px;
   }
   .guide-content {
-    padding: 0 0 22px 39px;
+    padding: 0 0 var(--space-lg) var(--space-xl);
   }
   .guide-content p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.95;
   }
   .modal-backdrop {
-    padding: 12px;
+    padding: var(--space-sm);
     align-items: center;
   }
   .modal {
-    padding: 21px 18px;
+    padding: 20px 20px;
     border-radius: 12px;
     max-height: calc(100dvh - 24px);
   }
   .modal-heading {
-    margin-bottom: 17px;
-    gap: 12px;
+    margin-bottom: var(--space-md);
+    gap: var(--space-sm);
   }
   .modal-heading h2 {
     font-size: 20px;
     line-height: 1.5;
+    text-wrap: balance;
   }
   .modal-description {
     font-size: 12px;
     line-height: 1.8;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
   .room-type-grid {
-    gap: 8px;
-    margin: 18px 0 23px;
+    gap: var(--space-xs);
+    margin: 20px 0 var(--space-lg);
   }
   .room-type-grid > button {
-    padding: 16px 7px;
-    font-size: 10px;
+    padding: var(--space-md) var(--space-xs);
+    font-size: 12px;
   }
   .dialog-actions {
-    gap: 8px;
+    gap: var(--space-xs);
     justify-content: space-between;
   }
   .dialog-actions .button {
-    padding: 11px 13px;
-    font-size: 11px;
+    padding: var(--space-sm) var(--space-sm);
+    font-size: 12px;
   }
   .form-field > input {
     font-size: 14px;
   }
   .product-detail {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: var(--space-md);
   }
   .product-detail .large {
     height: 210px;
   }
   .detail-favorite {
-    font-size: 11px;
-    padding: 12px;
+    font-size: 12px;
+    padding: var(--space-sm);
   }
   .product-detail h2 {
     font-size: 25px;
-    margin-top: 10px;
+    margin-top: var(--space-sm);
+    text-wrap: balance;
   }
   .product-description {
     font-size: 12px;
   }
   .product-detail .eyebrow {
-    font-size: 9px;
+    font-size: 12px;
   }
   .product-calculator {
-    padding: 18px;
+    padding: 20px;
   }
   .product-calculator .dimension-field > span {
     min-height: 0;
-    font-size: 11px;
+    font-size: 12px;
   }
   .product-calculator h3 {
     font-size: 14px;
+    text-wrap: balance;
   }
   .product-calculator .toggle-row strong {
     font-size: 12px;
   }
   .product-calc-result b {
     font-size: 26px;
+    font-variant-numeric: tabular-nums;
   }
   .product-calc-result strong {
     font-size: 19px;
+    font-variant-numeric: tabular-nums;
   }
   .product-calc-result small {
-    font-size: 10px;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
   }
   .product-detail .button.primary {
     font-size: 12px;
-    padding: 13px 10px;
+    padding: var(--space-sm) var(--space-sm);
   }
   .product-detail .modal-note {
-    font-size: 11px;
+    font-size: 12px;
   }
   .replacement-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 11px;
+    gap: var(--space-sm);
   }
   .replacement-option > .product-visual {
     height: 135px;
@@ -1953,28 +2012,29 @@
     font-size: 13px;
   }
   .replacement-option > small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .toast {
-    width: calc(100vw - 28px);
+    width: calc(100% - 28px);
     max-width: 450px;
     bottom: 17px;
-    font-size: 11px;
-    padding: 12px;
-    gap: 9px;
+    font-size: 12px;
+    padding: var(--space-sm);
+    gap: var(--space-xs);
   }
   .toast > .icon-button {
     margin-left: auto;
     flex-shrink: 0;
   }
   .empty-state {
-    padding: 50px 12px;
+    padding: 52px var(--space-sm);
   }
   .empty-state h2 {
     font-size: 22px;
+    text-wrap: balance;
   }
   .empty-state p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .pack-label b {
     font-size: 9px;
@@ -2009,74 +2069,76 @@
 }
 @media (max-width: 360px) {
   main {
-    padding-left: 13px;
-    padding-right: 13px;
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
   }
   .page-heading h1 {
     font-size: 27px;
+    text-wrap: balance;
   }
   .region-button {
     max-width: 125px;
-    font-size: 8px;
+    font-size: 12px;
   }
   .profile-button {
     display: none;
   }
   .project-toolbar > .text-button {
-    font-size: 8px;
+    font-size: 12px;
   }
   .project-title button {
-    font-size: 10px;
+    font-size: 12px;
   }
   .project-title small {
-    font-size: 7px;
+    font-size: 12px;
   }
   .step {
-    gap: 5px;
+    gap: var(--space-2xs);
   }
   .step-number {
     width: 25px;
     height: 25px;
   }
   .step > span:nth-child(2) {
-    font-size: 9px;
+    font-size: 12px;
   }
   .dimension-grid {
-    gap: 6px;
+    gap: var(--space-xs);
   }
   .dimension-field > span,
   .area-readout > span {
-    font-size: 8px;
+    font-size: 12px;
   }
   .room-metrics {
-    font-size: 8px;
+    font-size: 12px;
   }
   .room-metrics b {
-    font-size: 9px;
+    font-size: 12px;
   }
   .room-metrics > span + span {
-    padding-left: 7px;
+    padding-left: var(--space-xs);
   }
   .condition > .toggle-row strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   .budget-lines > div {
-    font-size: 10px;
+    font-size: 12px;
   }
   .budget-lines strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   .product-card-info {
-    padding: 11px 9px;
+    padding: var(--space-sm) var(--space-xs);
   }
   .product-price strong {
     font-size: 15px;
+    font-variant-numeric: tabular-nums;
   }
   .product-card-image .product-visual {
     height: 138px;
   }
   .room-type-grid {
-    gap: 6px;
+    gap: var(--space-xs);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2094,8 +2156,8 @@
     margin: 14mm;
   }
   body {
-    background: white;
-    color: #222;
+    background: var(--legacy-mobile-close-hover-ink);
+    color: var(--legacy-body-ink);
   }
   .sidebar,
   .topbar,
@@ -2127,7 +2189,7 @@
     max-width: none;
   }
   .project-toolbar {
-    padding: 0 0 16px;
+    padding: 0 0 var(--space-md);
     margin-bottom: 20px;
   }
   .project-title small {
@@ -2143,41 +2205,41 @@
     width: 100%;
   }
   .estimate-table {
-    border-color: #ddd;
+    border-color: var(--legacy-estimate-table-edge);
   }
   .estimate-category {
     break-after: avoid;
-    background: #f5f5f2 !important;
+    background: var(--legacy-estimate-category-surface-soft) !important;
     print-color-adjust: exact;
   }
   .estimate-row {
     break-inside: avoid;
-    padding: 9px 12px;
+    padding: var(--space-xs) var(--space-sm);
   }
   .estimate-row > .product-visual {
     display: none;
   }
   .estimate-row button {
-    font-size: 11px;
+    font-size: 12px;
   }
   .estimate-row small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .estimate-row > strong {
-    font-size: 11px;
+    font-size: 12px;
   }
   .estimate-intro {
     margin-top: 0;
   }
   .summary-column {
     display: block;
-    margin-top: 24px;
+    margin-top: var(--space-lg);
     break-inside: avoid;
   }
   .budget-card {
     max-width: 100%;
-    padding: 18px;
-    border: 1px solid #ddd;
+    padding: 20px;
+    border: 1px solid var(--legacy-estimate-table-edge);
     break-inside: avoid;
   }
   .budget-heading .live-badge {
@@ -2191,10 +2253,11 @@
   }
   .budget-total {
     font-size: 30px;
+    font-variant-numeric: tabular-nums;
   }
   .budget-disclaimer {
     text-align: left;
-    font-size: 10px;
+    font-size: 12px;
     margin-left: 0;
   }
   .product-visual {
@@ -2204,13 +2267,14 @@
     font-size: 19px;
   }
   .estimate-actions + * {
-    margin-top: 10px;
+    margin-top: var(--space-sm);
   }
   button {
     color: inherit;
   }
   h2,
   h3 {
-    color: #222;
+    color: var(--legacy-body-ink);
+    text-wrap: balance;
   }
 }

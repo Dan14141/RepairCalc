@@ -175,10 +175,10 @@ export function MatchingStudio() {
                 checked={rows.length > 0 && rows.every((p) => selected.includes(p.id))}
                 onChange={(e) => setSelected(e.target.checked ? rows.map((p) => p.id) : [])}
               />
-              <span>МАТЕРИАЛ</span>
+              <span>Материал</span>
             </label>
-            <span>ПРЕДЛОЖЕННЫЕ ПРИВЯЗКИ</span>
-            <span>ПРОВЕРКА</span>
+            <span>Предложенные привязки</span>
+            <span>Проверка</span>
           </div>
           {rows.map((product) => {
             const assignment = assignments.find((a) => a.productId === product.id);
@@ -217,7 +217,7 @@ export function MatchingStudio() {
                       <p>
                         {assignment.rooms
                           .map((room) => roomTypes.find((r) => r.id === room)?.name)
-                          .join(' · ')}
+                          .join(', ')}
                       </p>
                     </>
                   ) : (
@@ -341,7 +341,7 @@ function AssignmentDialog({
       <div className="ml-assignment-reason">
         <Sparkles size={18} />
         <div>
-          <strong>Обоснование предложения · {Math.round(assignment.score * 100)}%</strong>
+          <strong>Обоснование предложения, {Math.round(assignment.score * 100)}%</strong>
           <p>{assignment.explanation}</p>
         </div>
       </div>

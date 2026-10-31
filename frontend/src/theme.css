@@ -1,3 +1,5 @@
+/* Hallmark · shape: app screen · genre: modern-minimal · theme: brand · redesign: restyle · copy: verbatim · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, kept composition by request and improved reading and interaction */
 /* Semantic text colours meet AA contrast on the paper, white and sage surfaces. */
 :root {
   --orange: #b95838;
@@ -19,7 +21,6 @@
 .project-options label > span,
 .segmented button,
 .section-label > span,
-.section-label h2 > span,
 .room-tab,
 .room-tab small,
 .add-room,
@@ -103,6 +104,8 @@
 .product-calc-result small,
 .detail-demo {
   color: var(--text-secondary);
+  text-wrap: balance;
+  font-variant-numeric: tabular-nums;
 }
 .room-tab.active,
 .room-tab.active small,
@@ -113,19 +116,19 @@
 }
 .product-brand > span:last-child,
 .rating {
-  color: #836529;
+  color: var(--legacy-product-brand-span-last-child-ink-soft);
 }
 .step.active .step-number {
   background: var(--orange);
   border-color: var(--orange);
-  color: white;
+  color: var(--legacy-mobile-close-hover-ink);
 }
 .step.complete .step-number {
-  color: #536543;
+  color: var(--legacy-stepcomplete-step-number-ink-soft);
 }
 .partner,
 .partner small {
-  color: #a4b29b;
+  color: var(--legacy-partner-ink-soft);
 }
 .sidebar > .mobile-close {
   display: none;
@@ -133,8 +136,8 @@
 .room-tabs-row {
   display: flex;
   align-items: stretch;
-  gap: 8px;
-  margin-bottom: 15px;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
 }
 .room-tabs-row > .room-tabs {
   flex: 1;
@@ -142,7 +145,7 @@
   margin-bottom: 0;
 }
 .room-tabs-row > .add-room {
-  margin: 1px 1px 4px 0;
+  margin: 1px 1px var(--space-2xs) 0;
 }
 @media (max-width: 900px) {
   .sidebar > .mobile-close {
@@ -151,7 +154,7 @@
 }
 @media (max-width: 480px) {
   .room-tabs-row {
-    gap: 7px;
+    gap: var(--space-xs);
   }
   .room-editor .dimension-field > span,
   .room-editor .area-readout > span {
@@ -175,7 +178,7 @@
 }
 @media (max-width: 700px) {
   .app[data-page='calculator'] .workspace {
-    padding-bottom: 78px;
+    padding-bottom: 80px;
   }
   .mobile-budget-bar {
     position: fixed;
@@ -184,21 +187,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    padding: 13px 20px max(13px, env(safe-area-inset-bottom));
-    border-top: 1px solid #dce2d2;
-    background: #fbfcf7f5;
+    gap: var(--space-md);
+    padding: var(--space-sm) 20px max(var(--space-sm), env(safe-area-inset-bottom));
+    border-top: 1px solid var(--legacy-mobile-budget-bar-edge);
+    background: var(--legacy-mobile-budget-bar-surface);
     backdrop-filter: blur(14px);
-    box-shadow: 0 -4px 25px #35472d08;
+    box-shadow: 0 -4px 25px var(--legacy-mobile-budget-bar-shadow);
   }
   .mobile-budget-bar small {
     display: block;
-    font-size: 9px;
+    font-size: 12px;
     color: var(--text-secondary);
-    margin-bottom: 4px;
+    margin-bottom: var(--space-2xs);
   }
   .mobile-budget-bar strong {
-    font-family: 'Manrope Variable', sans-serif;
+    font-family: var(--font-display);
     font-size: 22px;
     font-weight: 600;
     letter-spacing: -0.6px;
@@ -206,7 +209,7 @@
   .mobile-budget-bar .button {
     font-size: 12px;
     min-height: 43px;
-    padding: 11px 15px;
+    padding: var(--space-sm) var(--space-md);
   }
   .app[data-page='calculator'] .toast {
     bottom: 93px;

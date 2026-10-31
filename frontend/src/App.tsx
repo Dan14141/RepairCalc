@@ -401,7 +401,7 @@ export default function App() {
         >
           <Logo />
         </button>
-        <div className="workspace-label">ВАША МАСТЕРСКАЯ</div>
+        <div className="workspace-label">Ваша мастерская</div>
         <nav aria-label="Основная навигация">
           {navItems
             .filter((item) => item.id !== 'admin')
@@ -425,7 +425,7 @@ export default function App() {
           <span>Полезные советы</span>
           <ArrowUpRight size={15} />
         </button>
-        <div className="workspace-label admin-nav-label">ДЛЯ ПЕРСОНАЛА</div>
+        <div className="workspace-label admin-nav-label">Для персонала</div>
         <nav aria-label="Ресурсы персонала">
           <button
             className={`nav-item ${page === 'admin' ? 'active' : ''}`}
@@ -438,7 +438,7 @@ export default function App() {
         </nav>
         <div className="sidebar-bottom">
           <div className="sidebar-note">
-            <span className="tiny-stars">✳</span>
+            <Sparkles className="tiny-stars" size={24} aria-hidden="true" />
             <h3>
               Большие перемены.
               <br />
@@ -532,9 +532,6 @@ export default function App() {
             <>
               <section className="page-heading">
                 <div>
-                  <div className="eyebrow1">
-                    <span />
-                  </div>
                   <h1>
                     Хороший ремонт
                     <br className="mobile-break" /> начинается с плана<span className="accent-dot">.</span>
@@ -552,7 +549,7 @@ export default function App() {
                   </span>
                   <div>
                     <button onClick={() => setDialog('rename')}>
-                      {project.name}
+                      <span className="project-name">{project.name}</span>
                       <Pencil size={13} />
                     </button>
                     <small>
@@ -703,7 +700,7 @@ export default function App() {
                           </div>
                           <div className="plan-wrap">
                             <span className="plan-label">
-                              <span /> ПЛАН ПОМЕЩЕНИЯ
+                              План помещения
                             </span>
                             <button
                               className="icon-button expand-plan"
@@ -753,11 +750,6 @@ export default function App() {
                           </div>
                         </div>
                       </section>
-                      <Tip title={room.wet ? 'Влага под контролем' : 'Подбираем с заботой о вашем доме'}>
-                        {room.wet
-                          ? 'Для этой комнаты выбраны влагостойкие покрытия и цементная штукатурка.'
-                          : 'Учтём особенности комнаты, расход материалов и небольшой запас на подрезку.'}
-                      </Tip>
                     </>
                   )}
                   {step === 1 && (
@@ -815,8 +807,8 @@ export default function App() {
                             <div className="selected-material panel" key={category}>
                               <ProductVisual product={p} />
                               <div className="selected-material-info">
-                                <small className="eyebrow">
-                                  {category === 'floor' ? 'НАПОЛЬНОЕ ПОКРЫТИЕ' : 'ОТДЕЛКА СТЕН'}
+                                <small className="product-category">
+                                  {category === 'floor' ? 'Напольное покрытие' : 'Отделка стен'}
                                 </small>
                                 <button
                                   className="product-name-button"
@@ -825,7 +817,7 @@ export default function App() {
                                   {p.name}
                                 </button>
                                 <span>
-                                  {p.brand} · {number(p.coverage)} м² / {p.unit}
+                                  {p.brand}, {number(p.coverage)} м² / {p.unit}
                                 </span>
                                 <div className="material-tags">
                                   <span>
@@ -880,7 +872,7 @@ export default function App() {
                         <div>
                           <h2>Ваш ремонт в цифрах</h2>
                           <p>
-                            {roomCount(project.rooms.length)} · {number(calculation.totalArea)} м² ·{' '}
+                            {roomCount(project.rooms.length)}, {number(calculation.totalArea)} м²,{' '}
                             {project.repair.toLowerCase()} ремонт
                           </p>
                         </div>
@@ -892,21 +884,21 @@ export default function App() {
                           disabled={!calculationRequest.data}
                           onClick={exportCsv}
                         >
-                          <ArrowDownToLine size={16} /> Скачать CSV
+                          <ArrowDownToLine size={16} /> Скачать <abbr title="Таблица в формате CSV">CSV</abbr>
                         </button>
                         <button
                           className="button secondary"
                           disabled={!calculationRequest.data}
                           onClick={() => window.print()}
                         >
-                          <Printer size={16} /> Печать / PDF
+                          <Printer size={16} /> Печать / <abbr title="Документ в формате PDF">PDF</abbr>
                         </button>
-                        <span>Запас {project.reserve}% включён</span>
+                        <p>Запас {project.reserve}% включён</p>
                       </div>
                       <div className="estimate-table panel">
                         <div className="table-head">
-                          <span>МАТЕРИАЛ / КОЛИЧЕСТВО</span>
-                          <span>СТОИМОСТЬ</span>
+                          <span>Материал / количество</span>
+                          <span>Стоимость</span>
                         </div>
                         {calculation.categories
                           .filter((c) => c.total > 0)
@@ -973,7 +965,7 @@ export default function App() {
                       {calculationRequest.data ? money(calculation.total) : '—'}
                     </div>
                     <p className="budget-subtitle">
-                      На {roomCount(project.rooms.length)} · {number(calculation.totalArea)} м²
+                      На {roomCount(project.rooms.length)}, {number(calculation.totalArea)} м²
                     </p>
                     {(calculation.warnings || []).map((warning) => (
                       <p className="budget-disclaimer" key={warning}>
@@ -1118,11 +1110,11 @@ export default function App() {
                       </button>
                       <div className="project-card-body">
                         <small>
-                          {p.object.toUpperCase()} · {p.repair.toUpperCase()}
+                          {p.object}, {p.repair}
                         </small>
                         <h2>{p.name}</h2>
                         <p>
-                          {roomCount(p.rooms.length)} <span>·</span>{' '}
+                          {roomCount(p.rooms.length)},{' '}
                           {number(p.rooms.reduce((sum, r) => sum + area(r), 0))} м²
                         </p>
                         <div>
@@ -1328,12 +1320,12 @@ export default function App() {
               </section>
               <div className="guide-banner">
                 <div>
-                  <span className="eyebrow">НЕБОЛЬШАЯ ПОДГОТОВКА. БОЛЬШАЯ РАЗНИЦА.</span>
                   <h2>
                     Дом складывается
                     <br />
                     из верных решений.
                   </h2>
+                  <p className="guide-caption">Небольшая подготовка. Большая разница.</p>
                   <p>
                     Собрали самое нужное, чтобы вам было
                     <br />
@@ -1353,7 +1345,7 @@ export default function App() {
                       <span className="guide-number">0{i + 1}</span>
                       <div>
                         <small>
-                          {g.tag} <span>· {g.time}</span>
+                          {g.tag} <span>{g.time}</span>
                         </small>
                         <h2>{g.title}</h2>
                       </div>
@@ -1430,7 +1422,7 @@ export default function App() {
         <Modal title={`${room.name} — план помещения`} close={() => setDialog(null)} wide>
           <RoomPlan room={room} expanded />
           <p className="modal-note">
-            Длина {number(room.length)} м · ширина {number(room.width)} м · высота {number(room.height)} м.
+            Длина {number(room.length)} м, ширина {number(room.width)} м, высота {number(room.height)} м.
             Мебель и положение проёмов показаны схематично.
           </p>
         </Modal>
@@ -1654,7 +1646,7 @@ function ProductCard({
           </span>
         </div>
         <button className="product-name-button" onClick={open}>
-          {p.name}
+          <span className="product-title">{p.name}</span>
         </button>
         <p>
           {p.coverage <= 0
@@ -1805,14 +1797,14 @@ function ProductDialog({
           </button>
         </div>
         <div>
-          <div className="eyebrow">
+          <h2>{p.name}</h2>
+          <div className="product-caption">
             {p.brand}{' '}
             <span className="rating">
               <Star size={12} fill="currentColor" />
               {p.rating}
             </span>
           </div>
-          <h2>{p.name}</h2>
           <p className="product-description">{p.description}</p>
           <div className="detail-price">
             {money(p.price)} <span>/ {p.unit}</span>
